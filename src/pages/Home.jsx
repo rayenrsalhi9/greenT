@@ -4,7 +4,7 @@ import '../styles/Home.css'
 
 export default function Home() {
   return (
-    <section className="home container">
+    <section className="home">
         <div className="hero-section">
             <div className="hero-content">
                 <h1>
