@@ -1,0 +1,155 @@
+.home {
+    min-height: 100vh;
+    background-color: #4caf50;
+    color: #111111;
+}
+
+.home > .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4rem 2rem;
+    overflow: hidden;
+
+    background: #4caf50; 
+    color: #fafafa;
+}
+
+.home > .hero-section > .hero-content {
+    max-width: 600px;
+    z-index: 1;
+}
+
+.home > .hero-section > .hero-content > h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.home > .hero-section > .hero-content > p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.plastics-link-btn {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #fffcdc;
+    color: #4caf50;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plastics-link-btn:hover {
+    background-color: #111;
+    transform: translateY(-.5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+    max-width: 400px;
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width: 1150px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Navigation section */
+
+.nav-section {
+    background-color: #fffcdc;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.nav-section > h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #4caf50;
+}
+
+.nav-section > p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.nav-section > .buttons-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-section .signup-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.6s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-section .signup-link:hover {
+    background-color: #328f37;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.nav-section .about-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: #4caf50;
+    border: 2px solid #4caf50;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.nav-section .about-link:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-color: #111;
+    color: #111;
+}
+
+@media(max-width: 768px) {
+    .buttons-section {
+        flex-direction: column;
+    }
+    .buttons-section a {
+        width: 100%;
+        margin-bottom: 1px;
+    }
+}

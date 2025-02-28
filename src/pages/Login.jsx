@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import loginIcon from '../assets/login-icon.png'
 import GoogleIcon from '../components/GoogleIcon'
 import '../styles/Login.css';
@@ -28,7 +29,7 @@ export default function Login() {
         </button>
         <div className="signup-prompt">
             Don't have an account? 
-            <a href='#' className='signup-link'>Create one now</a>
+            <Link to="/signup" className='signup-link'>Create one now</Link>
         </div>
     </section>
   )
