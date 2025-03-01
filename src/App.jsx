@@ -16,7 +16,9 @@ import PostPlastics from './pages/PostPlastics'
 import FindPlastics from './pages/FindPlastics'
 
 import ProfileLayout from './Layout/ProfileLayout'
-import Profile from './pages/Profile'
+
+import Profile from './pages/profile-layout/Profile'
+import Settings from './pages/profile-layout/Settings'
 
 import './App.css'
 
@@ -50,6 +52,7 @@ export default function App() {
       />
       <Route path='profile' element={<ProfileLayout />}>
         <Route index element={<Profile />} />
+        <Route path='settings' element={<Settings />} />
       </Route>
     </Route>
   ))

@@ -19,9 +19,9 @@ export default function ProfileNav() {
       </div>
 
       <div className="navigation-links">
-        <NavLink to="/profile">Overview</NavLink>
-        <NavLink to="posted-plastics">Posted Plastics</NavLink>
-        <NavLink to="points">Points</NavLink>
+        <NavLink to="/profile" end>Overview</NavLink>
+        <NavLink to="/posted-plastics">Posted Plastics</NavLink>
+        <NavLink to="/points">Points</NavLink>
         <NavLink to="settings">Settings</NavLink>
         <NavLink to="/logout" className="logout">Logout</NavLink>
       </div>

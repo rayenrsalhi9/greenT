@@ -1,5 +1,5 @@
-import postIcon from '../assets/post.png'
-import '../styles/Profile.css'
+import postIcon from '../../assets/post.png'
+import '../../styles/profile-layout/Profile.css'
 
 export default function Profile() {
   return (
