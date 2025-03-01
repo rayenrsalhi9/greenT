@@ -9,7 +9,12 @@ import Layout from './Layout/Layout'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+
 import About from './pages/About'
+import HowItWorks from './pages/HowItWorks'
+import PostPlastics from './pages/PostPlastics'
+import FindPlastics from './pages/FindPlastics'
+import Profile from './pages/Profile'
 
 import './App.css'
 
@@ -28,6 +33,22 @@ export default function App() {
       <Route 
         path='about'
         element={<About />}
+      />
+      <Route 
+        path='postPlastics'
+        element={<PostPlastics />}
+      />
+      <Route 
+        path='findPlastics'
+        element={<FindPlastics />}
+      />
+      <Route 
+        path='howToUse'
+        element={<HowItWorks />}
+      />
+      <Route 
+        path='profile'
+        element={<Profile />}
       />
     </Route>
   ))

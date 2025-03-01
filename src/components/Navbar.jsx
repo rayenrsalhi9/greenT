@@ -24,10 +24,10 @@ export default function Navbar() {
             </Link>
 
             <div className="nav">
-                <NavLink to="/find">Find Plastics</NavLink>
-                <NavLink to="/post">Post Plastics</NavLink>
-                <NavLink to="/how">How It Works</NavLink>
-                <NavLink to="/about">About GreenT</NavLink>
+                <NavLink to="findPlastics">Find Plastics</NavLink>
+                <NavLink to="postPlastics">Post Plastics</NavLink>
+                <NavLink to="howToUse">How It Works</NavLink>
+                <NavLink to="about">About GreenT</NavLink>
             </div>
 
             <Link to="/profile" className='user-icon'>
@@ -45,10 +45,10 @@ export default function Navbar() {
                 {
                     isMenuOpen &&
                     <div className="mobile-menu">
-                        <Link to="">Profile</Link>
-                        <Link to="">Find Plastics</Link>
-                        <Link to="">Post Plastics</Link>
-                        <Link to="">How It Works</Link>
+                        <Link to="profile">Profile</Link>
+                        <Link to="findPlastics">Find Plastics</Link>
+                        <Link to="postPlastics">Post Plastics</Link>
+                        <Link to="howToUse">How It Works</Link>
                         <Link to="about">About GreenT</Link>
                     </div>
                 }

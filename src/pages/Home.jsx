@@ -14,7 +14,7 @@ export default function Home() {
                     Join EcoClean and be part of a community dedicated to reducing plastic waste. Connect with like-minded
                     individuals, exchange plastics, and make a real difference.
                 </p>
-                <Link to="/" className='plastics-link-btn'>
+                <Link to="login" className='plastics-link-btn'>
                     Get Started
                 </Link>
             </div>
@@ -26,8 +26,8 @@ export default function Home() {
             <h2>Ready to Make a Difference?</h2>
             <p>Join GreenT today and start your journey towards a plastic-free future.</p>
             <div className="buttons-section">
-                <Link to="/signup" className='signup-link'>Sign Up Now</Link>
-                <Link to="/" className='about-link'>About the App</Link>
+                <Link to="signup" className='signup-link'>Sign Up Now</Link>
+                <Link to="about" className='about-link'>About the App</Link>
             </div>
         </div>
     </section>
