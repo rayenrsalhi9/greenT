@@ -1,0 +1,171 @@
+.profile-overview-container {
+    flex-basis: 70%;
+    width: 100%;
+
+    color: #111;
+
+    padding: 20px;
+}
+
+.profile-overview {
+    background: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.283);
+    border-radius: 6px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-titles {}
+
+.profile-titles > h1 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.profile-titles > p {
+    font-size: 14px;
+    color: #787c82;
+    margin-top: 4px;
+}
+
+/* Account details */
+.profile-details-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media(max-width: 991px) {
+    .profile-details-container {
+        flex-direction: column;
+    }
+}
+
+.profile-details-container > .account-details {
+    width: 100%;
+    flex-basis: 60%;
+    background: #faf6cd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.283);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account-details h3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.profile-details-container > .account-details > .details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.profile-details-container > .account-details > .details-row .title {
+    font-weight: 500;
+    color: #787c82;
+}
+
+/* Points summary */
+.profile-details-container > .points-summary {
+    width: 100%;
+    flex-basis: 40%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.283);
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.points-summary h3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.points-summary .amount {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: #4caf50;
+}
+
+.points-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.points-amount p {
+    font-size: 14px;
+    text-align: center;
+}
+
+.points-summary button {
+    display: block;
+    width: fit-content;
+
+    margin: 0 auto;
+    padding: 12px;
+
+    border: none;
+
+    background: #4caf50;
+    color: #fafafa;
+
+    font-weight: 600;
+    transition: .6s;
+}
+
+.points-summary button:hover {
+    background: #2b972f;
+}
+
+/* Posts container */
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.activity-container .post {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.activity-container .post img {
+    width: 30px;
+}
+
+.activity-container .post h3 {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.activity-container .post p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    color: #787c82;
+    font-size: 14px;
+  }
+  

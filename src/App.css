@@ -1,0 +1,9 @@
+.profile-layout {
+    display: flex;
+}
+
+@media(max-width: 768px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+}
