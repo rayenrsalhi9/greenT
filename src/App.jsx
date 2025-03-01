@@ -14,6 +14,8 @@ import About from './pages/About'
 import HowItWorks from './pages/HowItWorks'
 import PostPlastics from './pages/PostPlastics'
 import FindPlastics from './pages/FindPlastics'
+
+import ProfileLayout from './Layout/ProfileLayout'
 import Profile from './pages/Profile'
 
 import './App.css'
@@ -46,10 +48,9 @@ export default function App() {
         path='howToUse'
         element={<HowItWorks />}
       />
-      <Route 
-        path='profile'
-        element={<Profile />}
-      />
+      <Route path='profile' element={<ProfileLayout />}>
+        <Route index element={<Profile />} />
+      </Route>
     </Route>
   ))
   return (

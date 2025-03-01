@@ -17,7 +17,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav>
+        <nav className='home-navbar'>
             <Link to="/" className="logo">
                 <img src={appIcon} alt="app icon" />
                 <span>GreenT</span>
