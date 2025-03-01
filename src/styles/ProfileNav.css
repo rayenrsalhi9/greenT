@@ -74,6 +74,10 @@
     font-size: 14px;
     font-weight: 600;
 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     padding: 20px;
     transition: .6s;
 }
@@ -81,6 +85,10 @@
 .navigation-links a:hover,
 .navigation-links a.active {
     background: #4caf4f4e;
+}
+
+.navigation-links a img {
+    width: 30px;
 }
 
 .navigation-links .logout {

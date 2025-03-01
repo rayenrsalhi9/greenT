@@ -19,6 +19,8 @@ import ProfileLayout from './Layout/ProfileLayout'
 
 import Profile from './pages/profile-layout/Profile'
 import Settings from './pages/profile-layout/Settings'
+import Points from './pages/profile-layout/Points'
+import Posts from './pages/profile-layout/Posts'
 
 import './App.css'
 
@@ -53,6 +55,8 @@ export default function App() {
       <Route path='profile' element={<ProfileLayout />}>
         <Route index element={<Profile />} />
         <Route path='settings' element={<Settings />} />
+        <Route path='points' element={<Points />} />
+        <Route path='posts' element={<Posts />} />
       </Route>
     </Route>
   ))
