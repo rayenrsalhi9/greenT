@@ -91,6 +91,10 @@
     background: #39843b;
 }
 
+.signup-form button:disabled {
+    opacity: .5;
+}
+
 /* Login link */
 .login-prompt {
     margin-top: 2rem;
@@ -108,4 +112,11 @@
 
 .login-link:hover {
     text-decoration: underline;
+}
+
+.signup-container .error-msg {
+    color: #c1121f;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
 }

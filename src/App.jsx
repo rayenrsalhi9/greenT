@@ -8,7 +8,7 @@ import Layout from './Layout/Layout'
 
 import Home from './pages/static/Home'
 import Login, { action as loginAction } from './pages/Login'
-import Signup from './pages/Signup'
+import Signup, { action as signupAction } from './pages/Signup'
 
 import About from './pages/static/About'
 import HowItWorks from './pages/static/HowItWorks'
@@ -36,6 +36,7 @@ export default function App() {
       <Route 
         path='signup'
         element={<Signup />}
+        action={signupAction}
       />
       <Route 
         path='about'
