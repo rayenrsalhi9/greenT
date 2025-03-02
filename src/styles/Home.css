@@ -27,14 +27,14 @@
 }
 
 .home > .hero-section > .hero-content > p {
-    font-size: 1.25rem;
+    font-size: 18px;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
 
 .plastics-link-btn {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 16px;
     padding: 0.75rem 1.5rem;
     background-color: #fffcdc;
     color: #4caf50;
@@ -92,7 +92,7 @@
 }
 
 .nav-section > p {
-    font-size: 1.25rem;
+    font-size: 18px;
     margin-bottom: 2rem;
     color: #666;
 }
@@ -105,7 +105,7 @@
 
 .nav-section .signup-link {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 16px;
     padding: 0.75rem 1.5rem;
     background-color: #4caf50;
     color: #fff;
@@ -126,7 +126,7 @@
 
 .nav-section .about-link {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 16px;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
     color: #4caf50;
