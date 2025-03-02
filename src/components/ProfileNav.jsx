@@ -9,7 +9,7 @@ import logoutIcon from '../assets/logout.png'
 
 import '../styles/ProfileNav.css'
 
-export default function ProfileNav() {
+export default function ProfileNav({profile}) {
   return (
     <nav className="profile-navbar">
 
@@ -18,8 +18,8 @@ export default function ProfileNav() {
         <img src={userIcon} alt="profile image" className="profile-pic" />
 
         <div className="profile-info-details">
-          <h3>Essalhi Rayene</h3>
-          <p>rayene.salhi@gmail.com</p>
+          <h3> {profile.lastName} {profile.firstName} </h3>
+          <p> {profile.email} </p>
           <span className="badge">Eco Warrior</span>
         </div>
 

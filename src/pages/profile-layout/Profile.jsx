@@ -1,7 +1,11 @@
+import { useOutletContext } from 'react-router-dom'
+
 import postIcon from '../../assets/post.png'
 import '../../styles/profile-layout/Profile.css'
 
 export default function Profile() {
+  const profile = useOutletContext()
+  
   return (
     <section className="profile-overview-container">
       <div className="profile-overview">
@@ -16,19 +20,23 @@ export default function Profile() {
             <h3>Account Details</h3>
             <div className="details-row">
               <p className='title'>Name:</p>
-              <p>Essalhi Rayene</p>
+              <p> {profile.lastName} {profile.firstName} </p>
             </div>
             <div className="details-row">
               <p className='title'>Email:</p>
-              <p>rayene.salhi@gmail.com</p>
+              <p> {profile.email} </p>
             </div>
             <div className="details-row">
               <p className='title'>City Of Residence:</p>
-              <p>ElKef, Tunisia</p>
+              <p> {profile.city} </p>
             </div>
             <div className="details-row">
               <p className='title'>Phone Number:</p>
-              <p>(+216) 92840380</p>
+              <p>
+                {
+                  profile.phone !== '' && `(+216) ${profile.phone}` 
+                }
+              </p>
             </div>
             <div className="details-row">
               <p className='title'>Member Since:</p>
