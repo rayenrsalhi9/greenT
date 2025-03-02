@@ -2,7 +2,10 @@ import {
     Link,
     Form,
     useNavigate,
-    redirect
+    redirect,
+    useActionData,
+    useSearchParams,
+    useNavigation
 } from 'react-router-dom';
 
 import { googleLogin } from '../firebase/googleLogin';
@@ -35,17 +38,25 @@ export async function action({ request }) {
 export default function Login() {
 
     const navigate = useNavigate()
-
     const handleGoogleLogin = async () => {
         await googleLogin(navigate)
     }
+
+    const errorMsg = useActionData()
+    const [searchParams] = useSearchParams()
+    const navigation = useNavigation()
 
   return (
     <section className="login-container">
         <img src={loginIcon} alt="login icon" loading='lazy' />
         <h1>Welcome to GreenT</h1>
         <p>Join the movement to clean our planet</p>
-        <p className="error-msg">You need to log in to procced.</p>
+
+        {
+            searchParams && 
+            <p className="error-msg">{searchParams.get('message')}</p>
+        }
+
         <Form replace method='post' className='login-form' >
             <div className="row">
                 <label htmlFor="email">Email</label>
@@ -55,8 +66,13 @@ export default function Login() {
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" id="password" />
             </div>
-            <p className="error-msg">An error occured, try again.</p>
-            <button>Sign in</button>
+            { errorMsg && <p className="error-msg">{errorMsg}</p>}
+            <button disabled={navigation.state === 'submitting'}>
+                {
+                    navigation.state === 'submitting' ?
+                    'Signing in...' : 'Sign in'
+                }
+            </button>
         </Form>
         <div className="divider">
             <span className="divider-text">or continue with</span>
