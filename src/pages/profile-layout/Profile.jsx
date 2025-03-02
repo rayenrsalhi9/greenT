@@ -1,10 +1,12 @@
 import { useOutletContext } from 'react-router-dom'
+import { format } from 'date-fns'
 
 import postIcon from '../../assets/post.png'
 import '../../styles/profile-layout/Profile.css'
 
 export default function Profile() {
   const profile = useOutletContext()
+  const creationDate = profile.createdAt ? format(profile.createdAt.toDate(), "MMMM-yyyy") : "Unknown"
   
   return (
     <section className="profile-overview-container">
@@ -40,17 +42,17 @@ export default function Profile() {
             </div>
             <div className="details-row">
               <p className='title'>Member Since:</p>
-              <p>February 2025</p>
+              <p> {creationDate} </p>
             </div>
             <div className="details-row">
               <p className='title'>Level:</p>
-              <p>Eco Warrior</p>
+              <p> {profile.badge} </p>
             </div>
           </div>
           <div className="points-summary">
             <h3>Points Summary</h3>
             <div className="points-amount">
-              <h1 className='amount'>1250</h1>
+              <h1 className='amount'> {profile.points} </h1>
               <p>Total Points Earned</p>
               <button>Redeem Points</button>
             </div>

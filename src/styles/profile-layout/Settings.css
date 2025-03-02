@@ -84,3 +84,14 @@
 .settings button:hover {
     background: #288f2c;
 }
+
+.settings button:disabled {
+    opacity: .5;
+}
+
+.settings .error-msg {
+    color: #c1121f;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}

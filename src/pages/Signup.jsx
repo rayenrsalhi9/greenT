@@ -2,7 +2,7 @@ import { Link, Form, redirect, useNavigation, useActionData } from 'react-router
 import { auth, db } from '../config/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getSignUpErrorMessage } from '../firebase/signupErrorMsgs'
-import { doc, setDoc } from 'firebase/firestore'
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 
 import signupIcon from '../assets/login-icon.png'
 import '../styles/Signup.css'
@@ -25,7 +25,10 @@ export async function action({ request }) {
             lastName,
             email,
             city,
-            phone
+            phone,
+            createdAt: serverTimestamp(),
+            points: 0,
+            badge: 'Eco Newbie'
         })
         return redirect('/profile')
     } catch(err) {

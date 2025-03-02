@@ -1,5 +1,5 @@
 import { signInWithPopup } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, googleProvider, db } from "../config/firebase";
 import { getSignUpErrorMessage } from "./loginErrorMsgs";
 
@@ -28,6 +28,9 @@ async function saveUserToFirebase(user) {
             lastName: user.displayName ? user.displayName.split(' ')[1] : '',
             email: user.email,
             city: '',
-            phone: ''
+            phone: '',
+            createdAt: serverTimestamp(),
+            points: 0,
+            badge: 'Eco Newbie'
         });
 }}

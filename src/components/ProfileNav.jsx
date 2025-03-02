@@ -20,7 +20,7 @@ export default function ProfileNav({profile}) {
         <div className="profile-info-details">
           <h3> {profile.lastName} {profile.firstName} </h3>
           <p> {profile.email} </p>
-          <span className="badge">Eco Warrior</span>
+          <span className="badge"> {profile.badge} </span>
         </div>
 
       </div>
