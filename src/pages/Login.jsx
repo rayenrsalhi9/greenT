@@ -1,9 +1,23 @@
-import { Link } from 'react-router-dom';
+import { 
+    Link,
+    useNavigate
+} from 'react-router-dom';
+
+import { googleLogin } from '../firebase/googleLogin';
+
 import loginIcon from '../assets/login-icon.png'
 import GoogleIcon from '../components/GoogleIcon'
+
 import '../styles/Login.css';
 
 export default function Login() {
+
+    const navigate = useNavigate()
+    
+    const handleGoogleLogin = async () => {
+        await googleLogin(navigate)
+    }
+
   return (
     <section className="login-container">
         <img src={loginIcon} alt="login icon" loading='lazy' />
@@ -23,7 +37,7 @@ export default function Login() {
         <div className="divider">
             <span className="divider-text">or continue with</span>
         </div>
-        <button className='google-signin-btn'>
+        <button className='google-signin-btn' onClick={handleGoogleLogin}>
             <GoogleIcon />
             <span>Sign in with Google</span>
         </button>
