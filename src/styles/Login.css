@@ -8,7 +8,7 @@
     max-width: 24rem;
 
     padding: 1rem;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .login-container img {
@@ -26,7 +26,7 @@
 }
 
 .login-container > p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     color: rgba(17, 17, 17, 0.7);
     margin: 0 auto 30px;
@@ -147,4 +147,12 @@
 
 .signup-link:hover {
     text-decoration: underline;
+}
+
+/* Error message */
+.login-container .error-msg {
+    color: #c1121f;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
 }

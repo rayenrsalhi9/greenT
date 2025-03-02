@@ -7,7 +7,7 @@ import {
 import Layout from './Layout/Layout'
 
 import Home from './pages/static/Home'
-import Login from './pages/Login'
+import Login, { action as loginAction } from './pages/Login'
 import Signup from './pages/Signup'
 
 import About from './pages/static/About'
@@ -31,6 +31,7 @@ export default function App() {
       <Route 
         path='login'
         element={<Login />}
+        action={loginAction}
       />
       <Route 
         path='signup'
