@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles/About.css'
+import '../../styles/static/About.css'
 
 export default function About() {
   return (

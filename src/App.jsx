@@ -6,12 +6,12 @@ import {
 
 import Layout from './Layout/Layout'
 
-import Home from './pages/Home'
+import Home from './pages/static/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
-import About from './pages/About'
-import HowItWorks from './pages/HowItWorks'
+import About from './pages/static/About'
+import HowItWorks from './pages/static/HowItWorks'
 import PostPlastics from './pages/PostPlastics'
 import FindPlastics from './pages/FindPlastics'
 
