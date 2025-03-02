@@ -46,8 +46,8 @@ export default function Navbar() {
                     isMenuOpen &&
                     <div className="mobile-menu">
                         <Link to="profile">Profile</Link>
-                        <Link to="findPlastics">Find Plastics</Link>
-                        <Link to="postPlastics">Post Plastics</Link>
+                        <Link to="posts">Find Plastics</Link>
+                        <Link to="newPost">Post Plastics</Link>
                         <Link to="howToUse">How It Works</Link>
                         <Link to="about">About GreenT</Link>
                     </div>
