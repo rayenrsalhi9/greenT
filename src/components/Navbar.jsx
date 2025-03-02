@@ -24,8 +24,8 @@ export default function Navbar() {
             </Link>
 
             <div className="nav">
-                <NavLink to="findPlastics">Find Plastics</NavLink>
-                <NavLink to="postPlastics">Post Plastics</NavLink>
+                <NavLink to="posts">Find Plastics</NavLink>
+                <NavLink to="newPost">Post Plastics</NavLink>
                 <NavLink to="howToUse">How It Works</NavLink>
                 <NavLink to="about">About GreenT</NavLink>
             </div>
