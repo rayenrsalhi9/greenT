@@ -20,7 +20,7 @@ import Settings, { action as settingsAction } from './pages/profile-layout/Setti
 import Points from './pages/profile-layout/Points'
 import Posts from './pages/profile-layout/Posts'
 
-import PostsPage from './pages/plastic/PostsPage'
+import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
 
@@ -58,6 +58,7 @@ export default function App() {
       <Route 
         path='posts'
         element={<PostsPage />}
+        loader={postsLoader}
       />
       <Route 
         path='newPost' 
