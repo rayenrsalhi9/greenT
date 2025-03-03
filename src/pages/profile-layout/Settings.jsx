@@ -14,7 +14,9 @@ export async function action({ request }) {
     try {
         await updateDoc(docRef, {
             city,
-            phone
+            phone,
+            firstName,
+            lastName
         })
         return redirect('/profile')
     } catch(err) {
