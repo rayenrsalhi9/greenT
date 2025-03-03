@@ -4,6 +4,9 @@ import { NavLink, Link, redirect, defer, Await, useLoaderData } from 'react-rout
 import { auth } from '../../config/firebase';
 import { displayPosts } from '../../firebase/displayPosts';
 
+import Loading from '../../components/Loading';
+import NoPosts from '../../components/NoPosts';
+
 import '../../styles/plastic/PostsPage.css'
 
 export function loader() {
@@ -23,7 +26,7 @@ export default function PostsPage() {
     const postsObject = useLoaderData()
 
     return (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Loading />}>
             <Await resolve={postsObject.posts}>
                 {
                     posts => (
@@ -45,13 +48,12 @@ export default function PostsPage() {
                             <h1>All community posts</h1>
                             <div className="posts">
                                 {
-                                    posts.length > 0 ?
                                     posts.map(post => (
                                         <Post key={post.id} post={post} />
-                                    )) : 
-                                    <h1>No posts yet...</h1>
+                                    )) 
                                 }
                             </div>
+                            { posts.length === 0 && <NoPosts />}
                         </section>
                 
                     )

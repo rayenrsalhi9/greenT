@@ -5,6 +5,7 @@ import { getUser } from "../firebase/getProfile";
 import { auth } from "../config/firebase";
 
 import ProfileNav from "../components/ProfileNav"
+import Loading from '../components/Loading'
 
 export function loader() {
   return new Promise((resolve) => {
@@ -33,7 +34,7 @@ export default function ProfileLayout() {
 
   return (
     <section className="profile-layout">
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Loading />}>
           <Await resolve={profileObject.profile}>
               {
                 profile => (
