@@ -21,6 +21,7 @@ import Points from './pages/profile-layout/Points'
 import Posts from './pages/profile-layout/Posts'
 
 import PostsPage from './pages/plastic/PostsPage'
+import NewPost, { loader as newPostLoader } from './pages/plastic/NewPost'
 
 import './App.css'
 
@@ -56,6 +57,11 @@ export default function App() {
       <Route 
         path='posts'
         element={<PostsPage />}
+      />
+      <Route 
+        path='newPost' 
+        element={<NewPost />} 
+        loader={newPostLoader} 
       />
     </Route>
   ))

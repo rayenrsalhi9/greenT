@@ -1,4 +1,6 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
+import { signout } from "../firebase/signOut"
+
 import userIcon from '../assets/profile.png'
 
 import overviewIcon from '../assets/overview.png'
@@ -10,6 +12,13 @@ import logoutIcon from '../assets/logout.png'
 import '../styles/ProfileNav.css'
 
 export default function ProfileNav({profile}) {
+
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    signout(navigate)
+  }
+
   return (
     <nav className="profile-navbar">
 
@@ -42,10 +51,10 @@ export default function ProfileNav({profile}) {
           <img src={settingsIcon} alt="settings icon" />
           Settings
         </NavLink>
-        <NavLink to="/logout" className="logout">
+        <button className="logout" onClick={handleLogout}>
           <img src={logoutIcon} alt="logout icon" />
           Log out
-        </NavLink>
+        </button>
       </div>
     </nav>
   )
