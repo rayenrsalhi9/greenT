@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { auth } from '../../config/firebase'
-import { redirect } from 'react-router-dom'
+import { redirect, Form } from 'react-router-dom'
+import { serverTimestamp } from 'firebase/firestore'
 
 import { states, cities } from '../../utils/locations'
+import { sharePost } from '../../firebase/userPost'
 
 import bottle from '../../assets/bottle.png'
 import bag from '../../assets/bag.png'
@@ -23,6 +25,25 @@ export function loader() {
     });
 }
 
+export async function action({request}) {
+  const formData = await request.formData()
+  const { title, state, city, description, bottles, bags, mixed } = Object.fromEntries(formData)
+  
+  if (!title || !state || !city || !description || !bottles || !bags || !mixed) {
+    return 'All fields are required.'
+  }
+
+  const postAttributes = {
+    title, state, city, description, 
+    bottles: Number(bottles), 
+    bags: Number(bags), 
+    mixed: Number(mixed),
+    createdAt: serverTimestamp()
+  }
+
+  return sharePost(auth.currentUser.uid, postAttributes)
+}
+
 export default function NewPost() {
 
   const [, setSelectedState] = useState("")
@@ -36,7 +57,7 @@ export default function NewPost() {
 
   return (
     <div className="post-form-container">
-      <form  method='post' className="post-form">
+      <Form  method='post' replace className="post-form">
         <h1 className="form-title">Create a New Post</h1>
 
         <div className="form-group">
@@ -128,7 +149,7 @@ export default function NewPost() {
         <button type="submit" className="submit-button">
           Submit Post
         </button>
-      </form>
+      </Form>
     </div>
   )
 }
