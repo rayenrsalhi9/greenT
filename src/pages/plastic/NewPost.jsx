@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { auth } from '../../config/firebase'
 import { redirect } from 'react-router-dom'
+
+import { states, cities } from '../../utils/locations'
 
 import bottle from '../../assets/bottle.png'
 import bag from '../../assets/bag.png'
@@ -21,6 +24,16 @@ export function loader() {
 }
 
 export default function NewPost() {
+
+  const [, setSelectedState] = useState("")
+  const [availablesCities, setCities] = useState([])
+
+  const handleStateChange = (e) => {
+    const stateId = e.target.value
+    setSelectedState(stateId)
+    setCities(cities[stateId] || [])
+  }
+
   return (
     <div className="post-form-container">
       <form  method='post' className="post-form">
@@ -39,13 +52,25 @@ export default function NewPost() {
         <div className="location-group">
           <div className="form-group">
             <label htmlFor="state">State</label>
-            <select id="state" name="state">
+            <select id="state" name="state" onChange={handleStateChange}>
+              <option value="">Select a state</option>
+              {
+                states.map(state => (
+                  <option key={state.id} value={state.id} > {state.name} </option>
+                ))
+              }
             </select>
           </div>
 
           <div className="form-group">
             <label htmlFor="city">City</label>
             <select id="city" name="city"> 
+              <option value="">Select a city</option>
+              {
+                availablesCities.map((el, index) => (
+                  <option key={index} value={el} > {el} </option>
+                ))
+              }
             </select>
           </div>
         </div>
