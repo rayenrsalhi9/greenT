@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import userIcon from '../../assets/profile.png'
 import location from '../../assets/location.png'
 
@@ -5,12 +7,9 @@ import bottle from '../../assets/bottle.png'
 import bag from '../../assets/bag.png'
 import mixed from '../../assets/mixedMaterial.png'
 
-import message from '../../assets/message.png'
-
 import '../../styles/plastic/PostsPage.css'
 
 export default function Post({post}) {
-    console.log(post)
     return (
         <div className="post">
             <div className="user">
@@ -43,11 +42,12 @@ export default function Post({post}) {
                 </div>
             </div>
             <div className="action">
-                <button className="reactions">
-                    <img src={message} alt="message icon" />
-                    <p>Contact User</p>
-                </button>
-                <button>View Details</button>
+                <Link 
+                    to={`./details?user=${post.userID}&post=${post.id}`}
+                    className="details-btn"
+                >
+                    See Details
+                </Link>
             </div>
         </div>
     )

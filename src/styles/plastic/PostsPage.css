@@ -189,39 +189,23 @@
     align-items: center;
 }
 
-.action button {
+.action .details-btn {
     padding: 12px;
     width: fit-content;
 
     border: none;
+    border-radius: 4px;
 
     background: #4caf50;
     color: #fafafa;
+
     font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: .6s;
 }
 
-.action button:hover {
+.action .details-btn:hover {
     background: #2e8931;
-}
-
-.action button.reactions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 8px;
-
-    border-radius: 5px;
-    border: 1px solid #aaa;
-
-    background: #fffcdc;
-    color: #111;
-}
-
-.action button.reactions:hover {
-    background: #f4efbb;
-}
-
-.action .reactions img {
-    width: 18px;
 }

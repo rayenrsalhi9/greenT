@@ -23,6 +23,7 @@ import Posts from './pages/profile-layout/Posts'
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
+import Details from './pages/plastic/Details'
 
 import './App.css'
 
@@ -65,6 +66,10 @@ export default function App() {
         element={<NewPost />} 
         loader={newPostLoader}
         action={newPostAction} 
+      />
+      <Route 
+        path='posts/details'
+        element={<Details />}
       />
     </Route>
   ))

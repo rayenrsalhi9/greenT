@@ -34,6 +34,7 @@ export async function action({request}) {
   }
 
   const postAttributes = {
+    userID: auth.currentUser.uid,
     title, state, city, description, 
     bottles: Number(bottles), 
     bags: Number(bags), 

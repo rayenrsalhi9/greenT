@@ -1,0 +1,133 @@
+.chat-container {
+    padding: 20px;
+}
+
+.chat-container a {
+    display: block;
+    color: #111;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-underline-offset: 2px;
+    transition: .6s;
+}
+
+.chat-container a:hover {
+    color: #3b3b3b;
+}
+
+.chat {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.chat .header{
+    background: #fafafa;
+    padding: 20px;
+}
+
+.chat .header h1 {
+    color: #4caf50;
+    font-weight: 600;
+    text-align: center;
+}
+
+.chat .content {
+    padding: 20px;
+    background: #fffcdc;
+}
+
+/* User details */
+.user-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-details img {
+    width: 50px;
+}
+
+.user-details h3 {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.user-details p {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* Post details */
+.post-details {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.location-and-date {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.post-details img {
+    width: 15px;
+}
+
+.post-details h2 {
+    font-weight: 500;
+    font-size: 20px;
+    color: #4caf50;
+}
+
+.location, .date {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.description {
+    font-size: 14px;
+}
+
+/* Quantities */
+.quantities {
+    display: flex;
+    align-items: center;
+}
+
+.quantities .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.quantities .icon img {
+    width: 40px
+}
+
+.quantities .icon .name {
+    font-size: 14px;
+}
+
+.quantities .icon .quantity {
+    font-weight: 800;
+    font-size: 22px;
+    color: #4caf50;
+}
+
+/* Messages */
+.messages {
+    padding: 20px 0;
+}
