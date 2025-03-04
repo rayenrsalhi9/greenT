@@ -23,7 +23,7 @@ import Posts from './pages/profile-layout/Posts'
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
-import Details from './pages/plastic/Details'
+import Details, {messagesAction} from './pages/plastic/Details'
 
 import './App.css'
 
@@ -70,6 +70,7 @@ export default function App() {
       <Route 
         path='posts/details'
         element={<Details />}
+        action={messagesAction}
       />
     </Route>
   ))

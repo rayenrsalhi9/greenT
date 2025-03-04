@@ -129,7 +129,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .details .title {
@@ -149,7 +149,7 @@
 }
 
 .details .location img {
-    width: 20px;
+    width: 12px;
 }
 
 .quantities {

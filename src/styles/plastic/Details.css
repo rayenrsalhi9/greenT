@@ -6,7 +6,7 @@
     display: block;
     color: #111;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     text-underline-offset: 2px;
     transition: .6s;
 }
@@ -20,17 +20,6 @@
     margin: 0 auto;
     border-radius: 5px;
     overflow: hidden;
-}
-
-.chat .header{
-    background: #fafafa;
-    padding: 20px;
-}
-
-.chat .header h1 {
-    color: #4caf50;
-    font-weight: 600;
-    text-align: center;
 }
 
 .chat .content {

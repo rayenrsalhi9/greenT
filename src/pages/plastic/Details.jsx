@@ -5,6 +5,12 @@ import { getUser } from '../../firebase/getProfile'
 import { getPost } from '../../firebase/getPost'
 
 import Messages from './Messages'
+import Loading from '../../components/Loading'
+
+import { serverTimestamp } from 'firebase/firestore'
+import { auth } from '../../config/firebase.js'
+
+import { saveMessage } from '../../firebase/saveMessage.js'
 
 import userImg from '../../assets/profile.png'
 import locationMark from '../../assets/location.png'
@@ -14,6 +20,32 @@ import bag from '../../assets/bag.png'
 import mixed from '../../assets/mixedMaterial.png'
 
 import '../../styles/plastic/Details.css'
+
+export async function messagesAction({ request }) {
+
+    const url = new URL(request.url)
+
+    const senderID = auth.currentUser.uid
+    const destinationID = url.searchParams.get('user')
+    const postID = url.searchParams.get('post')
+
+    const formData = await request.formData()
+    const { msg } = Object.fromEntries(formData)
+
+    if (!msg) return null
+
+    const msgObject = {
+        senderID,
+        destinationID,
+        postID,
+        text: msg,
+        createdAt: serverTimestamp()
+    }
+
+    await saveMessage(msgObject)
+    
+    return null
+}
 
 export default function Details() {
 
@@ -36,12 +68,9 @@ export default function Details() {
         <section className="chat-container">
             <Link to=".." relative='path'>Return to all posts</Link>
             {
-                user && post &&
+                user && post ?
 
                 <div className="chat">
-                    <div className="header">
-                        <h1>Post Details & Messages</h1>
-                    </div>
                     <div className="content">
                         <div className="user-details">
                             <img src={userImg} alt="" />
@@ -93,7 +122,7 @@ export default function Details() {
                         </div>
                         <Messages />
                     </div>
-                </div>
+                </div> : <Loading />
             }
         </section>
     )

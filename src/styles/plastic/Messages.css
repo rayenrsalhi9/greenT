@@ -2,6 +2,10 @@
     padding: 20px 0;
 }
 
+.messages .title {
+    font-weight: 600;
+}
+
 .messages-container {
     display: flex;
     flex-direction: column;
