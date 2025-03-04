@@ -4,6 +4,8 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { getUser } from '../../firebase/getProfile'
 import { getPost } from '../../firebase/getPost'
 
+import Messages from './Messages'
+
 import userImg from '../../assets/profile.png'
 import locationMark from '../../assets/location.png'
 import calendar from '../../assets/calendar.png'
@@ -89,9 +91,7 @@ export default function Details() {
                                 </div>
                             </div>
                         </div>
-                        <div className="messages">
-                            <h2>Messages</h2>
-                        </div>
+                        <Messages />
                     </div>
                 </div>
             }
