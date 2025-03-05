@@ -126,6 +126,10 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
+.received span.message-time {
+    color: #454545;
+}
+
 .chat-input-container {
     padding: 20px;
     border-top: 1px solid #eee;
