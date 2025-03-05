@@ -3,7 +3,6 @@ import { doc, collection, query, where, getDocs, getDoc } from 'firebase/firesto
 
 export async function showContacts(userID) {
     try {
-
         // Query chats where current user is a member
         const chatsRef = collection(db, 'chats')
         const q = query(chatsRef, where('members', 'array-contains', userID))
@@ -11,19 +10,25 @@ export async function showContacts(userID) {
 
         const contacts = []
         
-        // For each chat, get the other member's details
+        // For each chat, get the other member's details and last message
         for (const chatDoc of querySnapshot.docs) {
-
-            const members = chatDoc.data().members
+            const chatData = chatDoc.data()
+            const members = chatData.members
             const otherUserId = members.find(id => id !== userID)
 
             const userRef = doc(db, 'users', otherUserId)
             const userSnapshot = await getDoc(userRef)
-            const userObject = {...userSnapshot.data(), id: userSnapshot.id}
+            
+            const userObject = {
+                ...userSnapshot.data(),
+                id: userSnapshot.id,
+                lastMessage: chatData.lastMessage || '',
+                lastMessageTime: chatData.lastMessageTime || null
+            }
             contacts.push(userObject)
         }
 
-        return contacts
+        return contacts.sort((a, b) => b.lastMessageTime - a.lastMessageTime)
 
     } catch (error) {
         console.error("Error fetching contacts:", error)

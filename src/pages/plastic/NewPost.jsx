@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useState } from 'react'
 import { auth } from '../../config/firebase'
-import { redirect, Form } from 'react-router-dom'
+import { redirect, Form, useActionData, useNavigation } from 'react-router-dom'
 import { serverTimestamp } from 'firebase/firestore'
 
 import { states, cities } from '../../utils/locations'
@@ -47,9 +47,11 @@ export async function action({request}) {
 }
 
 export default function NewPost() {
-
   const [, setSelectedState] = useState("")
   const [availablesCities, setCities] = useState([])
+
+  const errorMessage = useActionData()
+  const navigation = useNavigation()
 
   const handleStateChange = (e) => {
     const stateId = e.target.value
@@ -148,8 +150,14 @@ export default function NewPost() {
           </div>
         </div>
 
-        <button type="submit" className="submit-button">
-          Submit Post
+        {errorMessage && <h3 className='error-msg'>{errorMessage}</h3>}
+
+        <button 
+          type="submit" 
+          className="submit-button"
+          disabled={navigation.state === 'submitting'}
+        >
+          {navigation.state === 'submitting' ? 'Submitting...' : 'Submit Post'}
         </button>
       </Form>
     </div>

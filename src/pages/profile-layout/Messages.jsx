@@ -4,6 +4,7 @@ import userIcon from '../../assets/profile.png'
 
 import { showContacts } from '../../firebase/showContacts'
 import { auth } from '../../config/firebase'
+import { formatTime } from '../../utils/formatTime'
 
 import './messages.css'
 
@@ -38,6 +39,10 @@ export default function Messages() {
                                 />
                                 <div className="contact-info">
                                     <h3>{contact.firstName} {contact.lastName}</h3>
+                                    <div className="message-info">
+                                        <p>{contact.lastMessage}</p>
+                                        <span>{formatTime(contact.lastMessageTime)}</span>
+                                    </div>
                                 </div>
                             </Link>
                         ))

@@ -79,5 +79,15 @@ export async function getChatId(senderId, receiverId) {
   const chatsRef = collection(db, 'chats')
   const q = query(chatsRef, where('members', '==', members))
   const querySnapshot = await getDocs(q)
+
+  if (querySnapshot.empty) {
+    // If no chat exists yet, create a new one
+    const newChatRef = await addDoc(chatsRef, {
+      members,
+      createdAt: serverTimestamp()
+    })
+    return newChatRef.id
+  }
+
   return querySnapshot.docs[0].id
 }
