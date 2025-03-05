@@ -20,7 +20,7 @@ import Settings, { action as settingsAction } from './pages/profile-layout/Setti
 import Points from './pages/profile-layout/Points'
 import Posts from './pages/profile-layout/Posts'
 import Messages from './pages/profile-layout/Messages'
-import Chat from './pages/profile-layout/Chat'
+import Chat, { action as chatAction } from './pages/profile-layout/Chat'
 
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
@@ -56,7 +56,7 @@ export default function App() {
         <Route path='points' element={<Points />} />
         <Route path='posts' element={<Posts />} />
         <Route path='messages' element={<Messages />} />
-        <Route path='messages/:userId' element={<Chat />} />
+        <Route path='messages/:userId' element={<Chat />} action={chatAction} />
       </Route>
 
       <Route 

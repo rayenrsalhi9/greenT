@@ -17,6 +17,12 @@
     transition: 0.5s;
 }
 
+.back-to-chats img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
 .back-to-chats:hover {
     color: #000000;
     text-decoration: underline;
@@ -78,7 +84,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
 }
 
 .message {
@@ -93,11 +99,14 @@
     font-size: 0.95rem;
 }
 
-.message-time {
-    font-size: 0.75rem;
-    color: #666;
+.message span.message-time {
+    font-size: 11px;
+    color: #ddd;
     margin-top: 5px;
     display: block;
+    position: absolute;
+    bottom: 1px;
+    right: 10px;
 }
 
 .received {
