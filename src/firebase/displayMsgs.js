@@ -1,26 +1,39 @@
 import { db } from "../config/firebase";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, query, where, onSnapshot, getDocs } from "firebase/firestore";
 
-export async function displayMsgs(senderID, destinationID) {
+export function displayMsgs(senderID, destinationID, callback) {
+    const usersRef = collection(db, 'users');
+    const unsubscribers = [];
 
-    const usersRef = collection(db, 'users')
-    const usersSnapshot = await getDocs(usersRef)
-
-    let msgs = []
-
-    for (const userDoc of usersSnapshot.docs) {
-        if (userDoc.id === senderID || userDoc.id === destinationID) {
-
-            const q = query(collection(db, 'users', userDoc.id, 'messages'), orderBy("createdAt", "asc"))
-            const msgsSnapshot = await getDocs(q)
-
-            const allMsgs = msgsSnapshot.docs.map(doc => ({
+    function fetchMessages(userID) {
+        const q = query(
+            collection(db, 'users', userID, 'messages'),
+            where("senderID", "==", senderID),
+            where("destinationID", "==", destinationID)
+        );
+        
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            let msgs = snapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
-            }))
+            }));
+            
+            msgs.sort((a, b) => a.createdAt - b.createdAt);
+            callback(msgs);
+        });
+        
+        unsubscribers.push(unsubscribe);
+    }
 
-            msgs = [...msgs, ...allMsgs, ]
-        }  
-    }   
-    return msgs 
+    getDocs(usersRef).then(usersSnapshot => {
+        usersSnapshot.docs.forEach(userDoc => {
+            if (userDoc.id === senderID || userDoc.id === destinationID) {
+                fetchMessages(userDoc.id);
+            }
+        });
+    });
+
+    return () => {
+        unsubscribers.forEach(unsub => unsub());
+    };
 }

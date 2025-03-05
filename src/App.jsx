@@ -19,11 +19,12 @@ import Profile from './pages/profile-layout/Profile'
 import Settings, { action as settingsAction } from './pages/profile-layout/Settings'
 import Points from './pages/profile-layout/Points'
 import Posts from './pages/profile-layout/Posts'
+import Messages from './pages/profile-layout/Messages'
+import Chat from './pages/profile-layout/Chat'
 
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
-import Details, {messagesAction} from './pages/plastic/Details'
 
 import './App.css'
 
@@ -54,6 +55,8 @@ export default function App() {
         <Route path='settings' element={<Settings />} action={settingsAction} />
         <Route path='points' element={<Points />} />
         <Route path='posts' element={<Posts />} />
+        <Route path='messages' element={<Messages />} />
+        <Route path='messages/:userId' element={<Chat />} />
       </Route>
 
       <Route 
@@ -66,11 +69,6 @@ export default function App() {
         element={<NewPost />} 
         loader={newPostLoader}
         action={newPostAction} 
-      />
-      <Route 
-        path='posts/details'
-        element={<Details />}
-        action={messagesAction}
       />
     </Route>
   ))

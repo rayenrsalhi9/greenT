@@ -1,10 +1,10 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 
 import { getUser } from '../../firebase/getProfile'
 import { getPost } from '../../firebase/getPost'
 
-import Messages from './Messages'
 import Loading from '../../components/Loading'
 
 import { serverTimestamp } from 'firebase/firestore'
@@ -120,7 +120,7 @@ export default function Details() {
                                 </div>
                             </div>
                         </div>
-                        <Messages />
+                        <button className='contact-user-button'>Contact User</button>
                     </div>
                 </div> : <Loading />
             }

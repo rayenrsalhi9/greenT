@@ -8,6 +8,7 @@ import postIcon from '../assets/posts.png'
 import pointsIcon from '../assets/change.png'
 import settingsIcon from '../assets/settings.png'
 import logoutIcon from '../assets/logout.png'
+import messagesIcon from '../assets/message.png'
 
 import '../styles/ProfileNav.css'
 
@@ -42,6 +43,10 @@ export default function ProfileNav({profile}) {
         <NavLink to="posts">
           <img src={postIcon} alt="post icon" loading="lazy" />
           Posted Plastics
+        </NavLink>
+        <NavLink to="messages">
+          <img src={messagesIcon} alt="messages icon" />
+          Messages
         </NavLink>
         <NavLink to="points">
           <img src={pointsIcon} alt="points icon" />

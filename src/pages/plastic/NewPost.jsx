@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState } from 'react'
 import { auth } from '../../config/firebase'
 import { redirect, Form } from 'react-router-dom'
@@ -42,7 +43,7 @@ export async function action({request}) {
     createdAt: serverTimestamp()
   }
 
-  return sharePost(auth.currentUser.uid, postAttributes)
+  return sharePost(postAttributes)
 }
 
 export default function NewPost() {

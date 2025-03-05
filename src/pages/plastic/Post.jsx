@@ -43,10 +43,10 @@ export default function Post({post}) {
             </div>
             <div className="action">
                 <Link 
-                    to={`./details?user=${post.userID}&post=${post.id}`}
+                    to={`/profile/messages/${post.userID}`}
                     className="details-btn"
-                >
-                    See Details
+                > 
+                    Contact User
                 </Link>
             </div>
         </div>

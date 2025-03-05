@@ -4,8 +4,9 @@ import { Form, useSearchParams } from 'react-router-dom'
 import { formatTime } from '../../utils/formatTime'
 import { displayMsgs } from '../../firebase/displayMsgs'
 
-import '../../styles/plastic/Messages.css'
 import { auth } from '../../config/firebase'
+
+import '../../styles/plastic/Messages.css'
 
 export default function Messages() {
 
@@ -14,14 +15,21 @@ export default function Messages() {
     const destinationID = searchParams.get('user')
     
     const [messages, setMessages] = useState(null)
+    const [msg, setMsg] = useState('')
+
+    const handleChange = (e) => {
+        setMsg(e.target.value)
+    }
+
+    const clearField = () => {
+        setMsg('')
+    }
 
     useEffect( () => {
-        async function getMsgs() {
-            const msgs = await displayMsgs(senderID, destinationID)
-            setMessages(msgs)
-        }
-        getMsgs()
-    }, []) 
+        const unsubscribe = displayMsgs(senderID, destinationID, setMessages)
+
+        return () => unsubscribe()
+    }, [senderID, destinationID]) 
     
     return (
         <section className="messages">
@@ -36,18 +44,23 @@ export default function Messages() {
                         >
                             <div className="msg-bubble">
                                 <p className="text">{msg.text}</p>
-                                <span className="time">{formatTime(msg.createdAt.seconds)}</span>
+                                {
+                                    msg.createdAt &&
+                                    <span className="time">{formatTime(msg.createdAt.seconds)}</span>
+                                }
                             </div>
                         </div>
                     )) : <h1>Loading...</h1>
                 }
             </div>
-            <Form method='post'>
+            <Form method='post' onSubmit={clearField}>
                 <input 
                     type="text" 
                     name='msg' 
                     id='msg' 
                     placeholder='Type your message...' 
+                    value={msg}
+                    onChange={handleChange}
                 />
                 <button>Send</button>
             </Form>
