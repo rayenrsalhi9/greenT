@@ -20,7 +20,7 @@ export async function displayPosts() {
             }
         }))
 
-        return posts
+        return posts.sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
         console.error('Error fetching posts:', error)
         return []

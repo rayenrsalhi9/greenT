@@ -14,13 +14,13 @@ export default function Post({post}) {
         <div className="post">
             <div className="user">
                 <img src={userIcon} alt="user icon" />
-                {post.firstName} {post.lastName}
+                {post.lastName} {post.firstName}
             </div>
             <div className="details">
                 <h3 className="title">{post.title}</h3>
                 <div className="location">
                     <img src={location} alt="location icon" />
-                    {`${post.state}, ${post.city}`}
+                    {`${post.city}, ${post.state}`}
                 </div>
                 <p className="description">{post.description}</p>
                 <div className="quantities">
@@ -41,7 +41,7 @@ export default function Post({post}) {
                     </div>
                 </div>
             </div>
-            <div className="action">
+            <div className="message-section">
                 <Link 
                     to={`/profile/messages/${post.userID}`}
                     className="details-btn"

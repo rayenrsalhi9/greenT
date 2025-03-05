@@ -5,7 +5,7 @@ import { redirect, Form } from 'react-router-dom'
 import { serverTimestamp } from 'firebase/firestore'
 
 import { states, cities } from '../../utils/locations'
-import { sharePost } from '../../firebase/userPost'
+import { sharePost } from '../../firebase/sharePost'
 
 import bottle from '../../assets/bottle.png'
 import bag from '../../assets/bag.png'
