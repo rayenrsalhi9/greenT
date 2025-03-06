@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
 import userIcon from '../../assets/profile.png'
+import noContacts from '../../assets/empty-message.gif'
 
 import { showContacts } from '../../firebase/showContacts'
 import { auth } from '../../config/firebase'
@@ -22,10 +24,10 @@ export default function Messages() {
 
     return (
         <div className="messages-container">
-            <h2>My Messages</h2>
+            <h2>My Messages {contacts && <span>({contacts.length})</span>}</h2>
             <div className="contacts-list">
                 {
-                    contacts ?
+                    contacts &&
                         contacts.map(contact => (
                             <Link 
                                 to={`./${contact.id}`}
@@ -45,13 +47,20 @@ export default function Messages() {
                                     </div>
                                 </div>
                             </Link>
-                        ))
-                    : <h3>Loading...</h3>
-                }
-                {
-                    contacts && contacts.length === 0 && <h3>No contacts found</h3>
+                        )) 
                 }
             </div>
+            {
+                !contacts && 
+                <h3 className='loading'>Loading...</h3>
+            }
+            {
+                contacts && contacts.length === 0 && 
+                <h3 className='no-contacts'>
+                    <img src={noContacts} alt="no contacts" />
+                    <p>No contacts found</p>
+                </h3>
+            }
         </div>
     )
 }
