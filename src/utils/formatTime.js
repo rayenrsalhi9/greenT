@@ -6,3 +6,12 @@ export function formatTime(seconds) {
         hour12: true
     });
 }
+
+export function formatDate(seconds) {
+    const date = new Date(seconds * 1000);
+    return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}

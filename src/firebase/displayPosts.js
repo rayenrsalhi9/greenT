@@ -26,3 +26,20 @@ export async function displayPosts() {
         return []
     }
 }
+
+export async function displayPostsByUser(userID) {
+    try {
+        const postsRef = collection(db, 'posts')
+        const postsSnapshot = await getDocs(postsRef)
+
+        const userPosts = postsSnapshot.docs.filter(doc => doc.data().userID === userID)
+
+        return userPosts.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }))
+    } catch (error) {
+        console.error('Error fetching posts by user:', error)
+        return []
+    }
+}

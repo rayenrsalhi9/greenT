@@ -1,0 +1,119 @@
+.user-posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    padding: 20px;
+}
+
+.user-posts-container .title {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.user-posts-container .new-post-link {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.user-posts-container .new-post-link a {
+    text-decoration: none;
+    color: #fafafa;
+    background-color: #4caf50;
+    font-weight: 500;
+    font-size: 14px;
+    
+    padding: 8px;
+
+    border-radius: 5px;
+    border: 1px solid #fafafa;
+
+    transition: .6s;
+}
+
+.user-posts-container .new-post-link a:hover {
+    background-color: #2c8d2f;
+}
+
+.user-posts-container .post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.312);
+}
+
+@media (max-width: 991px) {
+    .user-posts-container .post {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.user-posts-container .post-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.user-posts-container .post-details h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #4caf50;
+}
+
+.user-posts-container .post-details p:not(.time) {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    max-width: 90%;
+
+    color: #454545;
+}
+
+.user-posts-container .post-details .time {
+    font-size: 12px;
+    color: #111;
+}
+
+.user-posts-container .post-actions {
+    display: flex;
+    gap: 2px;
+}
+
+.user-posts-container .post-actions a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+
+    border-radius: 5px;
+    border: .5px solid #cccccc75;
+
+    padding: 6px;
+
+    transition: .6s;
+}
+
+.user-posts-container .modify-post {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.user-posts-container .modify-post:hover {
+    background-color: #2c8d2f;
+}
+
+.user-posts-container .post-details-btn {
+    background-color: #fffcdc;
+    color: #232323;
+}
+
+.user-posts-container .post-details-btn:hover {
+    background-color: #fdf6ac;
+}
