@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, getDoc, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 export async function displayPosts() {
@@ -41,5 +41,27 @@ export async function displayPostsByUser(userID) {
     } catch (error) {
         console.error('Error fetching posts by user:', error)
         return []
+    }
+}
+
+export async function getPostDetails(postId) {
+    const postRef = doc(db, 'posts', postId)
+    const postSnapshot = await getDoc(postRef)
+
+    const post = {
+        id: postSnapshot.id,
+        ...postSnapshot.data()
+    }
+    return post
+}
+
+export async function deletePost(postId, navigate) {
+    try {
+        const postRef = doc(db, 'posts', postId)
+        await deleteDoc(postRef)
+        navigate('/profile/posts?message=Post deleted successfully')
+        return null
+    } catch (error) {
+        return { error: 'Failed to delete post', code: error.code }
     }
 }

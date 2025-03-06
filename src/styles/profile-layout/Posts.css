@@ -100,20 +100,19 @@
     transition: .6s;
 }
 
-.user-posts-container .modify-post {
-    background-color: #4caf50;
-    color: #fff;
-}
-
-.user-posts-container .modify-post:hover {
-    background-color: #2c8d2f;
-}
-
 .user-posts-container .post-details-btn {
-    background-color: #fffcdc;
-    color: #232323;
+    background-color: #4caf50;
+    color: #fafafa;
 }
 
 .user-posts-container .post-details-btn:hover {
-    background-color: #fdf6ac;
+    background-color: #2c8d2f;
+}
+
+.user-posts-container .url-message {
+    font-size: 16px;
+    font-weight: 600;
+    color: #c1121f;
+    text-align: center;
+    margin-bottom: 12px;
 }

@@ -2,7 +2,7 @@ import { displayPostsByUser } from '../../firebase/displayPosts'
 import { formatDate } from '../../utils/formatTime'
 
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { auth } from '../../config/firebase'
 
 import Loading from '../../components/Loading'
@@ -11,6 +11,9 @@ import '../../styles/profile-layout/Posts.css'
 export default function Posts() {
   const userID = auth.currentUser.uid
   const [posts, setPosts] = useState(null)
+
+  const [searchParams] = useSearchParams()
+  const message = searchParams.get('message')
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -27,6 +30,9 @@ export default function Posts() {
           <Link to="/newPost">Add new post</Link>
         </div>
         {
+          message && <p className="url-message">{message}</p>
+        }
+        {
           posts && posts.length > 0 && (
           posts.map((post) => (
             <div key={post.id} className="post">
@@ -39,13 +45,7 @@ export default function Posts() {
                 </div>
                 <div className="post-actions">
                     <Link 
-                      to="/" 
-                      className='modify-post'
-                    >
-                        Modify post
-                    </Link>
-                    <Link 
-                      to="/" 
+                      to={`./${post.id}`}
                       className="post-details-btn"
                     >
                         See details
