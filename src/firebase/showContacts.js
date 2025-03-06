@@ -16,16 +16,18 @@ export async function showContacts(userID) {
             const members = chatData.members
             const otherUserId = members.find(id => id !== userID)
 
-            const userRef = doc(db, 'users', otherUserId)
-            const userSnapshot = await getDoc(userRef)
-            
-            const userObject = {
-                ...userSnapshot.data(),
-                id: userSnapshot.id,
-                lastMessage: chatData.lastMessage || '',
-                lastMessageTime: chatData.lastMessageTime || null
+            if (otherUserId) {
+                const userRef = doc(db, 'users', otherUserId)
+                const userSnapshot = await getDoc(userRef)
+                
+                const userObject = {
+                    ...userSnapshot.data(),
+                    id: userSnapshot.id,
+                    lastMessage: chatData.lastMessage || '',
+                    lastMessageTime: chatData.lastMessageTime || null
+                    }
+                    contacts.push(userObject)
             }
-            contacts.push(userObject)
         }
 
         return contacts.sort((a, b) => b.lastMessageTime - a.lastMessageTime)

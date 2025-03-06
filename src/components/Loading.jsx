@@ -1,12 +1,8 @@
-import loading from '../assets/loading.svg'
+import loading from '../assets/loading.gif'
+import './loading.css'
 
 export default function Loading() {
-    const imageStyles = {
-        width: '150px',
-        display: 'block',
-        margin: '30px auto'
-    }
   return (
-    <img src={loading} alt="loading icon" style={imageStyles} />
+    <img src={loading} alt="loading icon" className='loading-icon' />
   )
 }

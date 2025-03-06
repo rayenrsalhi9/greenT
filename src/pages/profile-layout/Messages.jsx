@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import userIcon from '../../assets/profile.png'
 import noContacts from '../../assets/empty-message.gif'
+import loading from '../../assets/loading.gif'
 
 import { showContacts } from '../../firebase/showContacts'
 import { auth } from '../../config/firebase'
@@ -52,7 +53,9 @@ export default function Messages() {
             </div>
             {
                 !contacts && 
-                <h3 className='loading'>Loading...</h3>
+                <h3 className='loading'>
+                    <img src={loading} alt="loading" />
+                </h3>
             }
             {
                 contacts && contacts.length === 0 && 

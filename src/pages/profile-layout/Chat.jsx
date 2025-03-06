@@ -7,6 +7,7 @@ import userIcon from '../../assets/profile.png'
 import leftArrow from '../../assets/left-arrow.png'
 
 import { sendNewMessage, displayMessages, getChatId } from '../../firebase/messages'
+import { getUser } from '../../firebase/getProfile'
 import { formatTime } from '../../utils/formatTime'
 
 import './chat.css'
@@ -31,6 +32,16 @@ export default function Chat() {
   const receiverId = new URL(window.location.href).pathname.split('/').pop()
   const senderId = auth.currentUser.uid
   const [conversation, setConversation] = useState([])
+
+  const [receiver, setReceiver] = useState(null)
+
+  useEffect(() => {
+    const fetchReceiver = async () => {
+      const receiver = await getUser(receiverId)
+      setReceiver(receiver)
+    }
+    fetchReceiver()
+  }, [receiverId])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView()
@@ -77,7 +88,9 @@ export default function Chat() {
             alt="John Doe" 
             className="receiver-avatar"
           />
-          <h3>Rayen Salhi</h3>
+          <h3>
+            {receiver?.firstName && receiver?.lastName ? `${receiver?.firstName} ${receiver?.lastName}` : 'GreenT user'}
+          </h3>
         </div>
 
         {/* Messages Section */}

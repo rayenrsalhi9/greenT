@@ -1,0 +1,7 @@
+.loading-icon {
+    width: 150px;
+    display: block;
+    margin: 30px auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}

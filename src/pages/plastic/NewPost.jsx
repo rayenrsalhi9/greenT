@@ -157,7 +157,7 @@ export default function NewPost() {
           className="submit-button"
           disabled={navigation.state === 'submitting'}
         >
-          {navigation.state === 'submitting' ? 'Submitting...' : 'Submit Post'}
+          {navigation.state === 'submitting' ? 'Publishing...' : 'Publish Post'}
         </button>
       </Form>
     </div>

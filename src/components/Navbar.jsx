@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
-import appIcon from '../assets/login-icon.png'
+import appIcon from '../assets/page-icon.png'
 import userIcon from '../assets/user.png'
 
 import menuIcon from '../assets/menu-burger.png'

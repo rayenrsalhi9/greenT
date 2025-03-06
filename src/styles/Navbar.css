@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 /* Navbar */
 nav.home-navbar {
     position: relative;
@@ -20,7 +22,6 @@ nav.home-navbar {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    color: #111;
 }
 
 .logo > img {
@@ -29,8 +30,11 @@ nav.home-navbar {
 }
 
 .logo > span {
-    font-size: 1.5rem;
-    font-weight: 700;
+    color: #257528;
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 /* navbar links */

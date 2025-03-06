@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getSignUpErrorMessage } from '../firebase/signupErrorMsgs'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 
-import signupIcon from '../assets/login-icon.png'
+import greetIcon from '../assets/greet.gif'
 import '../styles/Signup.css'
 
 export async function action({ request }) {
@@ -42,53 +42,55 @@ export default function Signup() {
     const errorMsg = useActionData()
 
     return (
-        <section className="signup-container">
+        <div className="signup-outer-container">
+            <section className="signup-container">
 
-            <img src={signupIcon} alt="login icon" loading='lazy' />
-            <h1>Join GreenT</h1>
-            <p>Sign up to start cleaning our planet</p>
+                <img src={greetIcon} alt="greet icon" loading='lazy' />
+                <h1>Join GreenT</h1>
+                <p>Sign up to join the movement to clean our planet</p>
 
-            <Form method='post' replace className='signup-form' >
-                <div className="form-group">
-                    <div className="form-row">
-                        <label htmlFor="firstName">First Name</label>
-                        <input type="text" name="firstName" id="firstName" />
+                <Form method='post' replace className='signup-form' >
+                    <div className="form-group">
+                        <div className="form-row">
+                            <label htmlFor="firstName">First Name</label>
+                            <input type="text" name="firstName" id="firstName" />
+                        </div>
+                        <div className="form-row">
+                            <label htmlFor="lastName">Last Name</label>
+                            <input type="text" name="lastName" id="lastName" />
+                        </div>
                     </div>
                     <div className="form-row">
-                        <label htmlFor="lastName">Last Name</label>
-                        <input type="text" name="lastName" id="lastName" />
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name="email" id="email" />
                     </div>
-                </div>
-                <div className="form-row">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" />
-                </div>
-                <div className="form-row">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" />
-                </div>
-                <div className="form-row">
-                    <label htmlFor="city">City of Residence</label>
-                    <input type="text" name="city" id="city" />
-                </div>
-                <div className="form-row">
-                    <label htmlFor="phone">Phone Number</label>
-                    <input type="text" name="phone" id="phone" />
-                </div>
+                    <div className="form-row">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" id="password" />
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="city">City of Residence</label>
+                        <input type="text" name="city" id="city" />
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone" />
+                    </div>
 
-                { errorMsg && <p className="error-msg"> {errorMsg} </p> }
+                    { errorMsg && <p className="error-msg"> {errorMsg} </p> }
 
-                <button disabled={navigation.state === 'submitting'}>
-                    {
-                        navigation.state === 'submitting' ?
-                        'Signing up...' : 'Sign up'
-                    }
-                </button>
-            </Form>
-            <div className="login-prompt">
-                Already have an account? 
-                <Link to="/login" className='login-link'>Log in here</Link>
-            </div>
-        </section>
+                    <button disabled={navigation.state === 'submitting'}>
+                        {
+                            navigation.state === 'submitting' ?
+                            'Signing up...' : 'Sign up'
+                        }
+                    </button>
+                </Form>
+                <div className="login-prompt">
+                    Already have an account? 
+                    <Link to="/login" className='login-link'>Log in here</Link>
+                </div>
+            </section>
+        </div>
     )
 }

@@ -13,7 +13,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { getLoginErrorMessage } from '../firebase/errorMsgs';
 import { auth } from '../config/firebase';
 
-import loginIcon from '../assets/login-icon.png'
+import helloIcon from '../assets/hello.gif'
 import GoogleIcon from '../components/GoogleIcon'
 
 import '../styles/Login.css';
@@ -47,44 +47,46 @@ export default function Login() {
     const navigation = useNavigation()
 
   return (
-    <section className="login-container">
-        <img src={loginIcon} alt="login icon" loading='lazy' />
-        <h1>Welcome to GreenT</h1>
-        <p>Join the movement to clean our planet</p>
+    <div className="login-outer-container">
+        <section className="login-container">
+            <img src={helloIcon} alt="hello icon" loading='lazy' />
+            <h1>Hi again!</h1>
+            <p> Login to continue cleaning our planet </p>
 
-        {
-            searchParams && 
-            <p className="error-msg">{searchParams.get('message')}</p>
-        }
+            {
+                searchParams && 
+                <p className="error-msg">{searchParams.get('message')}</p>
+            }
 
-        <Form replace method='post' className='login-form' >
-            <div className="row">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" />
+            <Form replace method='post' className='login-form' >
+                <div className="row">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email" />
+                </div>
+                <div className="row">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" id="password" />
+                </div>
+                { errorMsg && <p className="error-msg">{errorMsg}</p>}
+                <button disabled={navigation.state === 'submitting'}>
+                    {
+                        navigation.state === 'submitting' ?
+                        'Signing in...' : 'Sign in'
+                    }
+                </button>
+            </Form>
+            <div className="divider">
+                <span className="divider-text">or continue with</span>
             </div>
-            <div className="row">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" id="password" />
-            </div>
-            { errorMsg && <p className="error-msg">{errorMsg}</p>}
-            <button disabled={navigation.state === 'submitting'}>
-                {
-                    navigation.state === 'submitting' ?
-                    'Signing in...' : 'Sign in'
-                }
+            <button className='google-signin-btn' onClick={handleGoogleLogin}>
+                <GoogleIcon />
+                <span>Sign in with Google</span>
             </button>
-        </Form>
-        <div className="divider">
-            <span className="divider-text">or continue with</span>
-        </div>
-        <button className='google-signin-btn' onClick={handleGoogleLogin}>
-            <GoogleIcon />
-            <span>Sign in with Google</span>
-        </button>
-        <div className="signup-prompt">
-            Don't have an account? 
-            <Link to="/signup" className='signup-link'>Create one now</Link>
-        </div>
-    </section>
+            <div className="signup-prompt">
+                Don't have an account? 
+                <Link to="/signup" className='signup-link'>Create one now</Link>
+            </div>
+        </section>
+    </div>
   )
 }

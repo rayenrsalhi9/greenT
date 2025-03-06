@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom'
 import { format } from 'date-fns'
 
-import postIcon from '../../assets/post.png'
+import trophy from '../../assets/trophy.png'
 import '../../styles/profile-layout/Profile.css'
 
 export default function Profile() {
@@ -63,21 +63,21 @@ export default function Profile() {
 
         <div className="activity-container">
           <div className="post">
-            <img src={postIcon} alt="post icon" />
+            <img src={trophy} alt="trophy icon" />
             <div className="post-details">
               <h3>First Contribution</h3>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aspernatur ut fugiat harum modi perspiciatis corporis, laudantium commodi, mollitia quos, obcaecati at! Pariatur quod vitae dolore explicabo, quos accusantium inventore?</p>
             </div>
           </div>
           <div className="post">
-            <img src={postIcon} alt="post icon" />
+            <img src={trophy} alt="trophy icon" />
             <div className="post-details">
               <h3>100 Points Club</h3>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aspernatur ut fugiat harum modi perspiciatis corporis, laudantium commodi, mollitia quos, obcaecati at! Pariatur quod vitae dolore explicabo, quos accusantium inventore?</p>
             </div>
           </div>
           <div className="post">
-            <img src={postIcon} alt="post icon" />
+            <img src={trophy} alt="trophy icon" />
             <div className="post-details">
               <h3>Regular Recycler</h3>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis aspernatur ut fugiat harum modi perspiciatis corporis, laudantium commodi, mollitia quos, obcaecati at! Pariatur quod vitae dolore explicabo, quos accusantium inventore?</p>
