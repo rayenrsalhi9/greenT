@@ -7,7 +7,7 @@ export default function Home() {
     <section className="home">
         <div className="hero-section">
             <div className="hero-content">
-                <h1>
+                <h1 className='hero-title'>
                     Connect, Recycle, <span>Impact</span>
                 </h1>
                 <p>

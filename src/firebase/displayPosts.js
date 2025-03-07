@@ -47,7 +47,7 @@ export async function displayPostsByUser(userID) {
         return userPosts.map(doc => ({
             id: doc.id,
             ...doc.data()
-        }))
+        })).sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
         return { 
             message: 'Failed to fetch posts by user', 

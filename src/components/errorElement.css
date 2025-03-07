@@ -12,6 +12,12 @@
     margin-bottom: 10px;
 }
 
+.error-element p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
 .error-element a {
     text-decoration: none;
     color: #111;
