@@ -28,11 +28,12 @@ import NewPost,
 import Details, { loader as detailsLoader } from './pages/profile-layout/Details'
 import Edit, { loader as editLoader, action as editAction } from './pages/profile-layout/Edit'
 
+import ErrorElement from './components/ErrorElement'
 import './App.css'
 
 export default function App() {
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
+    <Route path='/' element={<Layout />} errorElement={<ErrorElement />}>
       <Route index element={<Home />} />
       <Route 
         path='login'

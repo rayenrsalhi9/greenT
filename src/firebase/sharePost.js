@@ -7,6 +7,10 @@ export const sharePost = async (postAttributes) => {
     await addDoc(collection(db, "posts"), postAttributes);
     return redirect('/posts')
    } catch(err) {
-    return err.message
+    return { 
+      message: 'Failed to share post', 
+      status: err.status,
+      statusText: err.statusText
+     }
    }
 };

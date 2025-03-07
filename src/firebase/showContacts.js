@@ -33,7 +33,10 @@ export async function showContacts(userID) {
         return contacts.sort((a, b) => b.lastMessageTime - a.lastMessageTime)
 
     } catch (error) {
-        console.error("Error fetching contacts:", error)
-        return []
+        return { 
+            message: 'Failed to show contacts', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }

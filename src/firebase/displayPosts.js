@@ -29,8 +29,11 @@ export async function displayPosts() {
 
         return posts.sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
-        console.error('Error fetching posts:', error)
-        return []
+        return { 
+            message: 'Failed to fetch posts', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }
 
@@ -46,20 +49,31 @@ export async function displayPostsByUser(userID) {
             ...doc.data()
         }))
     } catch (error) {
-        console.error('Error fetching posts by user:', error)
-        return []
+        return { 
+            message: 'Failed to fetch posts by user', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }
 
 export async function getPostDetails(postId) {
-    const postRef = doc(db, 'posts', postId)
-    const postSnapshot = await getDoc(postRef)
+    try {
+        const postRef = doc(db, 'posts', postId)
+        const postSnapshot = await getDoc(postRef)
 
-    const post = {
-        id: postSnapshot.id,
-        ...postSnapshot.data()
+        const post = {
+            id: postSnapshot.id,
+            ...postSnapshot.data()
+        }
+        return post
+    } catch (error) {
+        return { 
+            message: 'Failed to get post details', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
-    return post
 }
 
 export async function deletePost(postId, navigate) {
@@ -69,7 +83,11 @@ export async function deletePost(postId, navigate) {
         navigate('/profile/posts?message=Post deleted successfully')
         return null
     } catch (error) {
-        return { error: 'Failed to delete post', code: error.code }
+        return { 
+            message: 'Failed to delete post', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }
 
@@ -79,7 +97,11 @@ export async function updatePost(postId, postData) {
         await updateDoc(postRef, postData)
         return { success: 'Post updated successfully' }
     } catch (error) {
-        return { error: 'Failed to update post', code: error.code }
+        return { 
+            message: 'Failed to update post', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }
 

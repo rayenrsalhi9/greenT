@@ -55,8 +55,11 @@ export async function sendNewMessage(senderID, receiverID, messageText) {
     return chatId
 
   } catch (error) {
-    console.error("Error sending message: ", error)
-    throw error
+    return { 
+      message: 'Failed to send message', 
+      status: error.status,
+      statusText: error.statusText
+     }
   }
 }
 

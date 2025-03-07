@@ -1,0 +1,32 @@
+.error-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.error-element h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.error-element a {
+    text-decoration: none;
+    color: #111;
+    background-color: #4caf50;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    border: 1px solid #111;
+
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.6s ease;
+}
+
+.error-element a:hover {
+    background: #11111115;
+}

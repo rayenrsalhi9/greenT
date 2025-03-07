@@ -7,6 +7,10 @@ export async function signout(navigate) {
         navigate('/login?message=Disconnected successfully.');
         return null
     } catch (error) {
-        return error
+        return { 
+            message: 'Failed to sign out', 
+            status: error.status,
+            statusText: error.statusText
+         }
     }
 }
