@@ -1,0 +1,141 @@
+.edit-post-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1;
+}
+
+.edit-post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fffcdc;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.edit-post-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-post-header .published-on {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+}
+
+.edit-post input.post-title {
+    font-size: 16px;
+}
+
+.edit-post input, .edit-post textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+    resize: none;
+    outline: none;
+}
+
+.edit-post textarea {
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+.edit-post input:focus, .edit-post textarea:focus {
+    border-color: #4caf50;
+}
+
+.edit-post-header .location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-post-header .location img {
+    width: 16px;
+    height: 16px;
+}
+
+.edit-post-header .location p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+}
+
+.edit-post-content {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-post-content .quantities {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-post-content .quantities .icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-post-content .quantities .icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.edit-post-content .quantities .icon p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #111;
+}
+
+
+
+.edit-post-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.edit-post-actions button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fafafa;
+    background-color: #4caf50;
+    transition: .6s;
+}
+
+.edit-post-actions .submit-button:disabled {
+    background-color: #4caf50;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.edit-post-actions button.cancel-btn {
+    background-color: #cf0f0f;
+    border: 1px solid #ccc;
+}
+
+.edit-post-actions button:hover {
+    background-color: #2e8832;
+}
+
+.edit-post-actions button.cancel-btn:hover {
+    background-color: #950505;
+}
+

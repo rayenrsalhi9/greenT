@@ -5,7 +5,8 @@ import {
     Await, 
     useLoaderData, 
     Link, 
-    useNavigate
+    useNavigate,
+    useSearchParams
  } from 'react-router-dom'
 import { Suspense } from 'react'
 
@@ -19,6 +20,7 @@ import locationMarker from '../../assets/location.png'
 import bottleIcon from '../../assets/bottle.png'
 import bagIcon from '../../assets/bag.png'
 import mixedIcon from '../../assets/mixedMaterial.png'
+import leftArrow from '../../assets/left-arrow.png'
 import './details.css'
 
 export async function loader({ request }) {
@@ -39,6 +41,8 @@ export async function loader({ request }) {
 export default function Details() {
     const postObject = useLoaderData()
     const navigate = useNavigate()
+    const [searchParams] = useSearchParams()
+    const message = searchParams.get('message')
 
     return (
        <Suspense fallback={<Loading />}>
@@ -46,6 +50,17 @@ export default function Details() {
             {
                 post => (
                     <div className='post-details-container'>
+                        <div className="back-to-all-posts-link">
+                            <img src={leftArrow} alt="left-arrow" />
+                            <Link to='/profile/posts'>Back to all posts</Link>
+                        </div>
+                        {
+                            message && (
+                                <div className="changes-message">
+                                    <p>{message}</p>
+                                </div>
+                            )
+                        }
                         <div className="post-details">
                             <div className="header">
                                 <h1>{post.title}</h1>

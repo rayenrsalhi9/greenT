@@ -26,7 +26,7 @@ import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
 import Details, { loader as detailsLoader } from './pages/profile-layout/Details'
-import Edit from './pages/profile-layout/Edit'
+import Edit, { loader as editLoader, action as editAction } from './pages/profile-layout/Edit'
 
 import './App.css'
 
@@ -58,7 +58,12 @@ export default function App() {
         <Route path='points' element={<Points />} />
         <Route path='posts' element={<Posts />} />
         <Route path='posts/:postId' element={<Details />} loader={detailsLoader} />
-        <Route path='posts/:postId/edit' element={<Edit />} />
+        <Route 
+          path='posts/:postId/edit' 
+          element={<Edit />} 
+          loader={editLoader} 
+          action={editAction} 
+        />
         <Route path='messages' element={<Messages />} />
         <Route path='messages/:userId' element={<Chat />} action={chatAction} />
       </Route>

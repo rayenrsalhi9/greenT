@@ -1,4 +1,11 @@
-import { collection, getDocs, getDoc, doc, deleteDoc } from "firebase/firestore";
+import { 
+    collection, 
+    getDocs, 
+    getDoc, 
+    doc, 
+    deleteDoc,
+    updateDoc
+ } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 export async function displayPosts() {
@@ -65,3 +72,14 @@ export async function deletePost(postId, navigate) {
         return { error: 'Failed to delete post', code: error.code }
     }
 }
+
+export async function updatePost(postId, postData) {
+    try {
+        const postRef = doc(db, 'posts', postId)
+        await updateDoc(postRef, postData)
+        return { success: 'Post updated successfully' }
+    } catch (error) {
+        return { error: 'Failed to update post', code: error.code }
+    }
+}
+

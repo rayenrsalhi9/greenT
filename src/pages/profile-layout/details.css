@@ -4,7 +4,40 @@
 
     display: flex;
     flex-direction: column;
+}
+
+.post-details-container .changes-message {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #a00101;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.post-details-container .back-to-all-posts-link {
+    display: flex;
     align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.post-details-container .back-to-all-posts-link a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.6s ease;
+}
+
+.post-details-container .back-to-all-posts-link a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.post-details-container .back-to-all-posts-link img {
+    width: 20px;
+    height: 20px;
 }
 
 .post-details-container .post-details {
