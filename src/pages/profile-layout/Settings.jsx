@@ -1,6 +1,9 @@
 import { useOutletContext, Form, redirect, useNavigation, useActionData } from 'react-router-dom'
 import { auth, db } from '../../config/firebase'
 import { doc, updateDoc } from 'firebase/firestore'
+
+import { useTranslation } from 'react-i18next'
+
 import '../../styles/profile-layout/Settings.css'
 
 export async function action({ request }) {
@@ -25,6 +28,9 @@ export async function action({ request }) {
 }
 
 export default function Settings() {
+
+    const { t } = useTranslation()
+
     const profile = useOutletContext()
     const errorMsg = useActionData()
     const navigation = useNavigation()
@@ -33,14 +39,14 @@ export default function Settings() {
         <section className="settings-container">
             <div className="settings">
                 <div className="titles">
-                    <h1>Account Settings</h1>
-                    <p>Manage your profile and preferences</p>
+                    <h1>{t('account-settings-title')}</h1>
+                    <p>{t('account-settings-description')}</p>
                 </div>
                 <Form replace method='post' className="personal-info">
-                    <h3>Personal informations</h3>
+                    <h3>{t('account-settings-personal-info')}</h3>
                     <div className="row">
                         <div className="group">
-                            <label htmlFor="firstName">First Name</label>
+                            <label htmlFor="firstName">{t('account-settings-fname')}</label>
                             <input 
                                 type="text" 
                                 name='firstName' 
@@ -49,7 +55,7 @@ export default function Settings() {
                             />
                         </div>
                         <div className="group">
-                            <label htmlFor="lastName">Last Name</label>
+                            <label htmlFor="lastName">{t('account-settings-lname')}</label>
                             <input 
                                 type="text" 
                                 name='lastName' 
@@ -60,7 +66,7 @@ export default function Settings() {
                     </div>
                     <div className="row">
                         <div className="group">
-                            <label htmlFor="city">City Of Residence</label>
+                            <label htmlFor="city">{t('account-settings-city')}</label>
                             <input 
                                 type="text" 
                                 name='city' 
@@ -69,7 +75,7 @@ export default function Settings() {
                             />
                         </div>
                         <div className="group">
-                            <label htmlFor="phone">Phone Number</label>
+                            <label htmlFor="phone">{t('account-settings-phone')}</label>
                             <input 
                                 type="text" 
                                 name='phone' 
@@ -84,7 +90,7 @@ export default function Settings() {
                     <button disabled={navigation.state === 'submitting'}>
                         {
                             navigation.state === 'submitting' ?
-                            'Saving changes...' : 'Save Changes'
+                            t('account-settings-saving') : t('account-settings-save')
                         }
                     </button>
                 </Form>

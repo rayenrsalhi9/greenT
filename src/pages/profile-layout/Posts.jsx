@@ -1,6 +1,8 @@
 import { displayPostsByUser } from '../../firebase/displayPosts'
 import { formatDate } from '../../utils/formatTime'
 
+import { useTranslation } from 'react-i18next'
+
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { auth } from '../../config/firebase'
@@ -9,6 +11,8 @@ import Loading from '../../components/Loading'
 import '../../styles/profile-layout/Posts.css'
 
 export default function Posts() {
+
+  const { t } = useTranslation()
   const userID = auth.currentUser.uid
   const [posts, setPosts] = useState(null)
 
@@ -25,9 +29,9 @@ export default function Posts() {
   
   return (
     <div className="user-posts-container">
-        <h1 className="title">Your posted plastics</h1>
+        <h1 className="title">{t('posted-plastics-title')}</h1>
         <div className="new-post-link">
-          <Link to="/newPost">Add new post</Link>
+          <Link to="/newPost">{t('posted-plastics-add-plastic')}</Link>
         </div>
         {
           message && <p className="url-message">{message}</p>
@@ -48,7 +52,7 @@ export default function Posts() {
                       to={`./${post.id}`}
                       className="post-details-btn"
                     >
-                        See details
+                        {t('posted-plastics-see-details')}
                     </Link>
                 </div>
             </div>
@@ -58,7 +62,7 @@ export default function Posts() {
         }
         {
           posts && posts.length === 0 && (
-            <p className="no-posts">No posts yet, try adding your first post!</p>
+            <p className="no-posts">{t('posted-plastics-no-posts')}</p>
           )
         }
         {

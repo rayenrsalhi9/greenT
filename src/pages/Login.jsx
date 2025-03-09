@@ -8,6 +8,8 @@ import {
     useNavigation
 } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 import { googleLogin } from '../firebase/googleLogin';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { getLoginErrorMessage } from '../firebase/errorMsgs';
@@ -37,6 +39,8 @@ export async function action({ request }) {
 
 export default function Login() {
 
+    const { t } = useTranslation()
+
     const navigate = useNavigate()
     const handleGoogleLogin = async () => {
         await googleLogin(navigate)
@@ -50,8 +54,8 @@ export default function Login() {
     <div className="login-outer-container">
         <section className="login-container">
             <img src={helloIcon} alt="hello icon" loading='lazy' />
-            <h1>Hi again!</h1>
-            <p> Login to continue cleaning our planet </p>
+            <h1>{t('login-form-title')}</h1>
+            <p>{t('login-form-description')}</p>
 
             {
                 searchParams && 
@@ -60,31 +64,31 @@ export default function Login() {
 
             <Form replace method='post' className='login-form' >
                 <div className="row">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t('login-form-email')}</label>
                     <input type="email" name="email" id="email" />
                 </div>
                 <div className="row">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">{t('login-form-password')}</label>
                     <input type="password" name="password" id="password" />
                 </div>
                 { errorMsg && <p className="error-msg">{errorMsg}</p>}
                 <button disabled={navigation.state === 'submitting'}>
                     {
                         navigation.state === 'submitting' ?
-                        'Signing in...' : 'Sign in'
+                        t('login-form-button-submitting') : t('login-form-button')
                     }
                 </button>
             </Form>
             <div className="divider">
-                <span className="divider-text">or continue with</span>
+                <span className="divider-text">{t('login-form-divider')}</span>
             </div>
             <button className='google-signin-btn' onClick={handleGoogleLogin}>
                 <GoogleIcon />
-                <span>Sign in with Google</span>
+                <span>{t('login-form-google')}</span>
             </button>
             <div className="signup-prompt">
-                Don't have an account? 
-                <Link to="/signup" className='signup-link'>Create one now</Link>
+                {t('login-form-signup')} 
+                <Link to="/signup" className='signup-link'>{t('login-form-link')}</Link>
             </div>
         </section>
     </div>

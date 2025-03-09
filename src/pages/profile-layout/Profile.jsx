@@ -1,6 +1,8 @@
 import { useOutletContext } from 'react-router-dom'
 import { format } from 'date-fns'
 
+import { useTranslation } from 'react-i18next'
+
 import trophy from '../../assets/trophy.png'
 import '../../styles/profile-layout/Profile.css'
 
@@ -8,32 +10,34 @@ export default function Profile() {
   const profile = useOutletContext()
   const creationDate = profile.createdAt ? format(profile.createdAt.toDate(), "MMMM-yyyy") : "Unknown"
   
+  const { t } = useTranslation()
+
   return (
     <section className="profile-overview-container">
       <div className="profile-overview">
 
         <div className="profile-titles">
-          <h1>Profile Overview</h1>
-          <p>Your account summary and recent activities</p>
+          <h1>{t('profile-title')}</h1>
+          <p>{t('profile-description')}</p>
         </div>
 
         <div className="profile-details-container">
           <div className="account-details">
-            <h3>Account Details</h3>
+            <h3>{t('account-details-title')}</h3>
             <div className="details-row">
-              <p className='title'>Name:</p>
+              <p className='title'>{t('account-details-name')}:</p>
               <p> {profile.lastName} {profile.firstName} </p>
             </div>
             <div className="details-row">
-              <p className='title'>Email:</p>
+              <p className='title'>{t('account-details-email')}:</p>
               <p> {profile.email} </p>
             </div>
             <div className="details-row">
-              <p className='title'>City Of Residence:</p>
+              <p className='title'>{t('account-details-city')}:</p>
               <p> {profile.city} </p>
             </div>
             <div className="details-row">
-              <p className='title'>Phone Number:</p>
+              <p className='title'>{t('account-details-phone')}:</p>
               <p>
                 {
                   profile.phone !== '' && `(+216) ${profile.phone}` 
@@ -41,25 +45,25 @@ export default function Profile() {
               </p>
             </div>
             <div className="details-row">
-              <p className='title'>Member Since:</p>
+              <p className='title'>{t('account-details-member-since')}:</p>
               <p> {creationDate} </p>
             </div>
             <div className="details-row">
-              <p className='title'>Level:</p>
+              <p className='title'>{t('account-details-level')}:</p>
               <p> {profile.badge} </p>
             </div>
           </div>
           <div className="points-summary">
-            <h3>Points Summary</h3>
+            <h3>{t('points-summary-title')}</h3>
             <div className="points-amount">
               <h1 className='amount'> {profile.points} </h1>
-              <p>Total Points Earned</p>
-              <button>Redeem Points</button>
+              <p>{t('points-summary-description')}</p>
+              <button>{t('points-summary-redeem')}</button>
             </div>
           </div>
         </div>
 
-        <h3>Recent Activity</h3>
+        <h3>{t('recent-activity-title')}</h3>
 
         <div className="activity-container">
           <div className="post">

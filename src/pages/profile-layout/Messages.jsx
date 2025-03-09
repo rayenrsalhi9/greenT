@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+import { useTranslation } from 'react-i18next'
+
 import userIcon from '../../assets/profile.png'
 import noContacts from '../../assets/empty-message.gif'
 import loading from '../../assets/loading.gif'
@@ -12,6 +14,8 @@ import { formatTime } from '../../utils/formatTime'
 import './messages.css'
 
 export default function Messages() {
+
+    const { t } = useTranslation()
 
     const [contacts, setContacts] = useState(null)
 
@@ -25,7 +29,7 @@ export default function Messages() {
 
     return (
         <div className="messages-container">
-            <h2>My Messages {contacts && <span>({contacts.length})</span>}</h2>
+            <h2>{t('messages-title')} {contacts && <span>({contacts.length})</span>}</h2>
             <div className="contacts-list">
                 {
                     contacts &&
@@ -61,7 +65,7 @@ export default function Messages() {
                 contacts && contacts.length === 0 && 
                 <h3 className='no-contacts'>
                     <img src={noContacts} alt="no contacts" />
-                    <p>No contacts found</p>
+                    <p>{t('messages-no-contacts')}</p>
                 </h3>
             }
         </div>

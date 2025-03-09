@@ -4,6 +4,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getSignUpErrorMessage } from '../firebase/signupErrorMsgs'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 
+import { useTranslation } from 'react-i18next'
+
 import greetIcon from '../assets/greet.gif'
 import '../styles/Signup.css'
 
@@ -38,6 +40,8 @@ export async function action({ request }) {
 
 export default function Signup() {
 
+    const { t } = useTranslation()
+
     const navigation = useNavigation()
     const errorMsg = useActionData()
 
@@ -46,34 +50,34 @@ export default function Signup() {
             <section className="signup-container">
 
                 <img src={greetIcon} alt="greet icon" loading='lazy' />
-                <h1>Join GreenT</h1>
-                <p>Sign up to join the movement to clean our planet</p>
+                <h1>{t('signup-form-title')}</h1>
+                <p>{t('signup-form-description')}</p>
 
                 <Form method='post' replace className='signup-form' >
                     <div className="form-group">
                         <div className="form-row">
-                            <label htmlFor="firstName">First Name</label>
+                            <label htmlFor="firstName">{t('signup-form-fname')}</label>
                             <input type="text" name="firstName" id="firstName" />
                         </div>
                         <div className="form-row">
-                            <label htmlFor="lastName">Last Name</label>
+                            <label htmlFor="lastName">{t('signup-form-lname')}</label>
                             <input type="text" name="lastName" id="lastName" />
                         </div>
                     </div>
                     <div className="form-row">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email">{t('signup-form-email')}</label>
                         <input type="email" name="email" id="email" />
                     </div>
                     <div className="form-row">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">{t('signup-form-password')}</label>
                         <input type="password" name="password" id="password" />
                     </div>
                     <div className="form-row">
-                        <label htmlFor="city">City of Residence</label>
+                        <label htmlFor="city">{t('signup-form-city')}</label>
                         <input type="text" name="city" id="city" />
                     </div>
                     <div className="form-row">
-                        <label htmlFor="phone">Phone Number</label>
+                        <label htmlFor="phone">{t('signup-form-phone')}</label>
                         <input type="text" name="phone" id="phone" />
                     </div>
 
@@ -82,13 +86,13 @@ export default function Signup() {
                     <button disabled={navigation.state === 'submitting'}>
                         {
                             navigation.state === 'submitting' ?
-                            'Signing up...' : 'Sign up'
+                            t('signup-form-button-submitting') : t('signup-form-button')
                         }
                     </button>
                 </Form>
                 <div className="login-prompt">
-                    Already have an account? 
-                    <Link to="/login" className='login-link'>Log in here</Link>
+                    {t('signup-form-login')} 
+                    <Link to="/login" className='login-link'>{t('signup-form-link')}</Link>
                 </div>
             </section>
         </div>

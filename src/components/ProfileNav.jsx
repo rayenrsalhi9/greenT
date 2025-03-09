@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import { signout } from "../firebase/signOut"
 
+import { useTranslation } from 'react-i18next'
+
 import userIcon from '../assets/profile.png'
 
 import overviewIcon from '../assets/overview.png'
@@ -13,7 +15,7 @@ import messagesIcon from '../assets/message.png'
 import '../styles/ProfileNav.css'
 
 export default function ProfileNav({profile}) {
-
+  const { t } = useTranslation()
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -38,27 +40,27 @@ export default function ProfileNav({profile}) {
       <div className="navigation-links">
         <NavLink to="/profile" end>
           <img src={overviewIcon} alt="overview icon" loading="lazy" />
-          Overview
+          {t('profile-links-overview')}
         </NavLink>
         <NavLink to="posts">
           <img src={postIcon} alt="post icon" loading="lazy" />
-          Posted Plastics
+          {t('profile-links-plastics')}
         </NavLink>
         <NavLink to="messages">
           <img src={messagesIcon} alt="messages icon" />
-          Messages
+          {t('profile-links-messages')}
         </NavLink>
         <NavLink to="points">
           <img src={pointsIcon} alt="points icon" />
-          Points
+          {t('profile-links-points')}
         </NavLink>
         <NavLink to="settings">
           <img src={settingsIcon} alt="settings icon" />
-          Settings
+          {t('profile-links-settings')}
         </NavLink>
         <button className="logout" onClick={handleLogout}>
           <img src={logoutIcon} alt="logout icon" />
-          Log out
+          {t('profile-links-logout')}
         </button>
       </div>
     </nav>
