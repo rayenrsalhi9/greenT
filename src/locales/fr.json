@@ -104,5 +104,21 @@
     "post-bottles": "Bouteilles",
     "post-bags": "Sacs",
     "post-mixed": "Matériaux mixtes",
-    "post-contact-user": "Contacter l'utilisateur"
+    "post-contact-user": "Contacter l'utilisateur",
+
+    "new-post-title": "Ajouter une nouvelle publication",
+    "new-post-post-title": "Titre de la publication",
+    "new-post-post-title-placeholder": "Entrez le titre de la publication",
+    "new-post-post-state": "État",
+    "new-post-post-state-placeholder": "Sélectionnez votre état",
+    "new-post-post-city": "Ville",
+    "new-post-post-city-placeholder": "Entrez votre ville",
+    "new-post-post-description": "Description de la publication",
+    "new-post-post-description-placeholder": "Décrivez votre publication",
+    "new-post-post-bottles": "Bouteilles",
+    "new-post-post-bags": "Sacs",
+    "new-post-post-mixed": "Matériaux mixtes",
+    "new-post-post-button": "Publier la publication",
+    "new-post-post-button-submitting": "Publication en cours...",
+    "required-fields": "Tous les champs sont requis"
 }

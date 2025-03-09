@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { auth } from '../../config/firebase'
 import { redirect, Form, useActionData, useNavigation } from 'react-router-dom'
+
+import { useTranslation } from 'react-i18next'
 import { serverTimestamp } from 'firebase/firestore'
 
 import { states, cities } from '../../utils/locations'
@@ -31,7 +33,7 @@ export async function action({request}) {
   const { title, state, city, description, bottles, bags, mixed } = Object.fromEntries(formData)
   
   if (!title || !state || !city || !description || !bottles || !bags || !mixed) {
-    return 'All fields are required.'
+    return 'All fields are required'
   }
 
   const postAttributes = {
@@ -47,6 +49,7 @@ export async function action({request}) {
 }
 
 export default function NewPost() {
+  const { t } = useTranslation()
   const [, setSelectedState] = useState("")
   const [availablesCities, setCities] = useState([])
 
@@ -62,23 +65,23 @@ export default function NewPost() {
   return (
     <div className="post-form-container">
       <Form  method='post' replace className="post-form">
-        <h1 className="form-title">Create a New Post</h1>
+        <h1 className="form-title">{t('new-post-title')}</h1>
 
         <div className="form-group">
-          <label htmlFor="title">Post Title</label>
+          <label htmlFor="title">{t('new-post-post-title')}</label>
           <input
             type="text"
             id="title"
             name="title"
-            placeholder="Enter post title" 
+            placeholder={t('new-post-post-title-placeholder')} 
           />
         </div>
 
         <div className="location-group">
           <div className="form-group">
-            <label htmlFor="state">State</label>
+            <label htmlFor="state">{t('new-post-post-state')}</label>
             <select id="state" name="state" onChange={handleStateChange}>
-              <option value="">Select a state</option>
+              <option value="">{t('new-post-post-state-placeholder')}</option>
               {
                 states.map(state => (
                   <option key={state.id} value={state.id} > {state.name} </option>
@@ -88,9 +91,9 @@ export default function NewPost() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="city">City</label>
+            <label htmlFor="city">{t('new-post-post-city')}</label>
             <select id="city" name="city"> 
-              <option value="">Select a city</option>
+              <option value="">{t('new-post-post-city-placeholder')}</option>
               {
                 availablesCities.map((el, index) => (
                   <option key={index} value={el} > {el} </option>
@@ -101,11 +104,11 @@ export default function NewPost() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">{t('new-post-post-description')}</label>
           <textarea
             id="description"
             name="description"
-            placeholder="Describe your post"
+            placeholder={t('new-post-post-description-placeholder')}
           />
         </div>
 
@@ -114,7 +117,7 @@ export default function NewPost() {
             <div className="icon-container">
               <img src={bottle} alt="bottle icon" />
             </div>
-            <label htmlFor="bottles">Bottles</label>
+            <label htmlFor="bottles">{t('new-post-post-bottles')}</label>
             <input
               type="number"
               id="bottles"
@@ -127,7 +130,7 @@ export default function NewPost() {
             <div className="icon-container">
               <img src={bag} alt="bag icon" />
             </div>
-            <label htmlFor="bags">Bags</label>
+            <label htmlFor="bags">{t('new-post-post-bags')}</label>
             <input
               type="number"
               id="bags"
@@ -140,7 +143,7 @@ export default function NewPost() {
             <div className="icon-container">
               <img src={mixed} alt="mixed materials icon" />
             </div>
-            <label htmlFor="mixed">Mixed Items</label>
+            <label htmlFor="mixed">{t('new-post-post-mixed')}</label>
             <input
               type="number"
               id="mixed"
@@ -157,7 +160,7 @@ export default function NewPost() {
           className="submit-button"
           disabled={navigation.state === 'submitting'}
         >
-          {navigation.state === 'submitting' ? 'Publishing...' : 'Publish Post'}
+          {navigation.state === 'submitting' ? t('new-post-post-button-submitting') : t('new-post-post-button')}
         </button>
       </Form>
     </div>

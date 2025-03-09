@@ -104,6 +104,22 @@
     "post-bottles": "Bottles",
     "post-bags": "Bags",
     "post-mixed": "Mixed Materials",
-    "post-contact-user": "Contact User"
+    "post-contact-user": "Contact User",
+
+    "new-post-title": "Add a new post",
+    "new-post-post-title": "Post Title",
+    "new-post-post-title-placeholder": "Enter post title",
+    "new-post-post-state": "State",
+    "new-post-post-state-placeholder": "Select your state",
+    "new-post-post-city": "City",
+    "new-post-post-city-placeholder": "Enter your city",
+    "new-post-post-description": "Post Description",
+    "new-post-post-description-placeholder": "Describe your post",
+    "new-post-post-bottles": "Bottles",
+    "new-post-post-bags": "Bags",
+    "new-post-post-mixed": "Mixed items",
+    "new-post-post-button": "Publish post",
+    "new-post-post-button-submitting": "Publishing...",
+    "required-fields": "All fields are required"
     
 }
