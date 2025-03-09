@@ -93,5 +93,16 @@
     "account-settings-phone": "Numéro de téléphone",
     "account-settings-city": "Ville de résidence",
     "account-settings-save": "Enregistrer les modifications",
-    "account-settings-saving": "Enregistrement des modifications..."
+    "account-settings-saving": "Enregistrement des modifications...",
+
+    "posts-title": "Toutes les publications de la communauté",
+    "posts-search-input-placeholder": "Rechercher des plastiques, des utilisateurs ou des types de plastique...",
+    "posts-filters-bottles": "Bouteilles",
+    "posts-filters-bags": "Sacs",
+    "posts-filters-mixed": "Matériaux mixtes",
+    "posts-filters-clear": "Effacer les filtres",
+    "post-bottles": "Bouteilles",
+    "post-bags": "Sacs",
+    "post-mixed": "Matériaux mixtes",
+    "post-contact-user": "Contacter l'utilisateur"
 }

@@ -93,6 +93,17 @@
     "account-settings-phone": "Phone Number",
     "account-settings-city": "City of Residence",
     "account-settings-save": "Save Changes",
-    "account-settings-saving": "Saving changes..."
+    "account-settings-saving": "Saving changes...",
+
+    "posts-title": "All community posts",
+    "posts-search-input-placeholder": "Search posts, users or plastic types...",
+    "posts-filters-bottles": "Bottles",
+    "posts-filters-bags": "Bags",
+    "posts-filters-mixed": "Mixed Materials",
+    "posts-filters-clear": "Clear Filters",
+    "post-bottles": "Bottles",
+    "post-bags": "Bags",
+    "post-mixed": "Mixed Materials",
+    "post-contact-user": "Contact User"
     
 }

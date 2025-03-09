@@ -1,6 +1,10 @@
+/* eslint-disable react-refresh/only-export-components */
 import Post from './Post'
 import { Suspense } from 'react';
 import { NavLink, Link, redirect, defer, Await, useLoaderData } from 'react-router-dom'
+
+import { useTranslation } from 'react-i18next';
+
 import { auth } from '../../config/firebase';
 import { displayPosts } from '../../firebase/displayPosts';
 
@@ -23,6 +27,7 @@ export function loader() {
 }
 
 export default function PostsPage() {
+    const { t } = useTranslation();
     const postsObject = useLoaderData()
 
     return (
@@ -36,16 +41,16 @@ export default function PostsPage() {
                                     type="search" 
                                     name="post" 
                                     id="post"
-                                    placeholder='Search posts, users or plastic types...' 
+                                    placeholder={t('posts-search-input-placeholder')} 
                                 />
                                 <div className="filters">
-                                    <NavLink to="." className='link bottles'>Bottles</NavLink>
-                                    <NavLink to="." className='link bags'>Bags</NavLink>
-                                    <NavLink to="." className='link mixed'>Mixed</NavLink>
-                                    <Link to="." className='clear-filters'>Clear filters</Link>
+                                    <NavLink to="." className='link bottles'>{t('post-bottles')}</NavLink>
+                                    <NavLink to="." className='link bags'>{t('post-bags')}</NavLink>
+                                    <NavLink to="." className='link mixed'>{t('post-mixed')}</NavLink>
+                                    <Link to="." className='clear-filters'>{t('posts-filters-clear')}</Link>
                                 </div>
                             </div>
-                            <h1>All community posts</h1>
+                            <h1>{t('posts-title')}</h1>
                             <div className="posts">
                                 {
                                     posts.map(post => (

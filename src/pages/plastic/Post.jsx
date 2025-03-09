@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 import userIcon from '../../assets/profile.png'
 import location from '../../assets/location.png'
@@ -10,6 +11,8 @@ import mixed from '../../assets/mixedMaterial.png'
 import '../../styles/plastic/PostsPage.css'
 
 export default function Post({post}) {
+    const { t } = useTranslation();
+
     return (
         <div className="post">
             <div className="user">
@@ -26,17 +29,17 @@ export default function Post({post}) {
                 <div className="quantities">
                     <div className="icon">
                         <img src={bottle} alt="bottle icon" />
-                        <p className="name">bottles</p>
+                        <p className="name">{t('post-bottles')}</p>
                         <p className='quantity'>{post.bottles}</p>
                     </div>
                     <div className="icon">
                         <img src={bag} alt="bag icon" />
-                        <p className="name">bags</p>
+                        <p className="name">{t('post-bags')}</p>
                         <p className='quantity'>{post.bags}</p>
                     </div>
                     <div className="icon">
                         <img src={mixed} alt="mixed materials icon" />
-                        <p className="name">mixed materials</p>
+                        <p className="name">{t('post-mixed')}</p>
                         <p className='quantity'>{post.mixed}</p>
                     </div>
                 </div>
@@ -46,7 +49,7 @@ export default function Post({post}) {
                     to={`/profile/messages/${post.userID}`}
                     className="details-btn"
                 > 
-                    Contact User
+                    {t('post-contact-user')}
                 </Link>
             </div>
         </div>

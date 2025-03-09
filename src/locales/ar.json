@@ -93,5 +93,16 @@
     "account-settings-phone": "رقم الهاتف",
     "account-settings-city": "المدينة التي تعيش فيها",
     "account-settings-save": "حفظ التغييرات",
-    "account-settings-saving": "حفظ التغييرات..."
+    "account-settings-saving": "حفظ التغييرات...",
+
+    "posts-title": "كل المشاركات المجتمعية",
+    "posts-search-input-placeholder": "ابحث عن البلاستيك، الأعضاء أو أنواع البلاستيك...",
+    "posts-filters-bottles": "زجاجات",
+    "posts-filters-bags": "أكياس",
+    "posts-filters-mixed": "مواد مختلطة",
+    "posts-filters-clear": "مسح المرشحات",
+    "post-bottles": "قنينات",
+    "post-bags": "أكياس",
+    "post-mixed": "مواد مختلطة",
+    "post-contact-user": "تواصل مع العضو"
 }
