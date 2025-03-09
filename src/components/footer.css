@@ -134,3 +134,28 @@ footer .copyright-section {
     font-size: 14px;
     font-weight: 600;
 }
+
+.language-select {
+    padding: 10px;
+
+    border-radius: 5px;
+    border: 1px solid #fffcdc;
+
+    background: #0f2610;
+    color: #fffcdc;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.language-select option {
+    background: #fffcdc;
+    color: #0f2610;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.language-select option img {
+    width: 20px;
+    height: 20px;
+}

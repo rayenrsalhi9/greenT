@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom'
+
+import { useTranslation } from 'react-i18next'
+
 import homePageImg from '../../assets/home-img.jpg'
 import '../../styles/static/Home.css'
 
 export default function Home() {
+
+    const { t } = useTranslation()
+
   return (
     <section className="home">
         <div className="hero-section">
             <div className="hero-content">
                 <h1 className='hero-title'>
-                    Connect, Recycle, <span>Impact</span>
+                    {t("home-title")}
                 </h1>
                 <p>
-                    Join EcoClean and be part of a community dedicated to reducing plastic waste. Connect with like-minded
-                    individuals, exchange plastics, and make a real difference.
+                    {t("home-description")}
                 </p>
                 <Link to="login" className='plastics-link-btn'>
-                    Get Started
+                    {t("home-button")}
                 </Link>
             </div>
             <div className="hero-image">
@@ -23,11 +28,11 @@ export default function Home() {
             </div>
         </div>
         <div className="nav-section">
-            <h2>Ready to Make a Difference?</h2>
-            <p>Join GreenT today and start your journey towards a plastic-free future.</p>
+            <h2>{t('home-nav-title')}</h2>
+            <p>{t('home-nav-description')}</p>
             <div className="buttons-section">
-                <Link to="signup" className='signup-link'>Sign Up Now</Link>
-                <Link to="about" className='about-link'>About the App</Link>
+                <Link to="signup" className='signup-link'>{t('home-nav-signup')}</Link>
+                <Link to="about" className='about-link'>{t('home-nav-about')}</Link>
             </div>
         </div>
     </section>

@@ -59,7 +59,7 @@ nav.home-navbar {
     text-underline-offset: 2px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 991px) {
     .nav {
         display: none;
     }
@@ -90,7 +90,7 @@ nav .user-icon img {
     height: 24px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 991px) {
     nav .user-icon {
         display: none;
     }
@@ -115,7 +115,7 @@ nav .user-icon img {
     background: #4caf4f51;
 }
 
-@media(min-width: 769px) {
+@media(min-width: 992px) {
     .mobile-menu-icon {
         display: none;
     }

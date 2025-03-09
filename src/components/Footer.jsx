@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import { useTranslation } from 'react-i18next'
+
 import logo from '../assets/page-icon.png'
 
 import homeImg from '../assets/homepage.png'
@@ -13,6 +15,13 @@ import instagramImg from '../assets/instagram.png'
 import './footer.css'
 
 export default function Footer() {
+
+    const { i18n } = useTranslation()
+
+    const handleLanguageChange = (e) => {
+        i18n.changeLanguage(e.target.value)
+    }
+
     return (
         <footer>
             <div className="footer-content">
@@ -24,28 +33,34 @@ export default function Footer() {
                             <h3>Greent</h3>
                         </div>
                         <p>
-                            Connecting people to make recycling easier and more accessible. Join our community and help create a more sustainable future.
+                            {i18n.t('footer-description')}
                         </p>
+                        <select  className='language-select' name="language" id="language" onChange={handleLanguageChange}>
+                            <option disabled>{i18n.t('footer-language')}</option>
+                            <option value="en" selected={i18n.language === 'en'}>{i18n.t('footer-language-en')}</option>
+                            <option value="fr" selected={i18n.language === 'fr'}>{i18n.t('footer-language-fr')}</option>
+                            <option value="ar" selected={i18n.language === 'ar'}>{i18n.t('footer-language-ar')}</option>
+                        </select>
                     </div>
                     <div className="section">
-                        <h3>Quick Links</h3>
+                        <h3>{i18n.t('footer-links')}</h3>
                         <div className="links-section">
                             <Link to="/">
                                 <img src={homeImg} alt="Home" />
-                                Home
+                                {i18n.t('footer-links-home')}
                             </Link>
                             <Link to="/about">
                                 <img src={aboutImg} alt="About" />
-                                About
+                                {i18n.t('footer-links-about')}
                             </Link>
                             <Link to="/contact">
                                 <img src={contactImg} alt="Contact" />
-                                Contact Admin
+                                {i18n.t('footer-links-contact')}
                             </Link>
                         </div>
                     </div>
                     <div className="section">
-                        <h3>Follow Us</h3>
+                        <h3>{i18n.t('footer-follow-us')}</h3>
                         <div className="social-section">
                             <Link to="/">
                                 <img src={facebookImg} alt="Facebook" />
@@ -64,7 +79,7 @@ export default function Footer() {
                 </div>
                 <div className="copyright-section">
                     <p>
-                        &copy; {new Date().getFullYear()} Greent. All rights reserved.
+                        &copy; {new Date().getFullYear()} Greent. {i18n.t('footer-copyright')}
                     </p>
                 </div>
                 <div className="footer-pattern-bottom"></div>
