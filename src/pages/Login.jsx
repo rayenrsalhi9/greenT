@@ -84,7 +84,7 @@ export default function Login() {
             </div>
             <button className='google-signin-btn' onClick={handleGoogleLogin}>
                 <GoogleIcon />
-                <span>{t('login-form-google')}</span>
+                <span>{t('google-login')}</span>
             </button>
             <div className="signup-prompt">
                 {t('login-form-signup')} 
