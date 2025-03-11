@@ -80,7 +80,7 @@ export default function Login() {
                 </button>
             </Form>
             <div className="divider">
-                <span className="divider-text">{t('login-form-divider')}</span>
+                <span className="divider-text">{t('divider-text')}</span>
             </div>
             <button className='google-signin-btn' onClick={handleGoogleLogin}>
                 <GoogleIcon />
