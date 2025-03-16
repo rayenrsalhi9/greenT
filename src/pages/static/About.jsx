@@ -1,68 +1,132 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
+import { faq } from '../../utils/faq'
+
+import flash from '../../assets/about/flash.png'
+import recycle from '../../assets/about/recycle.png'
+import community from '../../assets/about/community.png'
+import communication from '../../assets/about/speak.png'
+import plus from '../../assets/about/plus.png'
+
 import '../../styles/static/About.css'
 
 export default function About() {
+
+  const { t } = useTranslation()
+  const [activeIndex, setActiveIndex] = useState(null)
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index)
+  }
+
   return (
     <section className="about">
-        <h1>About Our Platform</h1>
-        
-        <div>
-            <h2>Connecting Plastic Providers & Seekers</h2>
-            <p>Our platform is designed to bring together individuals and businesses who have accumulated plastic materials (such as bottles, bags, and other recyclable plastics) and those who need them. Whether you are looking to dispose of plastics responsibly or need a steady supply for recycling or repurposing, our app makes the process seamless and efficient.</p>
+
+        <div className="header">
+          <h1>{t('about-title')}</h1>
+          <p>
+            {t('about-description')}
+          </p>
         </div>
 
-        <h2>How It Works</h2>
-
-        <ol>
-            <li><b>Sign Up & Log In:</b> Users create an account and specify whether they are providing or seeking plastics.</li>
-            <li><b>List Your Plastic Quantities:</b> Providers can log the type and amount of plastic they have available.</li>
-            <li><b>Find Nearby Users:</b> The app connects providers with seekers based on location, ensuring easy collection and distribution.</li>
-            <li><b>Coordinate & Exchange:</b> Users can communicate, arrange pickups, and contribute to a more sustainable environment.</li>
-        </ol>
-
-        <h2>Why Use Our Platform?</h2>
-
-        <ul>
-            <li><b>Efficiency:</b> Instantly locate plastic providers or seekers near you.</li>
-            <li><b>Sustainability:</b> Reduce plastic waste by ensuring it is collected and repurposed properly.</li>
-            <li><b>Community Impact:</b> Connect with individuals and businesses that are committed to eco-friendly solutions.</li>
-            <li><b>Easy Communication:</b> Integrated messaging features allow seamless coordination between users.</li>
-        </ul>
-
-        <h1>Frequently Asked Questions (FAQ)</h1>
-
-        <div>
-            <h2>Who can use this platform?</h2>
-            <p>Anyone! Whether you are an individual, a recycling business, or an organization in need of plastic materials, you can sign up and start connecting.</p>
+        <div className="main-goal">
+            <h3>{t('about-connecting-providers-seekers')}</h3>
+            <p>
+            {t('about-description-connecting-providers-seekers')}
+            </p>
         </div>
 
-        <div>
-            <h2>Is it free to use?</h2>
-            <p>Yes! Our platform is free for all users to list, find, and exchange plastic materials.</p>
+        <h2 className="title">{t('about-how-it-works')}</h2>
+
+        <div className="how-it-works-container">
+          <div className="how-it-works-item">
+            <span>01</span>
+            <h4>{t('about-how-it-works-signup-login')}</h4>
+            <p>
+              {t('about-how-it-works-signup-login-description')}
+            </p>
+          </div>
+          <div className="how-it-works-item">
+            <span>02</span>
+            <h4>{t('about-how-it-works-list-plastic')}</h4>
+            <p>
+              {t('about-how-it-works-list-plastic-description')}
+            </p>
+          </div>
+          <div className="how-it-works-item">
+            <span>03</span>
+            <h4>{t('about-how-it-works-find-match')}</h4>
+            <p>
+              {t('about-how-it-works-find-match-description')}
+            </p>
+          </div>
+          <div className="how-it-works-item">
+            <span>04</span>
+            <h4>{t('about-how-it-works-coordinate-exchange')}</h4>
+            <p>
+              {t('about-how-it-works-coordinate-exchange-description')}
+            </p>
+          </div>  
         </div>
 
-        <div>
-            <h2>How do I ensure the plastic I receive is clean and usable?</h2>
-            <p>We encourage users to describe their plastic materials accurately and communicate before exchanges to clarify any concerns about quality. And we express our gratitude by offering incredible discounts and prizes at various popular locations such as malls, parks, and shops. Feel free to discover our partners <Link to=''>from here</Link>.</p>
+        <h2 className="title">{t('about-why-choose-platform')}</h2>
+
+        <div className="why-choose-container">
+          <div className="why-choose-item">
+            <div className="card-header">
+              <img src={flash} alt="flash" />
+              <h4>{t('about-why-choose-platform-efficiency')}</h4>
+            </div>
+            <p>
+            {t('about-why-choose-platform-efficiency-description')}
+            </p>
+          </div>
+          <div className="why-choose-item">
+            <div className="card-header">
+              <img src={recycle} alt="recycle" />
+              <h4>{t('about-why-choose-platform-sustainability')}</h4>
+            </div>
+            <p>
+            {t('about-why-choose-platform-sustainability-description')}
+            </p>
+          </div>
+          <div className="why-choose-item">
+            <div className="card-header">
+              <img src={community} alt="community" />
+              <h4>{t('about-why-choose-platform-community')}</h4>
+            </div>
+            <p>
+            {t('about-why-choose-platform-community-description')}
+            </p>
+          </div>
+          <div className="why-choose-item">
+            <div className="card-header">
+              <img src={communication} alt="communication" />
+              <h4>{t('about-why-choose-platform-easy-communication')}</h4>
+            </div>
+            <p>
+            {t('about-why-choose-platform-easy-communication-description')}
+            </p>
+          </div>
         </div>
 
-        <div>
-            <h2>What happens after I connect with someone?</h2>
-            <p>Once connected, you can arrange the details of the exchange—such as time, location, and quantity—directly within the app.</p>
+        <h2 className="title">{t('about-faq-title')}</h2>
+
+        <div className="faq-container">
+          {faq.map((_, index) => (
+            <div className="faq-item " key={index}>
+              <div className="accordion-header">
+                <h4>{t(`about-faq-question-${index + 1}`)}</h4>
+                <img src={plus} alt="plus" onClick={() => toggleAccordion(index)} className={activeIndex === index ? 'active' : ''}/>
+              </div>
+              <p className={`accordion-content ${activeIndex === index ? 'active' : 'hidden'}`}>
+                {t(`about-faq-answer-${index + 1}`)}
+              </p>
+            </div>
+          ))}
         </div>
-
-        <div>
-            <h2>Can businesses use this platform?</h2>
-            <p>Absolutely! Businesses looking for bulk plastic materials for recycling or production can efficiently source them from local providers.</p>
-        </div>
-
-        <div>
-            <h2>How does this help the environment?</h2>
-            <p>By connecting plastic providers and seekers, we reduce waste, encourage recycling, and promote a circular economy, ensuring that plastics are reused rather than ending up in landfills or oceans.</p>
-        </div>
-
-        <p>Join us in making plastic waste management smarter and more sustainable!</p>
-
     </section>
   )
 }
