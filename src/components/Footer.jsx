@@ -35,11 +35,11 @@ export default function Footer() {
                         <p>
                             {i18n.t('footer-description')}
                         </p>
-                        <select  className='language-select' name="language" id="language" onChange={handleLanguageChange}>
+                        <select value={i18n.language} className='language-select' name="language" id="language" onChange={handleLanguageChange}>
                             <option disabled>{i18n.t('footer-language')}</option>
-                            <option value="en" selected={i18n.language === 'en'}>{i18n.t('footer-language-en')}</option>
-                            <option value="fr" selected={i18n.language === 'fr'}>{i18n.t('footer-language-fr')}</option>
-                            <option value="ar" selected={i18n.language === 'ar'}>{i18n.t('footer-language-ar')}</option>
+                            <option value="en">{i18n.t('footer-language-en')}</option>
+                            <option value="fr">{i18n.t('footer-language-fr')}</option>
+                            <option value="ar">{i18n.t('footer-language-ar')}</option>
                         </select>
                     </div>
                     <div className="section">
