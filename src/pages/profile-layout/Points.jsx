@@ -1,7 +1,15 @@
-import '../../styles/profile-layout/Points.css'
+import ObjectivesLayout from '../points/ObjectivesLayout'
+import Partners from '../points/Partners'
+import Summary from '../points/Summary'
+
+import './points.css'
 
 export default function Points() {
   return (
-    <h1>Your points section will be here soon...</h1>
+    <div className="points-container">
+      <Summary />
+      <ObjectivesLayout />
+      <Partners />
+    </div>
   )
 }

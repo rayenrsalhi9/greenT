@@ -402,5 +402,18 @@
             "El Faouar": "الفوار",
             "Bechni": "بشني"
         }
-    }
+    },
+
+    "points-history-title": "نقاط المكافآت الخاصة بي",
+    "points-history-description": "تتبع نقاطك ومكافآتك هنا",
+    "points-history-total-points": "إجمالي النقاط",
+    "points-monthly-progress-title": "تقدمك الشهري",
+    "points-monthly-progress-goal": "الهدف الشهري",
+    "points-points-history-title": "أنشطتك الأخيرة",
+    "points-see-all": "عرض السجل الكامل",
+    "points-history-card-login": "تم تسجيل الدخول",
+    "points-history-card-share": "تم مشاركة نقاطك مع الأصدقاء",
+    "points-history-card-survey": "تم إكمال استبيان",
+    "points-history-card-post": "تم نشر منشور",
+    "points-history-card-message": "تم إرسال رسالة"
 }

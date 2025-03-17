@@ -398,5 +398,19 @@
             "El Faouar": "El Faouar",
             "Bechni": "Bechni"
         }
-    }
+    },
+
+    "points-history-title": "My Rewards Points",
+    "points-history-description": "Track your points and rewards here",
+    "points-history-total-points": "Total Points",
+    "points-monthly-progress-title": "Your Monthly Progress",
+    "points-monthly-progress-goal": "Monthly Goal",
+    "points-points-history-title": "Your Recent Activities",
+    "points-see-all": "View Full History",
+    "points-history-card-login": "Logged in",
+    "points-history-card-share": "Shared your points with friends",
+    "points-history-card-survey": "Completed a survey",
+    "points-history-card-post": "Posted a plastic",
+    "points-history-card-message": "Sent a message"
+    
 }
