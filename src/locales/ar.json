@@ -415,5 +415,12 @@
     "points-history-card-share": "تم مشاركة نقاطك مع الأصدقاء",
     "points-history-card-survey": "تم إكمال استبيان",
     "points-history-card-post": "تم نشر منشور",
-    "points-history-card-message": "تم إرسال رسالة"
+    "points-history-card-message": "تم إرسال رسالة",
+
+    "points-objectives-title": "أهدافي",
+    "points-objectives-description": "أكمل الأهداف لتحصل على نقاط أكثر",
+    "points-objectives-daily": "يومي",
+    "points-objectives-weekly": "أسبوعي",
+    "points-objectives-monthly": "شهري",
+    "points-objectives-one-time": "مرة واحدة"
 }

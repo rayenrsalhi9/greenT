@@ -6,7 +6,7 @@ import './points.css'
 
 export default function Points() {
   return (
-    <div className="points-container">
+    <div className="points-layout-container">
       <Summary />
       <ObjectivesLayout />
       <Partners />

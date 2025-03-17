@@ -17,10 +17,14 @@ import ProfileLayout, { loader as profileLoader } from './Layout/ProfileLayout'
 
 import Profile from './pages/profile-layout/Profile'
 import Settings, { action as settingsAction } from './pages/profile-layout/Settings'
-import Points from './pages/profile-layout/Points'
 import Posts from './pages/profile-layout/Posts'
 import Messages from './pages/profile-layout/Messages'
 import Chat, { action as chatAction } from './pages/profile-layout/Chat'
+
+import Points from './pages/profile-layout/Points'
+import ObjectivesLayout from './pages/points/ObjectivesLayout'
+import Summary from './pages/points/Summary'
+import Partners from './pages/points/Partners'
 
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
@@ -56,7 +60,11 @@ export default function App() {
       <Route path='profile' element={<ProfileLayout />} loader={profileLoader}>
         <Route index element={<Profile />} />
         <Route path='settings' element={<Settings />} action={settingsAction} />
-        <Route path='points' element={<Points />} />
+        <Route path='points' element={<Points />}>
+          <Route index element={<Summary />} />
+          <Route index element={<ObjectivesLayout />} />
+          <Route index element={<Partners />} />
+        </Route>
         <Route path='posts' element={<Posts />} />
         <Route path='posts/:postId' element={<Details />} loader={detailsLoader} />
         <Route 

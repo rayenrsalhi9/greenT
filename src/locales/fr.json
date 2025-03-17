@@ -411,5 +411,12 @@
     "points-history-card-share": "Partagé vos points avec des amis",
     "points-history-card-survey": "Complété un sondage",
     "points-history-card-post": "Publié un plastique",
-    "points-history-card-message": "Envoyé un message"
+    "points-history-card-message": "Envoyé un message",
+
+    "points-objectives-title": "Mes Objectifs",
+    "points-objectives-description": "Complétez des objectifs pour gagner plus de points",
+    "points-objectives-daily": "Journalier",
+    "points-objectives-weekly": "Hebdomadaire",
+    "points-objectives-monthly": "Mensuel",
+    "points-objectives-one-time": "Une-fois seulement"
 }

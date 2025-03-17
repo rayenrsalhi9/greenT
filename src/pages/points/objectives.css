@@ -1,0 +1,212 @@
+.objectives-layout {
+  background: #fafafa;
+  padding: 20px;
+
+  border-radius: 6px;
+  border: 2px solid #ffbe0b;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.283);
+}
+
+.objectives-layout .objectives-layout-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.objectives-layout .objectives-layout-header .objectives-layout-header-upper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.objectives-layout .objectives-layout-header .objectives-layout-header-upper img {
+  width: 20px;
+  height: 20px;
+}
+
+.objectives-layout .objectives-layout-header .objectives-layout-header-upper h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.objectives-layout .objectives-layout-header .objectives-layout-header-lower p {
+  font-size: 14px;
+  color: #666;
+}
+
+.objectives-layout nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  margin: 10px auto;
+
+  background: #66666634;
+  padding: 4px;
+  border-radius: 4px;
+
+  margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .objectives-layout nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.objectives-layout nav a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 4px;
+
+  transition: .6s;
+}
+
+.objectives-layout nav a:hover {
+  background: #fafafa;
+  color: #111;
+}
+
+.objectives-layout nav a.active {
+  background: #fffcdc;
+  color: #111;
+  border: 1px solid #4caf50;
+  font-weight: 600;
+}
+
+.objectives-layout nav a img {
+  width: 20px;
+  height: 20px;
+}
+
+.objectives-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.objectives-content .objectives-content-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #66666634;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.objective-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.objective-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.objective-header img {
+  width: 20px;
+  height: 20px;
+}
+
+.objectives-content-item-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.objectives-content-item-progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #66666634;
+}
+
+
+.objectives-content .progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #f48c06;
+  position: relative;
+}
+
+.objectives-content .progress-bar .progress-bar-progress {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #111;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 4px 8px;
+  background: #f48c06;
+}
+
+.container.ar .objectives-content .progress-bar .progress-bar-progress {
+  left: 0;
+  right: auto;
+}
+
+.objectives-content-item-progress-bar.empty {
+  background: #66666634;
+}
+
+.objectives-content-item-progress-bar.filled {
+  background: #4caf50;
+}
+
+.objectives-content .rewarded-points {
+  font-size: 12px;
+  color: #111;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 4px 8px;
+  background: #fafafa;
+  border: 1px solid #66666634;
+}
+
+.container.ar .objectives-content .rewarded-points {
+  direction: ltr;
+}
+
+.objectives-content .rewarded-points.done {
+  background: #4caf50;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .objective-header {
+    gap: 20px;
+  }
+  .rewarded-points {
+    text-wrap: nowrap;
+  }
+}
+
+.objectives-content .objective-description {
+  font-size: 14px;
+  color: #111;
+  font-weight: 500;
+}
+
+.objectives-content .objective-description.done {
+  color: #666;
+}
+

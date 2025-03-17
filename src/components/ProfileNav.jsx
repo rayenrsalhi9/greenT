@@ -50,7 +50,7 @@ export default function ProfileNav({profile}) {
           <img src={messagesIcon} alt="messages icon" />
           {t('profile-links-messages')}
         </NavLink>
-        <NavLink to="points">
+        <NavLink to="points?tab=daily">
           <img src={pointsIcon} alt="points icon" />
           {t('profile-links-points')}
         </NavLink>

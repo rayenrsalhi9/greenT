@@ -411,6 +411,13 @@
     "points-history-card-share": "Shared your points with friends",
     "points-history-card-survey": "Completed a survey",
     "points-history-card-post": "Posted a plastic",
-    "points-history-card-message": "Sent a message"
+    "points-history-card-message": "Sent a message",
+
+    "points-objectives-title": "My Objectives",
+    "points-objectives-description": "Complete objectives to earn more points",
+    "points-objectives-daily": "Daily",
+    "points-objectives-weekly": "Weekly",
+    "points-objectives-monthly": "Monthly",
+    "points-objectives-one-time": "One-time"
     
 }
