@@ -1,22 +1,26 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useOutletContext, Form, redirect, useNavigation, useActionData } from 'react-router-dom'
 import { auth, db } from '../../config/firebase'
 import { doc, updateDoc } from 'firebase/firestore'
 
+import { states, cities } from '../../utils/locations'
+
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import '../../styles/profile-layout/Settings.css'
 
 export async function action({ request }) {
     const formData = await request.formData()
-    const { firstName, lastName, city, phone } = Object.fromEntries(formData)
+    const { firstName, lastName, city, phone, state } = Object.fromEntries(formData)
 
-    if (!city || !phone || !firstName || !lastName) return 'All fields are required'
+    if (!city || !phone || !firstName || !lastName || !state) return 'All fields are required'
     
     const docRef = doc(db, "users", auth.currentUser.uid)
 
     try {
         await updateDoc(docRef, {
-            city,
+            city: `${state} - ${city}`,
             phone,
             firstName,
             lastName
@@ -28,6 +32,18 @@ export async function action({ request }) {
 }
 
 export default function Settings() {
+    console.log(auth.currentUser)
+
+    const [selectedState, setSelectedState] = useState("")
+    const [, setSelectedCity] = useState("")
+
+    const handleStateChange = (e) => {
+        setSelectedState(e.target.value)
+    }
+
+    const handleCityChange = (e) => {
+        setSelectedCity(e.target.value)
+    }
 
     const { t } = useTranslation()
 
@@ -67,12 +83,24 @@ export default function Settings() {
                     <div className="row">
                         <div className="group">
                             <label htmlFor="city">{t('account-settings-city')}</label>
-                            <input 
-                                type="text" 
-                                name='city' 
-                                id='city' 
-                                defaultValue={profile.city}
-                            />
+                            <div className="form-group">
+                                <select name="state" id="state" onChange={handleStateChange}>
+                                    <option value="">{t('account-settings-state-placeholder')}</option>
+                                    {
+                                        states.map((state) => (
+                                            <option value={state.id} key={state.id}>{t(`states.${state.id}`)}</option>
+                                        ))
+                                    }
+                                </select>       
+                                <select name="city" id="city" onChange={handleCityChange}>
+                                    <option value="">{t('account-settings-city-placeholder')}</option>
+                                    {
+                                        selectedState && cities[selectedState].map((city) => (
+                                            <option value={city} key={city}>{t(`cities.${selectedState}.${city}`)}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
                         </div>
                         <div className="group">
                             <label htmlFor="phone">{t('account-settings-phone')}</label>

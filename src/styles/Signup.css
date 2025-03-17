@@ -5,14 +5,20 @@
     padding: 20px;
 }
 
+@media (max-width: 576px) {
+    .signup-outer-container {
+        padding: 10px;
+    }
+}
+
 .signup-container {
     background-color: #fffcdc;
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 
-    width: 90%;
-    max-width: 24rem;
+    width: 100%;
+    max-width: 28rem;
 
     padding: 1rem;
     margin: 0 auto;
@@ -48,11 +54,27 @@
     gap: 14px;
 }
 
+@media (max-width: 576px) {
+    .signup-form {
+        gap: 25px;
+    }
+}
+
 .signup-form .form-group {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 0;
+}
+
+.signup-form .form-group .form-row {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .signup-form .form-group {
+        flex-direction: column;
+    }
 }
 
 .signup-form .form-row {

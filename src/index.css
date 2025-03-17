@@ -26,6 +26,15 @@ button {
     font-family: 'Cairo', sans-serif;
 }
 
+.container.ar button,
+.container.ar input::placeholder,
+.container.ar input,
+.container.ar label,
+.container.ar select,
+.container.ar option {
+    font-family: 'Cairo', sans-serif;
+}
+
 body {
     background: #4caf50;
     font-family: 'Inter', sans-serif;

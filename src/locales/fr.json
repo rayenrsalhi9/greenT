@@ -34,8 +34,8 @@
     "login-form-button-submitting": "Connexion en cours...",
     "login-form-signup": "Pas encore de compte ?",
     "login-form-link": "Créer un compte maintenant",
-    "login-form-divider": "Ou continuez avec",
-    "login-form-google": "Se connecter avec Google",
+    "divider-text": "Ou continuez avec",
+    "google-login": "Se connecter avec Google",
 
     "signup-form-title": "Rejoignez GreenT",
     "signup-form-description": "Créez un compte pour commencer votre parcours vers un avenir sans plastique.",
@@ -94,6 +94,8 @@
     "account-settings-city": "Ville de résidence",
     "account-settings-save": "Enregistrer les modifications",
     "account-settings-saving": "Enregistrement des modifications...",
+    "account-settings-city-placeholder": "Sélectionnez votre ville",
+    "account-settings-state-placeholder": "Sélectionnez votre état",
 
     "posts-title": "Toutes les publications de la communauté",
     "posts-search-input-placeholder": "Rechercher des plastiques, des utilisateurs ou des types de plastique...",
@@ -164,6 +166,237 @@
     "about-faq-question-7": "Comment puis-je échanger mes points ?",
     "about-faq-answer-7": "Vous pouvez trouver la section échanger les points dans votre page de profil. Essayez-le maintenant !",
     "about-faq-question-8": "Comment puis-je contacter la plateforme ?",
-    "about-faq-answer-8": "Vous pouvez contacter la plateforme en allant à la section 'Contact' dans le bas de page."
-    
+    "about-faq-answer-8": "Vous pouvez contacter la plateforme en allant à la section 'Contact' dans le bas de page.",
+
+    "form-google-divider": "Ou continuez avec",
+    "form-google-login": "Se connecter avec Google",
+
+    "states": {
+        "Tunis": "Tunis",
+        "Ariana": "Ariana",
+        "BenArous": "Ben Arous",
+        "Manouba": "Manouba",
+        "Nabeul": "Nabeul",
+        "Bizerte": "Bizerte",
+        "Beja": "Béja",
+        "Jendouba": "Jendouba",
+        "ElKef": "Le Kef",
+        "Siliana": "Siliana",
+        "Kairouan": "Kairouan",
+        "Kasserine": "Kasserine",
+        "SidiBouzid": "Sidi Bouzid",
+        "Sousse": "Sousse",
+        "Monastir": "Monastir",
+        "Mahdia": "Mahdia",
+        "Sfax": "Sfax",
+        "Gabes": "Gabès",
+        "Medenine": "Médenine",
+        "Tataouine": "Tataouine",
+        "Gafsa": "Gafsa",
+        "Tozeur": "Tozeur",
+        "Kebili": "Kébili"
+    },
+    "cities": {
+        "Tunis": {
+            "La Marsa": "La Marsa",
+            "Le Bardo": "Le Bardo",
+            "Carthage": "Carthage",
+            "El Menzah": "El Menzah",
+            "Centre Ville": "Centre Ville",
+            "El Omrane": "El Omrane",
+            "Sidi Hassine": "Sidi Hassine",
+            "Bab Souika": "Bab Souika",
+            "Lafayette": "Lafayette"
+        },
+        "Ariana": {
+            "Ariana": "Ariana",
+            "La Soukra": "La Soukra",
+            "Raoued": "Raoued",
+            "Kalaat El Andalous": "Kalaat El Andalous",
+            "Borj El Baccouche": "Borj El Baccouche",
+            "Mnihla": "Mnihla",
+            "Cité Ghazela": "Cité Ghazela"
+        },
+        "BenArous": {
+            "Ben Arous": "Ben Arous",
+            "Hammam Lif": "Hammam Lif",
+            "Rades": "Rades",
+            "Mornag": "Mornag",
+            "Bou Mhel": "Bou Mhel",
+            "Hammam Chott": "Hammam Chott",
+            "Mohamedia": "Mohamedia"
+        },
+        "Manouba": {
+            "Manouba": "Manouba",
+            "Djedeida": "Djedeida",
+            "Oued Ellil": "Oued Ellil",
+            "Tebourba": "Tebourba",
+            "Borj El Amri": "Borj El Amri",
+            "Mornaguia": "Mornaguia"
+        },
+        "Nabeul": {
+            "Nabeul": "Nabeul",
+            "Hammamet": "Hammamet",
+            "Kelibia": "Kelibia",
+            "Korba": "Korba",
+            "Menzel Temime": "Menzel Temime",
+            "Takelsa": "Takelsa",
+            "Soliman": "Soliman",
+            "Grombalia": "Grombalia"
+        },
+        "Bizerte": {
+            "Bizerte": "Bizerte",
+            "Menzel Bourguiba": "Menzel Bourguiba",
+            "Ras Jebel": "Ras Jebel",
+            "Mateur": "Mateur",
+            "Sejnane": "Sejnane",
+            "Tinja": "Tinja",
+            "Ghar El Melh": "Ghar El Melh"
+        },
+        "Beja": {
+            "Beja": "Béja",
+            "Medjez El Bab": "Medjez El Bab",
+            "Testour": "Testour",
+            "Nefza": "Nefza",
+            "Teboursouk": "Teboursouk",
+            "Goubellat": "Goubellat"
+        },
+        "Jendouba": {
+            "Jendouba": "Jendouba",
+            "Tabarka": "Tabarka",
+            "Bou Salem": "Bou Salem",
+            "Ain Draham": "Ain Draham",
+            "Fernana": "Fernana",
+            "Beni Mtir": "Beni Mtir"
+        },
+        "ElKef": {
+            "Le Kef": "Le Kef",
+            "Dahmani": "Dahmani",
+            "Tajerouine": "Tajerouine",
+            "Sakiet Sidi Youssef": "Sakiet Sidi Youssef",
+            "Nebeur": "Nebeur",
+            "Jerissa": "Jerissa",
+            "Kalaat Senan": "Kalaat Senan"
+        },
+        "Siliana": {
+            "Siliana": "Siliana",
+            "Makthar": "Makthar",
+            "Bargou": "Bargou",
+            "Bou Arada": "Bou Arada",
+            "Gaafour": "Gaafour",
+            "Kesra": "Kesra",
+            "Rouhia": "Rouhia"
+        },
+        "Kairouan": {
+            "Kairouan": "Kairouan",
+            "Chebika": "Chebika",
+            "Haffouz": "Haffouz",
+            "Nasrallah": "Nasrallah",
+            "Oueslatia": "Oueslatia",
+            "Sbikha": "Sbikha",
+            "Hajeb El Ayoun": "Hajeb El Ayoun"
+        },
+        "Kasserine": {
+            "Kasserine": "Kasserine",
+            "Sbeitla": "Sbeitla",
+            "Foussana": "Foussana",
+            "Thala": "Thala",
+            "Feriana": "Feriana",
+            "Hidra": "Hidra",
+            "Majel Bel Abbès": "Majel Bel Abbès"
+        },
+        "SidiBouzid": {
+            "Sidi Bouzid": "Sidi Bouzid",
+            "Regueb": "Regueb",
+            "Meknassy": "Meknassy",
+            "Jilma": "Jilma",
+            "Sidi Ali Ben Aoun": "Sidi Ali Ben Aoun",
+            "Menzel Bouzaiane": "Menzel Bouzaiane",
+            "Ouled Haffouz": "Ouled Haffouz"
+        },
+        "Sousse": {
+            "Sousse": "Sousse",
+            "Hammam Sousse": "Hammam Sousse",
+            "Msaken": "Msaken",
+            "Kalâa Kebira": "Kalâa Kebira",
+            "Kalâa Seghira": "Kalâa Seghira",
+            "Akouda": "Akouda",
+            "Enfidha": "Enfidha"
+        },
+        "Monastir": {
+            "Monastir": "Monastir",
+            "Sahline": "Sahline",
+            "Ksibet El Mediouni": "Ksibet El Mediouni",
+            "Jemmal": "Jemmal",
+            "Beni Hassen": "Beni Hassen",
+            "Bekalta": "Bekalta",
+            "Teboulba": "Teboulba"
+        },
+        "Mahdia": {
+            "Mahdia": "Mahdia",
+            "Chebba": "Chebba",
+            "El Jem": "El Jem",
+            "Melloulèche": "Melloulèche",
+            "Rejiche": "Rejiche",
+            "Ksour Essef": "Ksour Essef",
+            "Bou Merdes": "Bou Merdes"
+        },
+        "Sfax": {
+            "Sfax": "Sfax",
+            "Agareb": "Agareb",
+            "Kerkennah": "Kerkennah",
+            "El Hencha": "El Hencha",
+            "Bir Ali Ben Khalifa": "Bir Ali Ben Khalifa",
+            "Mahrès": "Mahrès",
+            "Skhira": "Skhira"
+        },
+        "Gabes": {
+            "Gabes": "Gabès",
+            "Mareth": "Mareth",
+            "Matmata": "Matmata",
+            "Chenini Nahal": "Chenini Nahal",
+            "Ghannouch": "Ghannouch",
+            "Hamma": "Hamma",
+            "Menzel Habib": "Menzel Habib"
+        },
+        "Medenine": {
+            "Medenine": "Médenine",
+            "Zarzis": "Zarzis",
+            "Djerba Midoun": "Djerba Midoun",
+            "Djerba Houmt Souk": "Djerba Houmt Souk",
+            "Djerba Ajim": "Djerba Ajim",
+            "Ben Guerdane": "Ben Guerdane",
+            "Boughrara": "Boughrara"
+        },
+        "Tataouine": {
+            "Tataouine": "Tataouine",
+            "Ghomrassen": "Ghomrassen",
+            "Bir Lahmar": "Bir Lahmar",
+            "Dehiba": "Dehiba",
+            "Remada": "Remada"
+        },
+        "Gafsa": {
+            "Gafsa": "Gafsa",
+            "Metlaoui": "Metlaoui",
+            "Redeyef": "Redeyef",
+            "El Guettar": "El Guettar",
+            "Mdhila": "Mdhila",
+            "Oum Laarayes": "Oum Laarayes",
+            "Belkhir": "Belkhir"
+        },
+        "Tozeur": {
+            "Tozeur": "Tozeur",
+            "Nefta": "Nefta",
+            "Degache": "Degache",
+            "Hazoua": "Hazoua",
+            "Tamaghza": "Tamaghza"
+        },
+        "Kebili": {
+            "Kebili": "Kébili",
+            "Douz": "Douz",
+            "Souk Lahad": "Souk Lahad",
+            "El Faouar": "El Faouar",
+            "Bechni": "Bechni"
+        }
+    }
 }

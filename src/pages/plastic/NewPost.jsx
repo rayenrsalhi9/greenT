@@ -50,8 +50,9 @@ export async function action({request}) {
 
 export default function NewPost() {
   const { t } = useTranslation()
-  const [, setSelectedState] = useState("")
-  const [availablesCities, setCities] = useState([])
+
+  const [selectedState, setSelectedState] = useState("")
+  const [, setSelectedCity] = useState("")
 
   const errorMessage = useActionData()
   const navigation = useNavigation()
@@ -59,7 +60,11 @@ export default function NewPost() {
   const handleStateChange = (e) => {
     const stateId = e.target.value
     setSelectedState(stateId)
-    setCities(cities[stateId] || [])
+  }
+
+  const handleCityChange = (e) => {
+    const city = e.target.value
+    setSelectedCity(city)
   }
 
   return (
@@ -84,7 +89,7 @@ export default function NewPost() {
               <option value="">{t('new-post-post-state-placeholder')}</option>
               {
                 states.map(state => (
-                  <option key={state.id} value={state.id} > {state.name} </option>
+                  <option key={state.id} value={state.id} > {t(`states.${state.id}`)} </option>
                 ))
               }
             </select>
@@ -92,11 +97,11 @@ export default function NewPost() {
 
           <div className="form-group">
             <label htmlFor="city">{t('new-post-post-city')}</label>
-            <select id="city" name="city"> 
+            <select id="city" name="city" onChange={handleCityChange}> 
               <option value="">{t('new-post-post-city-placeholder')}</option>
               {
-                availablesCities.map((el, index) => (
-                  <option key={index} value={el} > {el} </option>
+                selectedState && cities[selectedState].map((city) => (
+                  <option key={city} value={city} > {t(`cities.${selectedState}.${city}`)} </option>
                 ))
               }
             </select>

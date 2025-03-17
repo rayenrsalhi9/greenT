@@ -1,9 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Link, Form, redirect, useNavigation, useActionData } from 'react-router-dom'
 import { auth, db } from '../config/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getSignUpErrorMessage } from '../firebase/signupErrorMsgs'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 
+import { useState } from 'react'
+import { states, cities } from '../utils/locations'
 import { useTranslation } from 'react-i18next'
 
 import greetIcon from '../assets/greet.gif'
@@ -12,9 +15,9 @@ import '../styles/Signup.css'
 export async function action({ request }) {
     const formData = await request.formData()
     const password = formData.get('password')
-    const { firstName, lastName, email, city, phone } = Object.fromEntries(formData)
+    const { firstName, lastName, email, city, phone, state } = Object.fromEntries(formData)
 
-    if (!firstName || !lastName || !email || !password || !city || !phone) {
+    if (!firstName || !lastName || !email || !password || !city || !phone || !state) {
         return "All fields are required!"
     }
 
@@ -26,7 +29,7 @@ export async function action({ request }) {
             firstName,
             lastName,
             email,
-            city,
+            city: `${state} - ${city}`,
             phone,
             createdAt: serverTimestamp(),
             points: 0,
@@ -39,11 +42,21 @@ export async function action({ request }) {
 }
 
 export default function Signup() {
-
     const { t } = useTranslation()
 
     const navigation = useNavigation()
     const errorMsg = useActionData()
+
+    const [selectedState, setSelectedState] = useState(null)
+    const [, setSelectedCity] = useState(null)
+
+    const handleStateChange = (e) => {
+        setSelectedState(e.target.value)
+    }
+
+    const handleCityChange = (e) => {
+        setSelectedCity(e.target.value)
+    }
 
     return (
         <div className="signup-outer-container">
@@ -72,9 +85,29 @@ export default function Signup() {
                         <label htmlFor="password">{t('signup-form-password')}</label>
                         <input type="password" name="password" id="password" />
                     </div>
-                    <div className="form-row">
-                        <label htmlFor="city">{t('signup-form-city')}</label>
-                        <input type="text" name="city" id="city" />
+                    <div className="form-group">
+                        <div className="form-row">
+                            <label htmlFor="state">{t('new-post-post-state')}</label>
+                            <select name="state" id="state" onChange={handleStateChange}>
+                                <option value="">{t('new-post-post-state-placeholder')}</option>
+                                {
+                                    states.map((state) => (
+                                        <option value={state.id} key={state.id}>{t(`states.${state.id}`)}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                        <div className="form-row">
+                            <label htmlFor="city">{t('new-post-post-city')}</label>
+                            <select name="city" id="city" onChange={handleCityChange}>
+                                <option value="">{t('new-post-post-city-placeholder')}</option>
+                                {
+                                    selectedState && cities[selectedState].map((city) => (
+                                        <option value={city} key={city}>{t(`cities.${selectedState}.${city}`)}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
                     </div>
                     <div className="form-row">
                         <label htmlFor="phone">{t('signup-form-phone')}</label>

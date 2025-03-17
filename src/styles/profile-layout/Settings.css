@@ -95,3 +95,21 @@
     font-size: 16px;
     text-align: center;
 }
+
+.settings .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings .form-group select {
+    padding: 10px;
+    border: 1px solid #787c82;
+    border-radius: 5px;
+}
+
+@media(max-width: 576px) {
+    .settings .form-group {
+        flex-direction: column;
+    }
+}

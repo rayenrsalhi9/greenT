@@ -34,8 +34,8 @@
     "login-form-button-submitting": "تسجيل الدخول...",
     "login-form-signup": "ليس لديك حساب؟",
     "login-form-link": "إنشاء حساب الآن",
-    "login-form-divider": "أو استمر ب",
-    "login-form-google": "تسجيل الدخول باستخدام Google",
+    "divider-text": "أو استمر ب",
+    "google-login": "تسجيل الدخول باستخدام Google",
 
     "signup-form-title": "انضم إلى GreenT",
     "signup-form-description": "انضم إلى الحركة لإزالة البلاستيك من الكوكب.",
@@ -94,6 +94,8 @@
     "account-settings-city": "المدينة التي تعيش فيها",
     "account-settings-save": "حفظ التغييرات",
     "account-settings-saving": "حفظ التغييرات...",
+    "account-settings-city-placeholder": "حدد مدينتك",
+    "account-settings-state-placeholder": "حدد منطقتك",
 
     "posts-title": "كل المشاركات المجتمعية",
     "posts-search-input-placeholder": "ابحث عن البلاستيك، الأعضاء أو أنواع البلاستيك...",
@@ -152,20 +154,253 @@
     "about-why-choose-platform-easy-communication-description": "التواصل السهل في إعادة التدوير.",
 
     "about-faq-title": "الأسئلة الشائعة",
+    
     "about-faq-question-1": "من يمكنه استخدام هذه المنصة؟",
-    "about-faq-answer-1": "يمكن لأي شخص استخدام هذه المنصة، سواء كان عضوًا أو غير عضو. يمكنك التواصل مع الآخرين لإعادة التدوير.",
-    "about-faq-question-2": "هل هذه المنصة تساعد في الحفاظ على البيئة؟",
-    "about-faq-answer-2": "نعم، تساعد في الحفاظ على البيئة، وتساعد في إعادة التدوير.",
-    "about-faq-question-3": "كيف يمكنني التواصل مع الآخرين؟",
-    "about-faq-answer-3": "يمكنك التواصل مع الآخرين من خلال الرسائل والمشاركات.",
-    "about-faq-question-4": "كيف يمكنني الحصول على نقاط؟",
-    "about-faq-answer-4": "يمكنك الحصول على نقاط من خلال المشاركات والرسائل.",
-    "about-faq-question-5": "كيف يمكنني التواصل مع الآخرين؟",
-    "about-faq-answer-5": "يمكنك التواصل مع الآخرين من خلال الرسائل والمشاركات.",
-    "about-faq-question-6": "كيف يمكنني الحصول على نقاط؟",
-    "about-faq-answer-6": "يمكنك الحصول على نقاط من خلال المشاركات والرسائل.",
-    "about-faq-question-7": "كيف يمكنني التواصل مع الآخرين؟",
-    "about-faq-answer-7": "يمكنك التواصل مع الآخرين من خلال الرسائل والمشاركات.",
+    "about-faq-answer-1": "أي شخص! سواء كنت فردًا أو شركة تدوير أو منظمة تحتاج إلى مواد بلاستيكية، يمكنك التسجيل والبدء في التواصل.",
+    "about-faq-question-2": "هل استخدام المنصة مجاني؟",
+    "about-faq-answer-2": "نعم، استخدامها مجاني! يمكنك التسجيل والبدء في التواصل مع الآخرين.",
+    "about-faq-question-3": "كيف أتأكد من أن البلاستيك الذي أستلمه نظيف وقابل للاستخدام؟",
+    "about-faq-answer-3": "لدينا عملية تحقق صارمة لضمان أن البلاستيك نظيف وقابل للاستخدام. يتم فحص جميع المواد البلاستيكية من قبل فريقنا قبل إدراجها على المنصة.",
+    "about-faq-question-4": "ماذا يحدث بعد التواصل مع شخص ما؟",
+    "about-faq-answer-4": "بمجرد التواصل مع شخص ما، يمكنك البدء في تنسيق تبادل المواد البلاستيكية. نوفر منصة آمنة وسهلة الاستخدام للتواصل وإتمام التبادل.",
+    "about-faq-question-5": "كيف أحصل على الدفع مقابل البلاستيك الذي أبيع؟",
+    "about-faq-answer-5": "بعد اكتمال التبادل، ستستلم عدد النقاط بناءً على كمية البلاستيك التي بعتها. تحقق من كيفية تعيين النقاط في قسم 'كيف تعمل'.",
+    "about-faq-question-6": "كيف يساعد هذا البيئة؟",
+    "about-faq-answer-6": "من خلال ربط الباحثين عن البلاستيك مع الموردين، نقوم بتقليل كمية النفايات البلاستيكية في البيئة. هذا يساعد في الحفاظ على البيئة وتقليل كمية النفايات البلاستيكية.",
+    "about-faq-question-7": "كيف يمكنني استبدال نقاطي؟",
+    "about-faq-answer-7": "يمكنك العثور على قسم استبدال النقاط في صفحة ملفك الشخصي. جربه من هنا!",
     "about-faq-question-8": "كيف يمكنني التواصل مع المنصة؟",
-    "about-faq-answer-8": "يمكنك التواصل مع المنصة من خلال الرابط الموجود في الأسفل."
+    "about-faq-answer-8": "يمكنك التواصل مع المنصة من خلال الذهاب إلى قسم 'اتصل بنا' في الجزء السفلي من الصفحة.",
+
+    "form-google-divider": "أو استمر ب",
+    "form-google-login": "تسجيل الدخول باستخدام Google",
+    
+    "states": {
+        "Tunis": "تونس",
+        "Ariana": "أريانة",
+        "BenArous": "بن عروس",
+        "Manouba": "منوبة",
+        "Nabeul": "نابل",
+        "Bizerte": "بنزرت",
+        "Beja": "باجة",
+        "Jendouba": "جندوبة",
+        "ElKef": "الكاف",
+        "Siliana": "سليانة",
+        "Kairouan": "القيروان",
+        "Kasserine": "القصرين",
+        "SidiBouzid": "سيدي بوزيد",
+        "Sousse": "سوسة",
+        "Monastir": "المنستير",
+        "Mahdia": "المهدية",
+        "Sfax": "صفاقس",
+        "Gabes": "قابس",
+        "Medenine": "مدنين",
+        "Tataouine": "تطاوين",
+        "Gafsa": "قفصة",
+        "Tozeur": "توزر",
+        "Kebili": "قبلي"
+    },
+    "cities": {
+        "Tunis": {
+            "La Marsa": "المرسى",
+            "Le Bardo": "الباردو",
+            "Carthage": "قرطاج",
+            "El Menzah": "المنزه",
+            "Centre Ville": "وسط المدينة",
+            "El Omrane": "العمران",
+            "Sidi Hassine": "سيدي حسين",
+            "Bab Souika": "باب سويقة",
+            "Lafayette": "لافاييت"
+        },
+        "Ariana": {
+            "Ariana": "أريانة",
+            "La Soukra": "السكرة",
+            "Raoued": "رواد",
+            "Kalaat El Andalous": "قلعة الأندلس",
+            "Borj El Baccouche": "برج البكوش",
+            "Mnihla": "منيهلة",
+            "Cité Ghazela": "حي الغزالة"
+        },
+        "BenArous": {
+            "Ben Arous": "بن عروس",
+            "Hammam Lif": "حمام الأنف",
+            "Rades": "رادس",
+            "Mornag": "مرناق",
+            "Bou Mhel": "بوحجر",
+            "Hammam Chott": "حمام الشط",
+            "Mohamedia": "المحمدية"
+        },
+        "Manouba": {
+            "Manouba": "منوبة",
+            "Djedeida": "جديدة",
+            "Oued Ellil": "وادي الليل",
+            "Tebourba": "طبربة",
+            "Borj El Amri": "برج العامري",
+            "Mornaguia": "مرناقية"
+        },
+        "Nabeul": {
+            "Nabeul": "نابل",
+            "Hammamet": "حمامات",
+            "Kelibia": "قليبية",
+            "Korba": "قربص",
+            "Menzel Temime": "منزل تميم",
+            "Takelsa": "تكلصة",
+            "Soliman": "سليمان",
+            "Grombalia": "قرمبالية"
+        },
+        "Bizerte": {
+            "Bizerte": "بنزرت",
+            "Menzel Bourguiba": "منزل بورقيبة",
+            "Ras Jebel": "رأس الجبل",
+            "Mateur": "ماطر",
+            "Sejnane": "سجنان",
+            "Tinja": "تينجة",
+            "Ghar El Melh": "غار الملح"
+        },
+        "Beja": {
+            "Beja": "باجة",
+            "Medjez El Bab": "مجاز الباب",
+            "Testour": "تستور",
+            "Nefza": "نفزة",
+            "Teboursouk": "طبروق",
+            "Goubellat": "قبلاط"
+        },
+        "Jendouba": {
+            "Jendouba": "جندوبة",
+            "Tabarka": "طبرقة",
+            "Bou Salem": "بوسالم",
+            "Ain Draham": "عين دراهم",
+            "Fernana": "فرنانة",
+            "Beni Mtir": "بني مطير"
+        },
+        "ElKef": {
+            "Le Kef": "الكاف",
+            "Dahmani": "الدهماني",
+            "Tajerouine": "تاجروين",
+            "Sakiet Sidi Youssef": "ساقية سيدي يوسف",
+            "Nebeur": "نبر",
+            "Jerissa": "الجريصة",
+            "Kalaat Senan": "قلعة سنان"
+        },
+        "Siliana": {
+            "Siliana": "سليانة",
+            "Makthar": "مكثر",
+            "Bargou": "برقو",
+            "Bou Arada": "بوعرادة",
+            "Gaafour": "قفصة",
+            "Kesra": "كسرى",
+            "Rouhia": "الروحية"
+        },
+        "Kairouan": {
+            "Kairouan": "القيروان",
+            "Chebika": "الشبيكة",
+            "Haffouz": "حفوز",
+            "Nasrallah": "نصر الله",
+            "Oueslatia": "الوسلاتية",
+            "Sbikha": "سبيخة",
+            "Hajeb El Ayoun": "حاجب العيون"
+        },
+        "Kasserine": {
+            "Kasserine": "القصرين",
+            "Sbeitla": "سبيطلة",
+            "Foussana": "فوسانة",
+            "Thala": "تالة",
+            "Feriana": "فريانة",
+            "Hidra": "حيدرة",
+            "Majel Bel Abbès": "مجيل الباب"
+        },
+        "SidiBouzid": {
+            "Sidi Bouzid": "سيدي بوزيد",
+            "Regueb": "الرقاب",
+            "Meknassy": "مكناسة",
+            "Jilma": "جلمة",
+            "Sidi Ali Ben Aoun": "سيدي علي بن عون",
+            "Menzel Bouzaiane": "منزل بوزيان",
+            "Ouled Haffouz": "أولاد حفوز"
+        },
+        "Sousse": {
+            "Sousse": "سوسة",
+            "Hammam Sousse": "حمام سوسة",
+            "Msaken": "مساكن",
+            "Kalâa Kebira": "قلعة الكبيرة",
+            "Kalâa Seghira": "قلعة الصغيرة",
+            "Akouda": "عقودة",
+            "Enfidha": "النفيضة"
+        },
+        "Monastir": {
+            "Monastir": "المنستير",
+            "Sahline": "الساحلين",
+            "Ksibet El Mediouni": "قصر المعمورة",
+            "Jemmal": "جمال",
+            "Beni Hassen": "بني حسان",
+            "Bekalta": "بقالطة",
+            "Teboulba": "طبلبة"
+        },
+        "Mahdia": {
+            "Mahdia": "المهدية",
+            "Chebba": "الشابة",
+            "El Jem": "الجم",
+            "Melloulèche": "ملولش",
+            "Rejiche": "الرجيش",
+            "Ksour Essef": "قصور السيف",
+            "Bou Merdes": "بومرداس"
+        },
+        "Sfax": {
+            "Sfax": "صفاقس",
+            "Agareb": "عقارب",
+            "Kerkennah": "كركينة",
+            "El Hencha": "الحنشة",
+            "Bir Ali Ben Khalifa": "بئر علي بن خليفة",
+            "Mahrès": "المحرس",
+            "Skhira": "الصخيرة"
+        },
+        "Gabes": {
+            "Gabes": "قابس",
+            "Mareth": "مارث",
+            "Matmata": "مطماطة",
+            "Chenini Nahal": "شنني ناحال",
+            "Ghannouch": "غنوش",
+            "Hamma": "الحامة",
+            "Menzel Habib": "منزل حبيب"
+        },
+        "Medenine": {
+            "Medenine": "مدنين",
+            "Zarzis": "جرجيس",
+            "Djerba Midoun": "جربة ميدون",
+            "Djerba Houmt Souk": "جربة حومة السوق",
+            "Djerba Ajim": "جربة أجيم",
+            "Ben Guerdane": "بن قردان",
+            "Boughrara": "بوغرارة"
+        },
+        "Tataouine": {
+            "Tataouine": "تطاوين",
+            "Ghomrassen": "غمراسن",
+            "Bir Lahmar": "بئر الأحمر",
+            "Dehiba": "الدخيلة",
+            "Remada": "رمادة"
+        },
+        "Gafsa": {
+            "Gafsa": "قفصة",
+            "Metlaoui": "متلوي",
+            "Redeyef": "الرديف",
+            "El Guettar": "القطار",
+            "Mdhila": "المظيلة",
+            "Oum Laarayes": "أم العرائس",
+            "Belkhir": "بلخير"
+        },
+        "Tozeur": {
+            "Tozeur": "توزر",
+            "Nefta": "نفطة",
+            "Degache": "دقاش",
+            "Hazoua": "الحزوة",
+            "Tamaghza": "تمغزة"
+        },
+        "Kebili": {
+            "Kebili": "قبلي",
+            "Douz": "دوز",
+            "Souk Lahad": "سوق الأحد",
+            "El Faouar": "الفوار",
+            "Bechni": "بشني"
+        }
+    }
 }

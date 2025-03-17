@@ -205,6 +205,7 @@
 .about .accordion-header img {
     width: 16px;
     height: 16px;
+    cursor: pointer;
     transition: 0.6s ease;
 }
 
