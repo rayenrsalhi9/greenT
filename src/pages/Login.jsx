@@ -89,7 +89,7 @@ export default function Login() {
             </button>
             <div className="signup-prompt">
                 {t('login-form-signup')} 
-                <Link to="/signup" className='signup-link'>{t('login-form-link')}</Link>
+                <Link to="/signup" className='signup-link'>{t('signup-form-link')}</Link>
             </div>
         </section>
     </div>

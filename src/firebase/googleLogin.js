@@ -24,16 +24,26 @@ async function saveUserToFirebase(user) {
     const userSnap = await getDoc(userRef);
 
     if (!userSnap.exists()) {
-        await setDoc(userRef, {
-            firstName: user.displayName ? user.displayName.split(' ')[0] : '',
-            lastName: user.displayName ? user.displayName.split(' ')[1] : '',
-            email: user.email,
-            city: '',
-            phone: '',
-            createdAt: serverTimestamp(),
-            points: 0,
-            badge: 'Eco Newbie'
-        });  
-        await assignObjectives(user.uid)
+        await Promise.all([
+            setDoc(userRef, {
+                firstName: user.displayName ? user.displayName.split(' ')[0] : '',
+                lastName: user.displayName ? user.displayName.split(' ')[1] : '',
+                email: user.email,
+                city: '',
+                phone: '',
+                createdAt: serverTimestamp(),
+                points: 0,
+                badge: 'Eco-Newbie'
+            })
+        ])
+        .then(() => assignObjectives(user.uid))
+        .catch(err => {
+            console.log(err)
+            return {
+                message: 'Failed to assign objectives',
+                status: err.status,
+                statusText: err.statusText
+            }
+        })
     }
 }

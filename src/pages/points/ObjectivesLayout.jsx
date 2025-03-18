@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
+import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSearchParams } from 'react-router-dom'
-import { objectives } from '../../utils/objectives'
 
 import targetIcon from '../../assets/points/target.png'
 
@@ -15,10 +14,14 @@ import pendingIcon from '../../assets/points/pending.png'
 
 import './objectives.css'
 
-export default function ObjectivesLayout() {
+export default function ObjectivesLayout({ objectives, tab }) {
   const { t } = useTranslation()
-  const [searchParams] = useSearchParams()
-  const tab = searchParams.get('tab') || ''
+
+  const filteredObjectives = useMemo(() => {
+    return objectives.filter(objective => objective.type === tab)
+  }, [objectives, tab])
+
+  console.log("component rendered")
 
   return (
     <div className="objectives-layout">
@@ -51,9 +54,9 @@ export default function ObjectivesLayout() {
       </nav>
       <div className="objectives-content">
         {
-          searchParams.get('tab') &&
-          objectives.filter(objective => objective.type === searchParams.get('tab')).map((objective, key) => (
-            <div key={key} className="objectives-content-item">
+          tab &&
+          filteredObjectives.map(objective => (
+            <div key={objective.taskID} className="objectives-content-item">
               <div className="objective-header">
                 <div className="objective-header-left">
                   <img src={objective.done ? doneIcon : pendingIcon} alt="done" />
@@ -84,6 +87,5 @@ export default function ObjectivesLayout() {
           ))
         }
       </div>
-    </div>
-  )
-}
+  </div>
+)}

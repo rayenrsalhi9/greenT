@@ -25,20 +25,30 @@ export async function action({ request }) {
         const userData = await createUserWithEmailAndPassword(auth, email, password)
         const user = userData.user
 
-        await setDoc(doc(db, "users", user.uid), {
-            firstName,
-            lastName,
-            email,
-            city: `${state} - ${city}`,
-            phone,
-            createdAt: serverTimestamp(),
-            points: 0,
-            badge: 'Eco Newbie'
-        })
-
-        await assignObjectives(user.uid)
+        await Promise.all([
+            setDoc(doc(db, 'users', user.uid), {
+                firstName,
+                lastName,
+                email,
+                city: `${city} - ${state}`,
+                phone,
+                badge: 'Eco-Newbie',
+                points: 0,
+                createdAt: serverTimestamp(),
+            })
+            .then(() => assignObjectives(user.uid))
+            .catch(err => {
+                console.log(err)
+                return {
+                    message: 'Failed to assign objectives',
+                    status: err.status,
+                    statusText: err.statusText
+                }
+            })
+        ])
         
         return redirect('/profile')
+
     } catch(err) {
         return getSignUpErrorMessage(err.code)
     }
@@ -128,7 +138,7 @@ export default function Signup() {
                 </Form>
                 <div className="login-prompt">
                     {t('signup-form-login')} 
-                    <Link to="/login" className='login-link'>{t('signup-form-link')}</Link>
+                    <Link to="/login" className='login-link'>{t('login-form-link')}</Link>
                 </div>
             </section>
         </div>
