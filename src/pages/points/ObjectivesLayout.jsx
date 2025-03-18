@@ -70,10 +70,10 @@ export default function ObjectivesLayout() {
                         :
                         <div className="objectives-content-item-progress-bar empty"></div>
                     :
-                    <div className="progress-bar" style={{ width: `${objective.currentProgress / objective.goal * 100}%` }}>
+                    <div className={`progress-bar ${objective.done ? 'done' : ''}`} style={{ width: `${objective.currentProgress / objective.goal * 100}%` }}>
                       {
                         objective.currentProgress && (
-                          <span className="progress-bar-progress">{objective.currentProgress}</span>
+                          <span className={`progress-bar-progress ${objective.done ? 'hidden' : ''}`}>{objective.currentProgress}</span>
                         )
                       }
                     </div>

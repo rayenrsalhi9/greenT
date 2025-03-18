@@ -32,7 +32,7 @@ export default function ProfileNav({profile}) {
         <div className="profile-info-details">
           <h3> {profile.lastName} {profile.firstName} </h3>
           <p> {profile.email} </p>
-          <span className="badge"> {profile.badge} </span>
+          <span className={`badge ${profile.badge === "Plateform Admin" ? "admin" : ""}`}> {profile.badge} </span>
         </div>
 
       </div>

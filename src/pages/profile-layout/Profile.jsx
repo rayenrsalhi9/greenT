@@ -1,5 +1,6 @@
 import { useOutletContext } from 'react-router-dom'
 import { format } from 'date-fns'
+import { formatNum } from '../../utils/formatNum'
 
 import { useTranslation } from 'react-i18next'
 
@@ -50,13 +51,13 @@ export default function Profile() {
             </div>
             <div className="details-row">
               <p className='title'>{t('account-details-level')}:</p>
-              <p> {profile.badge} </p>
+              <p className={`badge ${profile.badge === "Plateform Admin" ? "admin" : ""}`}> {profile.badge} </p>
             </div>
           </div>
           <div className="points-summary">
             <h3>{t('points-summary-title')}</h3>
             <div className="points-amount">
-              <h1 className='amount'> {profile.points} </h1>
+              <h1 className='amount'> {formatNum(profile.points)} </h1>
               <p>{t('points-summary-description')}</p>
               <button>{t('points-summary-redeem')}</button>
             </div>

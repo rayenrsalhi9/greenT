@@ -52,6 +52,15 @@
     margin-top: 6px;
 
     border-radius: 50px; 
+    transition: .6s;
+}
+
+.profile-info-details .badge.admin {
+    background: #d00000;
+}
+
+.profile-info-details .badge.admin:hover {
+    background: #9e0000;
 }
 
 .profile-info-details .badge:hover {

@@ -146,6 +146,10 @@
   position: relative;
 }
 
+.objectives-content .progress-bar.done {
+  background: #4caf50;
+}
+
 .objectives-content .progress-bar .progress-bar-progress {
   position: absolute;
   right: 0;
@@ -157,6 +161,10 @@
   border-radius: 50px;
   padding: 4px 8px;
   background: #f48c06;
+}
+
+.objectives-content .progress-bar .progress-bar-progress.hidden {
+  display: none;
 }
 
 .container.ar .objectives-content .progress-bar .progress-bar-progress {

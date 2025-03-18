@@ -72,6 +72,11 @@
     color: #787c82;
 }
 
+.profile-details-container > .account-details > .details-row .badge.admin {
+    color: #d00000;
+    font-weight: 600;
+}
+
 /* Points summary */
 .profile-details-container > .points-summary {
     width: 100%;
