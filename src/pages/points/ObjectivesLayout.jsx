@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
-import { getObjectives } from '../../utils/objectives'
+import { objectives } from '../../utils/objectives'
 
 import targetIcon from '../../assets/points/target.png'
 
@@ -52,7 +52,7 @@ export default function ObjectivesLayout() {
       <div className="objectives-content">
         {
           searchParams.get('tab') &&
-          getObjectives(searchParams.get('tab')).map((objective, key) => (
+          objectives.filter(objective => objective.type === searchParams.get('tab')).map((objective, key) => (
             <div key={key} className="objectives-content-item">
               <div className="objective-header">
                 <div className="objective-header-left">

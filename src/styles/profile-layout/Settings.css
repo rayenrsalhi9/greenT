@@ -51,9 +51,9 @@
     }
 }
 
-.personal-info .row .group {
+.personal-info .row .group,
+.personal-info .group {
     width: 100%;
-    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -64,7 +64,8 @@
     font-weight: 600;
 }
 
-.group input {
+.group input,
+.group select {
     padding: 10px;
     border: 1px solid #787c82;
     border-radius: 5px;
@@ -94,22 +95,4 @@
     font-weight: 500;
     font-size: 16px;
     text-align: center;
-}
-
-.settings .form-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.settings .form-group select {
-    padding: 10px;
-    border: 1px solid #787c82;
-    border-radius: 5px;
-}
-
-@media(max-width: 576px) {
-    .settings .form-group {
-        flex-direction: column;
-    }
 }

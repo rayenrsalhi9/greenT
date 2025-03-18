@@ -2,6 +2,7 @@ import { signInWithPopup } from "firebase/auth";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, googleProvider, db } from "../config/firebase";
 import { getSignUpErrorMessage } from "./loginErrorMsgs";
+import { assignObjectives } from "./getProfile";
 
 export async function googleLogin(navigate) {
     try {
@@ -32,5 +33,7 @@ async function saveUserToFirebase(user) {
             createdAt: serverTimestamp(),
             points: 0,
             badge: 'Eco Newbie'
-        });
-}}
+        });  
+        await assignObjectives(user.uid)
+    }
+}

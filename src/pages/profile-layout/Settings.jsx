@@ -80,37 +80,35 @@ export default function Settings() {
                             />
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="group">
+                        <label htmlFor="city">{t('account-settings-city')}</label>
                         <div className="group">
-                            <label htmlFor="city">{t('account-settings-city')}</label>
-                            <div className="form-group">
-                                <select name="state" id="state" onChange={handleStateChange}>
-                                    <option value="">{t('account-settings-state-placeholder')}</option>
-                                    {
-                                        states.map((state) => (
-                                            <option value={state.id} key={state.id}>{t(`states.${state.id}`)}</option>
-                                        ))
-                                    }
-                                </select>       
-                                <select name="city" id="city" onChange={handleCityChange}>
-                                    <option value="">{t('account-settings-city-placeholder')}</option>
-                                    {
-                                        selectedState && cities[selectedState].map((city) => (
-                                            <option value={city} key={city}>{t(`cities.${selectedState}.${city}`)}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
+                            <select name="state" id="state" onChange={handleStateChange}>
+                                <option value="">{t('account-settings-state-placeholder')}</option>
+                                {
+                                    states.map((state) => (
+                                        <option value={state.id} key={state.id}>{t(`states.${state.id}`)}</option>
+                                    ))
+                                }
+                            </select>       
+                            <select name="city" id="city" onChange={handleCityChange}>
+                                <option value="">{t('account-settings-city-placeholder')}</option>
+                                {
+                                    selectedState && cities[selectedState].map((city) => (
+                                        <option value={city} key={city}>{t(`cities.${selectedState}.${city}`)}</option>
+                                    ))
+                                }
+                            </select>
                         </div>
-                        <div className="group">
-                            <label htmlFor="phone">{t('account-settings-phone')}</label>
-                            <input 
-                                type="text" 
-                                name='phone' 
-                                id='phone' 
-                                defaultValue={profile.phone}
-                            />
-                        </div>
+                    </div>
+                    <div className="group">
+                        <label htmlFor="phone">{t('account-settings-phone')}</label>
+                        <input 
+                            type="text" 
+                            name='phone' 
+                            id='phone' 
+                            defaultValue={profile.phone}
+                        />
                     </div>
                 
                     { errorMsg && <p className="error-msg"> {errorMsg} </p> }

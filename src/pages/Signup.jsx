@@ -4,7 +4,7 @@ import { auth, db } from '../config/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getSignUpErrorMessage } from '../firebase/signupErrorMsgs'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
-
+import { assignObjectives } from '../firebase/getProfile'
 import { useState } from 'react'
 import { states, cities } from '../utils/locations'
 import { useTranslation } from 'react-i18next'
@@ -35,6 +35,9 @@ export async function action({ request }) {
             points: 0,
             badge: 'Eco Newbie'
         })
+
+        await assignObjectives(user.uid)
+        
         return redirect('/profile')
     } catch(err) {
         return getSignUpErrorMessage(err.code)
