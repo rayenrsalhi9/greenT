@@ -32,8 +32,6 @@ export async function action({ request }) {
 }
 
 export default function Settings() {
-    console.log(auth.currentUser)
-
     const [selectedState, setSelectedState] = useState("")
     const [, setSelectedCity] = useState("")
 

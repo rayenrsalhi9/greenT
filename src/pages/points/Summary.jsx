@@ -1,3 +1,5 @@
+import { formatNum } from '../../utils/formatNum'
+
 import starIcon from '../../assets/points/star.png'
 import trophyIcon from '../../assets/points/trophy.png'
 import historyIcon from '../../assets/points/history.png'
@@ -8,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 import './summary.css'
 
-export default function Summary() {
+export default function Summary({ profile }) {
   const { t } = useTranslation()
 
   return (
@@ -21,7 +23,7 @@ export default function Summary() {
       <div className="points-container">
         <div className="points-card">
           <p>{t('points-history-total-points')}</p>
-          <span className="points-amount">1000</span>
+          <span className="points-amount">{formatNum(profile.points)}</span>
         </div>
         <img src={trophyIcon} alt="trophy" />
       </div>

@@ -21,10 +21,15 @@ import Posts from './pages/profile-layout/Posts'
 import Messages from './pages/profile-layout/Messages'
 import Chat, { action as chatAction } from './pages/profile-layout/Chat'
 
-import Points, { loader as pointsLoader } from './pages/profile-layout/Points'
-import ObjectivesLayout from './pages/points/ObjectivesLayout'
+import Points from './pages/profile-layout/Points'
 import Summary from './pages/points/Summary'
 import Partners from './pages/points/Partners'
+
+import ObjectivesLayout, { loader as objectivesLoader } from './pages/objectives/ObjectivesLayout'
+import Daily from './pages/objectives/Daily'
+import Weekly from './pages/objectives/Weekly'
+import Monthly from './pages/objectives/Monthly'
+import Once from './pages/objectives/Once'
 
 import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
 import NewPost, 
@@ -60,10 +65,15 @@ export default function App() {
       <Route path='profile' element={<ProfileLayout />} loader={profileLoader}>
         <Route index element={<Profile />} />
         <Route path='settings' element={<Settings />} action={settingsAction} />
-        <Route path='points' element={<Points />} loader={pointsLoader}>
+        <Route path='points' element={<Points />}>
           <Route index element={<Summary />} />
-          <Route index element={<ObjectivesLayout />} />
           <Route index element={<Partners />} />
+        </Route>
+        <Route path='objectives' element={<ObjectivesLayout />} loader={objectivesLoader}>
+          <Route index element={<Daily />} />
+          <Route path='weekly' element={<Weekly />} />
+          <Route path='monthly' element={<Monthly />} />
+          <Route path='once' element={<Once />} />
         </Route>
         <Route path='posts' element={<Posts />} />
         <Route path='posts/:postId' element={<Details />} loader={detailsLoader} />

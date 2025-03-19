@@ -11,6 +11,7 @@ import pointsIcon from '../assets/change.png'
 import settingsIcon from '../assets/settings.png'
 import logoutIcon from '../assets/logout.png'
 import messagesIcon from '../assets/message.png'
+import objectivesIcon from '../assets/points/target.png'
 
 import '../styles/ProfileNav.css'
 
@@ -50,9 +51,13 @@ export default function ProfileNav({profile}) {
           <img src={messagesIcon} alt="messages icon" />
           {t('profile-links-messages')}
         </NavLink>
-        <NavLink to="points?tab=daily">
+        <NavLink to="points">
           <img src={pointsIcon} alt="points icon" />
           {t('profile-links-points')}
+        </NavLink>
+        <NavLink to="objectives">
+          <img src={objectivesIcon} alt="objectives icon" />
+          {t('profile-links-objectives')}
         </NavLink>
         <NavLink to="settings">
           <img src={settingsIcon} alt="settings icon" />
