@@ -1,11 +1,11 @@
 import { useOutletContext } from 'react-router-dom'
-
+import { useTranslation } from 'react-i18next'
 import doneIcon from '../../assets/points/done.png'
 import pendingIcon from '../../assets/points/pending.png'
 
 export default function Weekly() {
   const objectives = useOutletContext()
-
+  const { t } = useTranslation()
   return (
     <div className="objectives-content">
           {
@@ -14,9 +14,9 @@ export default function Weekly() {
                 <div className="objective-header">
                   <div className="objective-header-left">
                     <img src={objective.done ? doneIcon : pendingIcon} alt="done" />
-                    <p className={`objective-description ${objective.done ? 'done' : ''}`}>{objective.description}</p>
+                    <p className={`objective-description ${objective.done ? 'done' : ''}`}>{t(`${objective.taskID}`)}</p>
                   </div>
-                  <p className={`rewarded-points ${objective.done ? 'done' : ''}`}>{objective.points} pts</p>
+                  <p className={`rewarded-points ${objective.done ? 'done' : ''}`}>{objective.points} {t('pts')}</p>
                 </div>
                 <div className="objectives-content-item-progress">
                   <div className="objectives-content-item-progress-bar">

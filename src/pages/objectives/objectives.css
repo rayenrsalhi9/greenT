@@ -74,7 +74,7 @@
   font-size: 14px;
   color: #666;
   text-decoration: none;
-  padding: 5px;
+  padding: 4px;
   border-radius: 4px;
 
   transition: .6s;
@@ -88,8 +88,6 @@
 .objectives-layout nav a.active {
   background: #fffcdc;
   color: #111;
-  border: 1px solid #4caf50;
-  font-weight: 600;
 }
 
 .objectives-layout nav a img {
@@ -198,7 +196,7 @@
 }
 
 .container.ar .objectives-content .rewarded-points {
-  direction: ltr;
+  direction: rtl;
 }
 
 .objectives-content .rewarded-points.done {

@@ -419,5 +419,24 @@
     "points-objectives-daily": "Journalier",
     "points-objectives-weekly": "Hebdomadaire",
     "points-objectives-monthly": "Mensuel",
-    "points-objectives-one-time": "Une-fois seulement"
+    "points-objectives-one-time": "Une-fois seulement",
+
+    "app-login": "Connectez-vous à l'application",
+  "plastic-15": "Publiez au moins 15 objets en plastique",
+  "send-message": "Envoyez un message à un membre de la communauté",
+  "plastic-post": "Partagez une publication sur le plastique avec la communauté",
+  "event-participate": "Participez à un événement de nettoyage en groupe",
+  "user-invite": "Invitez un nouvel utilisateur sur la plateforme",
+  "post-3": "Publiez au moins 3 publications cette semaine",
+  "contact-3": "Contactez au moins 3 personnes pour un échange de plastique",
+  "10-contacts": "Contactez 10 personnes pour un échange de plastique",
+  "donate-50": "Donnez au moins 50 objets en plastique dans une seule publication",
+  "earn-500": "Gagnez 500 points au total",
+  "post-10": "Publiez au moins 10 mises à jour ce mois-ci",
+  "reach-1000": "Atteignez 1 000 points",
+  "workshop-host": "Organisez un atelier de recyclage du plastique",
+  "refer-friend": "Parrainez un ami sur la plateforme",
+  "social-media-share": "Partagez la plateforme sur les réseaux sociaux",
+  "profile-complete": "Complétez votre profil (ajoutez votre localisation et votre numéro de téléphone)",
+  "pts": "pts"
 }

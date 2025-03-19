@@ -419,6 +419,25 @@
     "points-objectives-daily": "Daily",
     "points-objectives-weekly": "Weekly",
     "points-objectives-monthly": "Monthly",
-    "points-objectives-one-time": "One-time"
+    "points-objectives-one-time": "One-time",
+
+    "app-login": "Log in to the app",
+  "plastic-15": "Post at least 15 plastic items",
+  "send-message": "Send a message to a community member",
+  "plastic-post": "Share a plastic post with the community",
+  "event-participate": "Participate in a group cleanup event",
+  "user-invite": "Invite a new user to the platform",
+  "post-3": "Post at least 3 posts this week",
+  "contact-3": "Contact at least 3 people about plastic exchange",
+  "10-contacts": "Reach out 10 people about plastic exchange",
+  "donate-50": "Donate at least 50 plastic items in one post",
+  "earn-500": "Earn 500 points in total",
+  "post-10": "Post at least 10 updates this month",
+  "reach-1000": "Reach 1,000 points",
+  "workshop-host": "Host a plastic recycling workshop",
+  "refer-friend": "Refer a friend to the platform",
+  "social-media-share": "Share the platform on social media",
+  "profile-complete": "Complete your profile (add location & phone number)",
+  "pts": "pts"
     
 }

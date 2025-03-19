@@ -33,6 +33,8 @@ export default function ObjectivesLayout() {
   const objectivesObject = useLoaderData()
   const { t } = useTranslation()
 
+  console.log("component re-rendered")
+
   return (
     <Suspense fallback={<Loading />}>
       <Await resolve={objectivesObject.objectives}>
