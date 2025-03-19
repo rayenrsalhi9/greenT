@@ -8,6 +8,7 @@ import { assignObjectives } from '../firebase/getProfile'
 import { useState } from 'react'
 import { states, cities } from '../utils/locations'
 import { useTranslation } from 'react-i18next'
+import { markLoginAsDone } from '../firebase/objectives'
 
 import greetIcon from '../assets/greet.gif'
 import '../styles/Signup.css'
@@ -37,6 +38,7 @@ export async function action({ request }) {
                 createdAt: serverTimestamp(),
             })
             .then(() => assignObjectives(user.uid))
+            .then(() => markLoginAsDone(user.uid))
             .catch(err => {
                 console.log(err)
                 return {

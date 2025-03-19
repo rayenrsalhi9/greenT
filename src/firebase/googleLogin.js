@@ -3,6 +3,7 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, googleProvider, db } from "../config/firebase";
 import { getSignUpErrorMessage } from "./loginErrorMsgs";
 import { assignObjectives } from "./getProfile";
+import { markLoginAsDone } from "./objectives";
 
 export async function googleLogin(navigate) {
     try {
@@ -37,8 +38,8 @@ async function saveUserToFirebase(user) {
             })
         ])
         .then(() => assignObjectives(user.uid))
+        .then(() => markLoginAsDone(user.uid))
         .catch(err => {
-            console.log(err)
             return {
                 message: 'Failed to assign objectives',
                 status: err.status,
