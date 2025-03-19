@@ -79,7 +79,7 @@ export default function Footer() {
                 </div>
                 <div className="copyright-section">
                     <p>
-                        &copy; {new Date().getFullYear()} Greent. {i18n.t('footer-copyright')}
+                        &copy; {new Date().getFullYear()} GreenT - {i18n.t('footer-copyright')}
                     </p>
                 </div>
                 <div className="footer-pattern-bottom"></div>
