@@ -51,14 +51,20 @@ export default function ProfileNav({profile}) {
           <img src={messagesIcon} alt="messages icon" />
           {t('profile-links-messages')}
         </NavLink>
-        <NavLink to="points">
-          <img src={pointsIcon} alt="points icon" />
-          {t('profile-links-points')}
-        </NavLink>
-        <NavLink to="objectives">
-          <img src={objectivesIcon} alt="objectives icon" />
-          {t('profile-links-objectives')}
-        </NavLink>
+        {
+          profile.badge !== "Plateform Admin" &&
+          <NavLink to="points">
+            <img src={pointsIcon} alt="points icon" />
+            {t('profile-links-points')}
+          </NavLink>
+        }
+        {
+          profile.badge !== "Plateform Admin" &&
+          <NavLink to="objectives">
+            <img src={objectivesIcon} alt="objectives icon" />
+            {t('profile-links-objectives')}
+          </NavLink>
+        }
         <NavLink to="settings">
           <img src={settingsIcon} alt="settings icon" />
           {t('profile-links-settings')}
