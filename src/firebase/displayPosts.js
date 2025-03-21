@@ -4,7 +4,8 @@ import {
     getDoc, 
     doc, 
     deleteDoc,
-    updateDoc
+    updateDoc,
+    increment
  } from "firebase/firestore";
 import { db } from "../config/firebase";
 
@@ -29,11 +30,8 @@ export async function displayPosts() {
 
         return posts.sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
-        return { 
-            message: 'Failed to fetch posts', 
-            status: error.status,
-            statusText: error.statusText
-         }
+        console.error(error)
+        return 'Failed to fetch posts'
     }
 }
 
@@ -49,11 +47,8 @@ export async function displayPostsByUser(userID) {
             ...doc.data()
         })).sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
-        return { 
-            message: 'Failed to fetch posts by user', 
-            status: error.status,
-            statusText: error.statusText
-         }
+        console.error(error)
+        return 'Failed to fetch posts by user'
     }
 }
 
@@ -68,40 +63,73 @@ export async function getPostDetails(postId) {
         }
         return post
     } catch (error) {
-        return { 
-            message: 'Failed to get post details', 
-            status: error.status,
-            statusText: error.statusText
-         }
+        console.error(error)
+        return 'Failed to get post details'
     }
 }
 
 export async function deletePost(postId, navigate) {
     try {
         const postRef = doc(db, 'posts', postId)
+        const postSnapshot = await getDoc(postRef)
+        const postData = postSnapshot.data()
+
+        const statsRef = doc(db, 'stats', 'globalStats')
+        
+        await updateDoc(statsRef, {
+            totalPosts: increment(-1),
+            totalBottles: increment(-postData.bottles),
+            totalBags: increment(-postData.bags),
+            totalMixed: increment(-postData.mixed)
+        })
+
         await deleteDoc(postRef)
+
         navigate('/profile/posts?message=Post deleted successfully')
+
         return null
     } catch (error) {
-        return { 
-            message: 'Failed to delete post', 
-            status: error.status,
-            statusText: error.statusText
-         }
+        console.error(error)
+        return 'Failed to delete post'
     }
 }
 
 export async function updatePost(postId, postData) {
     try {
         const postRef = doc(db, 'posts', postId)
+        const statsRef = doc(db, 'stats', 'globalStats')
+        const postSnapshot = await getDoc(postRef)
+        const postDataBeforeUpdate = postSnapshot.data()
+        await updateDoc(statsRef, {
+            totalBottles: increment(-postDataBeforeUpdate.bottles),
+            totalBags: increment(-postDataBeforeUpdate.bags),
+            totalMixed: increment(-postDataBeforeUpdate.mixed)
+        })
         await updateDoc(postRef, postData)
+        await updateDoc(statsRef, {
+            totalBottles: increment(postData.bottles),
+            totalBags: increment(postData.bags),
+            totalMixed: increment(postData.mixed)
+        })
         return { success: 'Post updated successfully' }
     } catch (error) {
-        return { 
-            message: 'Failed to update post', 
-            status: error.status,
-            statusText: error.statusText
-         }
+        console.error(error)
+        return 'Failed to update post'
+    }
+}
+
+export async function showTotalItemsShared() {
+    try {
+        const statsRef = doc(db, 'stats', 'globalStats')
+        const statsSnapshot = await getDoc(statsRef)
+
+        return {
+            id: statsSnapshot.id,
+            ...statsSnapshot.data()
+        }
+    } catch (error) {
+        console.error(error)
+        return "Failed to get total items shared"
     }
 }
 

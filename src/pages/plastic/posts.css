@@ -1,0 +1,214 @@
+.posts-page-container {
+    padding: 20px;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .posts-page-container {
+        flex-direction: column-reverse;
+    }
+}
+
+.posts-page-container .left-section {
+    flex-basis: 75%;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 5px 8px 13px -5px rgba(0,0,0,0.62);
+    height: fit-content;
+}
+
+@media(max-width: 991px) {
+    .posts-page-container .left-section {
+        padding: 10px;
+    }
+}
+
+.left-section .header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.left-section .header .search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    outline: none;
+}
+
+.left-section .header .filters {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width: 991px) {
+    .left-section .header .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.left-section .header .filters .plastic-types,
+.left-section .header .filters .posts-types {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.left-section .header .filters .plastic-types a:not(.clear-filters-btn),
+.left-section .header .filters .posts-types a:not(.clear-filters-btn) {
+    text-decoration: none;
+
+    color: #111;
+    font-weight: 500;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 4px;
+
+    border-radius: 4px;
+    border: 1px solid #4caf50;
+
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.left-section .header .filters .plastic-types a:hover:not(.clear-filters-btn),
+.left-section .header .filters .plastic-types a.selected:not(.clear-filters-btn),
+.left-section .header .filters .posts-types a:hover:not(.clear-filters-btn),
+.left-section .header .filters .posts-types a.selected:not(.clear-filters-btn) {
+    background: #4caf50;
+    color: #fff;
+}
+
+.left-section .header .filters .plastic-types a img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.filters .clear-filters-btn {
+    text-underline-offset: 2px;
+
+    color: #666;
+    font-weight: 500;    
+    font-size: 14px;
+    transition: .6s;
+}
+
+.filters .clear-filters-btn:hover {
+    color: #111;
+}
+
+.right-section {
+    flex: 1;
+    height: fit-content;
+    padding: 10px;
+    background: #fafafa;
+    box-shadow: 5px 8px 13px -5px rgba(0,0,0,0.62);
+    border-radius: 6px;
+}
+
+.right-section .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.right-section .cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.right-section .cards .card .image-container {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background: #4caf4f22;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.right-section .cards .card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.right-section .cards .card h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.right-section .cards .card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* community posts */
+.community-posts {
+    margin-top: 15px;
+}
+
+.community-posts .community-posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.community-posts .community-posts-header h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.community-posts .community-posts-header a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    text-decoration: none;
+    padding: 4px 8px;
+
+    color: #111;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 4px;
+    border: 1px solid #4caf50;
+
+    transition: 0.6s ease;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.community-posts .community-posts-header a:hover {
+    background: #4caf50;
+    color: #fff;
+}
+
+.community-posts .community-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}

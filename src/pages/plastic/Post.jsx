@@ -1,55 +1,64 @@
 import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next';
+import { displayTimeAgo } from '../../utils/formatTime'
 
-import userIcon from '../../assets/profile.png'
-import location from '../../assets/location.png'
+import bottle from '../../assets/posts/bottle.png'
+import bag from '../../assets/posts/bag.png'
+import mixed from '../../assets/posts/mixed.png'
 
-import bottle from '../../assets/bottle.png'
-import bag from '../../assets/bag.png'
-import mixed from '../../assets/mixedMaterial.png'
+import profilePic from "../../assets/profile.png"
+import locationMarker from '../../assets/location.png'
+import chat from "../../assets/posts/chat.png"
 
-import '../../styles/plastic/PostsPage.css'
+import './post.css'
 
-export default function Post({post}) {
-    const { t } = useTranslation();
-
+export default function Post({ post }) {
     return (
         <div className="post">
-            <div className="user">
-                <img src={userIcon} alt="user icon" />
-                {post.lastName} {post.firstName}
-            </div>
-            <div className="details">
-                <h3 className="title">{post.title}</h3>
-                <div className="location">
-                    <img src={location} alt="location icon" />
-                    {`${post.city}, ${post.state}`}
-                </div>
-                <p className="description">{post.description}</p>
-                <div className="quantities">
-                    <div className="icon">
-                        <img src={bottle} alt="bottle icon" />
-                        <p className="name">{t('post-bottles')}</p>
-                        <p className='quantity'>{post.bottles}</p>
-                    </div>
-                    <div className="icon">
-                        <img src={bag} alt="bag icon" />
-                        <p className="name">{t('post-bags')}</p>
-                        <p className='quantity'>{post.bags}</p>
-                    </div>
-                    <div className="icon">
-                        <img src={mixed} alt="mixed materials icon" />
-                        <p className="name">{t('post-mixed')}</p>
-                        <p className='quantity'>{post.mixed}</p>
+            <div className="post-header">
+                <div className="user">
+                    <img src={profilePic} alt="profile pic" loading='lazy' className='profile-pic'/>
+                    <div className="user-details"> 
+                        <h3 className='username'>{post.firstName} {post.lastName}</h3> 
+                        <p className='location'>
+                            <img src={locationMarker} alt="location marker" loading='lazy' className='location-marker'/>
+                            {post.city}, {post.state}
+                        </p>
+                        <p className="publish-time">{displayTimeAgo(post.createdAt.seconds)}</p>          
                     </div>
                 </div>
+                
             </div>
-            <div className="message-section">
-                <Link 
-                    to={`/profile/messages/${post.userID}`}
-                    className="details-btn"
-                > 
-                    {t('post-contact-user')}
+            <div className="post-body">
+                <h1>{post.title}</h1>
+                <p>{post.description}</p>
+                <div className="plastic-types">
+                    {
+                        post.bottles > 0 && 
+                        <div className="plastic-type">
+                            <img src={bottle} alt="bottle icon" loading='lazy'/>
+                            <p><b>{post.bottles}</b> Bottles</p>
+                        </div>
+                    }
+                    {
+                        post.bags > 0 && 
+                        <div className="plastic-type">
+                            <img src={bag} alt="bag icon" loading='lazy'/>
+                            <p><b>{post.bags}</b> Bags</p>
+                        </div>
+                    }
+                    {
+                        post.mixed > 0 && 
+                        <div className="plastic-type">
+                            <img src={mixed} alt="mixed icon" loading='lazy'/>
+                            <p><b>{post.mixed}</b> Mixed</p>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div className="post-footer">
+                <Link to={`/profile/messages/${post.userID}`}>
+                    <img src={chat} alt="chat icon" loading='lazy'/>
+                    Contact User
                 </Link>
             </div>
         </div>

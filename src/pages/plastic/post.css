@@ -1,0 +1,150 @@
+.post {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.283);
+    border-radius: 6px;
+    border: 1px solid #4caf50;
+    height: fit-content;
+}
+
+.post p {
+    font-size: 14px;
+}
+
+.post .post-header {
+    padding: 8px;
+    border-bottom: 1px solid #666;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #4caf4f39;
+}
+
+.post .user {
+    display: flex;
+    gap: 5px;
+}
+
+.post .post-header img.location-marker {
+    width: 15px;
+    height: 15px;
+}
+
+.post .post-header img.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #4caf50;
+}
+
+.post .post-header .user h3 {
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post .post-header .user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.post .post-header .user-details .username {
+    font-size: 18px;
+    font-weight: 600;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post .post-header p.location {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    color: #111;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post .post-header p.publish-time {
+    font-size: 12px;
+    color: #666;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+} 
+
+/* post body */
+.post .post-body {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post .post-body img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.post .post-body h1 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.post .post-body p {
+    font-size: 14px;
+    color: #262626;
+    line-height: 1.5;
+}
+
+.post .post-body .plastic-types {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.post .post-body .plastic-types .plastic-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* post footer */
+.post .post-footer {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.post .post-footer a {
+    text-decoration: none;
+    color: #fafafa;
+    font-size: 14px;
+    font-weight: 500;
+    background: #4caf50;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.6s ease;
+}
+
+.post .post-footer a img {
+    width: 20px;
+    height: 20px;
+}
+
+.post .post-footer a:hover {
+    background: #297d2c;
+}

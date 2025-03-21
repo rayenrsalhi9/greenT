@@ -6,9 +6,9 @@ export default function ErrorElement() {
     
     return (
         <div className="error-element">
-            <pre>{error.status} - {error.statusText}</pre>
+            <pre>{error.status || 500} - {error.statusText || 'Internal Server Error'}</pre>
             <h1>An error occurred</h1>
-            <p>{error.message}</p>
+            <p>{error.message || 'Unknown error'}</p>
             <Link to='/'>Return to home page</Link>
         </div>
     )
