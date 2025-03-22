@@ -37,6 +37,7 @@
 
 .user-posts-container .post {
     display: flex;
+    background: #fafafa;
     justify-content: space-between;
     align-items: center;
     gap: 15px;

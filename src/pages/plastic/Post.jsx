@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { displayTimeAgo } from '../../utils/formatTime'
+import { useTranslation } from 'react-i18next'
 
 import bottle from '../../assets/posts/bottle.png'
 import bag from '../../assets/posts/bag.png'
@@ -12,6 +13,7 @@ import chat from "../../assets/posts/chat.png"
 import './post.css'
 
 export default function Post({ post }) {
+    const { t } = useTranslation()
     return (
         <div className="post">
             <div className="post-header">
@@ -36,21 +38,21 @@ export default function Post({ post }) {
                         post.bottles > 0 && 
                         <div className="plastic-type">
                             <img src={bottle} alt="bottle icon" loading='lazy'/>
-                            <p><b>{post.bottles}</b> Bottles</p>
+                            <p><b>{post.bottles}</b> {t('Bottles')}</p>
                         </div>
                     }
                     {
                         post.bags > 0 && 
                         <div className="plastic-type">
                             <img src={bag} alt="bag icon" loading='lazy'/>
-                            <p><b>{post.bags}</b> Bags</p>
+                            <p><b>{post.bags}</b> {t('Bags')}</p>
                         </div>
                     }
                     {
                         post.mixed > 0 && 
                         <div className="plastic-type">
                             <img src={mixed} alt="mixed icon" loading='lazy'/>
-                            <p><b>{post.mixed}</b> Mixed</p>
+                            <p><b>{post.mixed}</b> {t("Mixed Items")}</p>
                         </div>
                     }
                 </div>
@@ -58,7 +60,7 @@ export default function Post({ post }) {
             <div className="post-footer">
                 <Link to={`/profile/messages/${post.userID}`}>
                     <img src={chat} alt="chat icon" loading='lazy'/>
-                    Contact User
+                    {t('Contact User')}
                 </Link>
             </div>
         </div>

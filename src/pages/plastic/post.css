@@ -14,13 +14,24 @@
     border-bottom: 1px solid #666;
     display: flex;
     flex-direction: column;
-    gap: 5px;
     background: #4caf4f39;
 }
 
 .post .user {
     display: flex;
     gap: 5px;
+}
+
+.container.ar .post .user-details {
+    gap: 0;
+
+    h3 {
+        margin-bottom: -6px;
+    }
+
+    p.location {
+        margin-bottom: -5px;
+    }
 }
 
 .post .post-header img.location-marker {

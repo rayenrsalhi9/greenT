@@ -51,6 +51,12 @@
     align-items: center;
 }
 
+@media(max-width: 576px) {
+    .left-section .header .filters .posts-types {
+        flex-wrap: wrap;
+    }
+}
+
 @media(max-width: 991px) {
     .left-section .header .filters {
         flex-direction: column;
