@@ -33,7 +33,7 @@
     "login-form-button": "Connexion",
     "login-form-button-submitting": "Connexion en cours...",
     "login-form-signup": "Pas encore de compte ?",
-    "login-form-link": "Créer un compte maintenant",
+    "login-form-link": "Se connecter",
     "divider-text": "Ou continuez avec",
     "google-login": "Se connecter avec Google",
 
@@ -48,7 +48,7 @@
     "signup-form-button": "Créer un compte",
     "signup-form-button-submitting": "Création du compte...",
     "signup-form-login": "Déjà un compte ?",
-    "signup-form-link": "Connectez-vous ici",
+    "signup-form-link": "Crée un compte maintenant",
 
     "profile-title": "Aperçu du profil",
     "profile-description": "Résumé de votre compte et activités récentes.",

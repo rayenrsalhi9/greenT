@@ -31,7 +31,8 @@ button {
 .container.ar input,
 .container.ar label,
 .container.ar select,
-.container.ar option {
+.container.ar option,
+.container.ar textarea {
     font-family: 'Cairo', sans-serif;
 }
 

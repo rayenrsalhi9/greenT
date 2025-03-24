@@ -49,7 +49,7 @@ export default function Chat() {
 
   useEffect(() => {
     scrollToBottom()
-  }, [])
+  })
 
   useEffect(() => {
     const fetchChatId = async () => {
@@ -85,7 +85,7 @@ export default function Chat() {
         <div className="chat-header">
           <img 
             src={userIcon} 
-            alt="John Doe" 
+            alt="User profile picture" 
             className="receiver-avatar"
           />
           <h3>
