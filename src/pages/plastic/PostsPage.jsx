@@ -61,13 +61,13 @@ export default function PostsPage() {
                         </div>
                         <div className="posts-types">
                             <NavLink to=".">
-                                {t('All posts')}
+                                {t('Collectors')}
                             </NavLink>
                             <NavLink to="./nearby">
-                                {t('Nearby')}
+                                {t('Providers')}
                             </NavLink>
                             <NavLink to="./top">
-                                {t('Top')}
+                                {t('Admin')}
                             </NavLink>
                             <Link to="." className='clear-filters-btn'>
                                 {t('Clear filters')}

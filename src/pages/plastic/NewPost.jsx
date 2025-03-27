@@ -30,19 +30,36 @@ export function loader() {
 
 export async function action({request}) {
   const formData = await request.formData()
-  const { title, state, city, description, bottles, bags, mixed } = Object.fromEntries(formData)
+  const { 
+    title, 
+    state, 
+    city, 
+    description, 
+    bottles, 
+    bags, 
+    mixed,
+    role } = Object.fromEntries(formData)
   
-  if (!title || !state || !city || !description || !bottles || !bags || !mixed) {
+  if (!title || !state || !city || !description ||  !role || (role === 'provider' && (!bottles || !bags || !mixed))) {
     return 'All fields are required'
+  } 
+
+  if (description.length > 500) {
+    return 'Description must be less than 500 characters'
+  }
+
+  if (title.length > 50) {
+    return 'Title must be less than 50 characters'
   }
 
   const postAttributes = {
     userID: auth.currentUser.uid,
     title, state, city, description, 
-    bottles: Number(bottles), 
-    bags: Number(bags), 
-    mixed: Number(mixed),
-    createdAt: serverTimestamp()
+    bottles:  bottles === '' ? 0 : Number(bottles), 
+    bags: bags === '' ? 0 : Number(bags), 
+    mixed:  mixed === '' ? 0 : Number(mixed),
+    createdAt: serverTimestamp(),
+    role
   }
 
   return sharePost(postAttributes)
@@ -53,6 +70,7 @@ export default function NewPost() {
 
   const [selectedState, setSelectedState] = useState("")
   const [, setSelectedCity] = useState("")
+  const [role, setRole] = useState("")
 
   const errorMessage = useActionData()
   const navigation = useNavigation()
@@ -65,6 +83,11 @@ export default function NewPost() {
   const handleCityChange = (e) => {
     const city = e.target.value
     setSelectedCity(city)
+  }
+
+  const handleRoleChange = (e) => {
+    const role = e.target.value
+    setRole(role)
   }
 
   return (
@@ -117,46 +140,59 @@ export default function NewPost() {
           />
         </div>
 
-        <div className="items-count-group">
-          <div className="count-item">
-            <div className="icon-container">
-              <img src={bottle} alt="bottle icon" />
-            </div>
-            <label htmlFor="bottles">{t('new-post-post-bottles')}</label>
-            <input
-              type="number"
-              id="bottles"
-              name="bottles"
-              min="0"
-            />
-          </div>
-
-          <div className="count-item">
-            <div className="icon-container">
-              <img src={bag} alt="bag icon" />
-            </div>
-            <label htmlFor="bags">{t('new-post-post-bags')}</label>
-            <input
-              type="number"
-              id="bags"
-              name="bags"
-              min="0"
-            />
-          </div>
-
-          <div className="count-item">
-            <div className="icon-container">
-              <img src={mixed} alt="mixed materials icon" />
-            </div>
-            <label htmlFor="mixed">{t('new-post-post-mixed')}</label>
-            <input
-              type="number"
-              id="mixed"
-              name="mixed"
-              min="0"
-            />
-          </div>
+        <div className="form-group">
+          <label htmlFor="role">Role</label>
+          <select name="role" id="role" onChange={handleRoleChange}>
+            <option value="" defaultChecked>Select your role</option>
+            <option value="collector">Collector</option>
+            <option value="provider">Provider</option>
+          </select>
         </div>
+
+        {
+          role === "provider" && (
+            <div className="items-count-group">
+              <div className="count-item">
+                <div className="icon-container">
+                  <img src={bottle} alt="bottle icon" />
+                </div>
+                <label htmlFor="bottles">{t('new-post-post-bottles')}</label>
+                <input
+                  type="number"
+                  id="bottles"
+                  name="bottles"
+                  min="0"
+                />
+              </div>
+
+              <div className="count-item">
+                <div className="icon-container">
+                  <img src={bag} alt="bag icon" />
+                </div>
+                <label htmlFor="bags">{t('new-post-post-bags')}</label>
+                <input
+                  type="number"
+                  id="bags"
+                  name="bags"
+                  min="0"
+                />
+              </div>
+
+              <div className="count-item">
+                <div className="icon-container">
+                  <img src={mixed} alt="mixed materials icon" />
+                </div>
+                <label htmlFor="mixed">{t('new-post-post-mixed')}</label>
+                <input
+                  type="number"
+                  id="mixed"
+                  name="mixed"
+                  min="0"
+                />
+              </div>
+            </div>
+          )
+        }
 
         {errorMessage && <h3 className='error-msg'>{errorMessage}</h3>}
 
