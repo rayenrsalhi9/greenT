@@ -5,9 +5,14 @@ import { useTranslation } from 'react-i18next'
 
 import appIcon from '../assets/page-icon.png'
 import userIcon from '../assets/user.png'
-
 import menuIcon from '../assets/menu-burger.png'
 import closeMenuOpen from '../assets/cross.png'
+
+import profile from '../assets/mobile-nav/profile.png'
+import findPost from '../assets/mobile-nav/search.png'
+import addPost from '../assets/mobile-nav/new-post.png'
+import about from '../assets/mobile-nav/about.png'
+import how from '../assets/mobile-nav/how.png'
 
 import '../styles/Navbar.css'
 
@@ -49,11 +54,26 @@ export default function Navbar() {
                 {
                     isMenuOpen &&
                     <div className="mobile-menu">
-                        <Link to="profile">{t('navbar-profile')}</Link>
-                        <Link to="posts">{t('navbar-find-plastics')}</Link>
-                        <Link to="newPost">{t('navbar-post-plastics')}</Link>
-                        <Link to="howToUse">{t('navbar-how-it-works')}</Link>
-                        <Link to="about">{t('navbar-about')}</Link>
+                        <Link to="profile">
+                            <img src={profile} alt="profile icon" loading='lazy' />
+                            {t('navbar-profile')}
+                        </Link>
+                        <Link to="posts">
+                            <img src={findPost} alt="find post icon" loading='lazy' />
+                            {t('navbar-find-plastics')}
+                        </Link>
+                        <Link to="newPost">
+                            <img src={addPost} alt="add post icon" loading='lazy' />
+                            {t('navbar-post-plastics')}
+                        </Link>
+                        <Link to="howToUse">
+                            <img src={how} alt="how to use icon" loading='lazy' />
+                            {t('navbar-how-it-works')}
+                        </Link>
+                        <Link to="about">
+                            <img src={about} alt="about icon" loading='lazy'/>
+                            {t('navbar-about')}
+                        </Link>
                     </div>
                 }
             </button>

@@ -12,41 +12,6 @@
     padding: 4rem 2rem;
 }
 
-.hero-title span {
-    position: relative;
-    display: inline-block;
-}
-
-.hero-title span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background-image: url('../../assets/star.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-
-    animation: move-in-space 15s infinite, rotate 2s infinite;
-}
-
-@keyframes move-in-space {
-    0% { top: 10%; left: 10%; }
-    20% { top: 70%; left: 30%; }
-    40% { top: 40%; left: 80%; }
-    60% { top: 90%; left: 50%; }
-    80% { top: 20%; left: 10%; }
-    100% { top: 60%; left: 70%; }
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 .home > .hero-section > .hero-content {
     max-width: 600px;
     z-index: 1;
@@ -112,7 +77,7 @@
 
 @keyframes change-border-color {
     0% { border-color: #fffcdc; }
-    50% { border-color: #4caf50; }
+    50% { border-color: #ffbe0b5d; }
     100% { border-color: #fffcdc; }
 }
 

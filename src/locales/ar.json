@@ -1,16 +1,16 @@
 {
-    "home-title": "تواصل، أعد تدوير، واصنع الفارق",
-    "home-description": "انضم إلى GreenT وكن جزءًا من مجتمعٍ ملتزمٍ بالحد من استخدام البلاستيك. تواصل مع أفرادٍ يشاركونك نفس الرؤية، وساهم في إحداث تغيير إيجابي من خلال تبادل المواد البلاستيكية.",
-    "home-button": "ابدأ الآن",
+    "home-title": " تواصل، أعد تدوير البلاستيك، و اصنع غدا أفضل !",
+  "home-description": "انضم إلى GreenT واشترك في بنية تعاونية لتقليل نفايات البلاستيك. تواصل مع أشخاص ملتزمين، واستبدل مخلفاتك البلاستيكية بمكافآت وفوائد تفعل الفرق!",
+  "home-button": "ابدأ رحلتك اليوم",
 
     "home-nav-title": "هل أنت مستعد لصنع التغيير؟",
     "home-nav-description": "انضم إلى GreenT اليوم وابدأ رحلتك نحو مستقبلٍ خالٍ من البلاستيك.",
     "home-nav-signup": "اشترك الآن",
-    "home-nav-about": "عن التطبيق",
+    "home-nav-about": "معلومات حول التطبيق",
 
-    "navbar-find-plastics": "ابحث عن بلاستيك",
-    "navbar-post-plastics": "أضف بلاستيك",
-    "navbar-how-it-works": "كيف يعمل",
+    "navbar-find-plastics": "ابحث عن البلاستيك",
+    "navbar-post-plastics": "أضف منشورا",
+    "navbar-how-it-works": "نظام عمل GreenT",
     "navbar-about": "عن GreenT",
     "navbar-profile": "حسابي",
 
@@ -22,9 +22,12 @@
     "footer-follow-us": "تابعنا على",
     "footer-copyright": "جميع الحقوق محفوظة ©",
     "footer-language": "اختر اللغة",
-    "footer-language-en": "English",
-    "footer-language-fr": "Français",
+    "footer-language-en": "الانجليزية",
+    "footer-language-fr": "الفرنسية",
     "footer-language-ar": "العربية",
+    "footer-facebook": "فيسبوك",
+    "footer-instagram": "انستقرام",
+    "footer-twitter": "تويتر",
 
     "login-form-title": "مرحبًا بعودتك!",
     "login-form-description": "سجّل الدخول للمساهمة في تقليل البلاستيك على كوكبنا.",
@@ -79,7 +82,7 @@
 
     "recent-activity-title": "النشاطات الحديثة",
     "posted-plastics-title": "منشورات البلاستيك",
-    "posted-plastics-add-plastic": "إضافة بلاستيك جديد",
+    "posted-plastics-add-plastic": "إضافة منشور جديد",
     "posted-plastics-no-posts": "لا توجد منشورات بعد، أضف أول منشور لك!",
     "posted-plastics-see-details": "عرض التفاصيل",
 
@@ -106,15 +109,15 @@
     "Collectors": "جامعي البلاستيك",
     "Admin": "أدمن",
     "collector": "ملتقط بلاستيك",
-    "provider": "مزودي بلاستيك",
+    "provider": "مزود بلاستيك",
     "admin": "الأدمين",
     "Clear filters": "مسح الفلاتر",
     "Community Posts": "منشورات المجتمع",
     "Add post": "إضافة منشور",
-    "Bottles collected in total": "إجمالي الزجاجات المجموعة",
-    "Bags collected in total": "إجمالي الأكياس المجموعة",
-    "Mixed items collected in total": "إجمالي المواد المختلطة المجموعة",
-    "Posts shared in total": "إجمالي المنشورات المشتركة",
+    "Bottles collected in total": "إجمالي الزجاجات المنشورة",
+    "Bags collected in total": "إجمالي الأكياس المنشورة",
+    "Mixed items collected in total": "إجمالي المواد المختلطة المنشورة",
+    "Posts shared in total": "إجمالي المنشورات",
     "Contact User": "تواصل مع المستخدم",
 
     "new-post-title": "إضافة منشور جديد",
@@ -132,6 +135,10 @@
     "new-post-post-bags-placeholder": "عدد الأكياس",
     "new-post-post-mixed": "مواد مختلطة",
     "new-post-post-mixed-placeholder": "عدد المواد المختلطة",
+    "new-post-role": "دورك (مزود بلاستيك او ملتقط بلاستيك)",
+    "new-post-select-your-role": "اختر دورك",
+    "new-post-provider": "مزود بلاستيك",
+    "new-post-collector": "ملتقط بلاستيك",
     "new-post-post-button": "نشر",
     "new-post-post-button-submitting": "جاري النشر...",
     "required-fields": "جميع الحقول مطلوبة",
@@ -212,7 +219,7 @@
     "cities": {
         "Tunis": {
             "La Marsa": "المرسى",
-            "Le Bardo": "الباردو",
+            "Le Bardo": "باردو",
             "Carthage": "قرطاج",
             "El Menzah": "المنزه",
             "Centre Ville": "وسط المدينة",
@@ -223,11 +230,11 @@
         },
         "Ariana": {
             "Ariana": "أريانة",
-            "La Soukra": "السكرة",
+            "La Soukra": "سكرة",
             "Raoued": "رواد",
             "Kalaat El Andalous": "قلعة الأندلس",
             "Borj El Baccouche": "برج البكوش",
-            "Mnihla": "منيهلة",
+            "Mnihla": "المنيهلة",
             "Cité Ghazela": "حي الغزالة"
         },
         "BenArous": {
@@ -235,23 +242,23 @@
             "Hammam Lif": "حمام الأنف",
             "Rades": "رادس",
             "Mornag": "مرناق",
-            "Bou Mhel": "بوحجر",
+            "Bou Mhel": "بومهل",
             "Hammam Chott": "حمام الشط",
             "Mohamedia": "المحمدية"
         },
         "Manouba": {
             "Manouba": "منوبة",
-            "Djedeida": "جديدة",
+            "Djedeida": "الجديدة",
             "Oued Ellil": "وادي الليل",
             "Tebourba": "طبربة",
             "Borj El Amri": "برج العامري",
-            "Mornaguia": "مرناقية"
+            "Mornaguia": "المرناقية"
         },
         "Nabeul": {
             "Nabeul": "نابل",
-            "Hammamet": "حمامات",
+            "Hammamet": "الحمامات",
             "Kelibia": "قليبية",
-            "Korba": "قربص",
+            "Korba": "قربة",
             "Menzel Temime": "منزل تميم",
             "Takelsa": "تكلصة",
             "Soliman": "سليمان",
@@ -271,7 +278,7 @@
             "Medjez El Bab": "مجاز الباب",
             "Testour": "تستور",
             "Nefza": "نفزة",
-            "Teboursouk": "طبروق",
+            "Teboursouk": "تبرصق",
             "Goubellat": "قبلاط"
         },
         "Jendouba": {
@@ -296,7 +303,7 @@
             "Makthar": "مكثر",
             "Bargou": "برقو",
             "Bou Arada": "بوعرادة",
-            "Gaafour": "قفصة",
+            "Gaafour": "قعفور",
             "Kesra": "كسرى",
             "Rouhia": "الروحية"
         },
@@ -306,7 +313,7 @@
             "Haffouz": "حفوز",
             "Nasrallah": "نصر الله",
             "Oueslatia": "الوسلاتية",
-            "Sbikha": "سبيخة",
+            "Sbikha": "السبيخة",
             "Hajeb El Ayoun": "حاجب العيون"
         },
         "Kasserine": {
@@ -316,12 +323,12 @@
             "Thala": "تالة",
             "Feriana": "فريانة",
             "Hidra": "حيدرة",
-            "Majel Bel Abbès": "مجيل الباب"
+            "Majel Bel Abbès": "ماجل بالعباس"
         },
         "SidiBouzid": {
             "Sidi Bouzid": "سيدي بوزيد",
             "Regueb": "الرقاب",
-            "Meknassy": "مكناسة",
+            "Meknassy": "المكناسي",
             "Jilma": "جلمة",
             "Sidi Ali Ben Aoun": "سيدي علي بن عون",
             "Menzel Bouzaiane": "منزل بوزيان",
@@ -331,18 +338,18 @@
             "Sousse": "سوسة",
             "Hammam Sousse": "حمام سوسة",
             "Msaken": "مساكن",
-            "Kalâa Kebira": "قلعة الكبيرة",
-            "Kalâa Seghira": "قلعة الصغيرة",
-            "Akouda": "عقودة",
+            "Kalâa Kebira": "القلعة الكبيرة",
+            "Kalâa Seghira": "القلعة الصغيرة",
+            "Akouda": "أكودة",
             "Enfidha": "النفيضة"
         },
         "Monastir": {
             "Monastir": "المنستير",
             "Sahline": "الساحلين",
-            "Ksibet El Mediouni": "قصر المعمورة",
+            "Ksibet El Mediouni": "قصيبة المديوني",
             "Jemmal": "جمال",
             "Beni Hassen": "بني حسان",
-            "Bekalta": "بقالطة",
+            "Bekalta": "البقالطة",
             "Teboulba": "طبلبة"
         },
         "Mahdia": {
@@ -351,13 +358,13 @@
             "El Jem": "الجم",
             "Melloulèche": "ملولش",
             "Rejiche": "الرجيش",
-            "Ksour Essef": "قصور السيف",
+            "Ksour Essef": "قصور الساف",
             "Bou Merdes": "بومرداس"
         },
         "Sfax": {
             "Sfax": "صفاقس",
             "Agareb": "عقارب",
-            "Kerkennah": "كركينة",
+            "Kerkennah": "قرقنة",
             "El Hencha": "الحنشة",
             "Bir Ali Ben Khalifa": "بئر علي بن خليفة",
             "Mahrès": "المحرس",
@@ -450,5 +457,10 @@
     "refer-friend": "أحِل صديقًا",
     "social-media-share": "شارك على وسائل التواصل",
     "profile-complete": "أكمل ملفك الشخصي",
-    "pts": "نقاط"
+    "pts": "نقاط",
+
+    "Just now": "الان",
+    "minutes ago": "دقيقة سابقا",
+    "hours ago": "ساعة سابقا",
+    "days ago": "أيام سابقا"
 }

@@ -23,9 +23,9 @@ export default function Post({ post }) {
                         <h3 className='username'>{post.firstName} {post.lastName}</h3> 
                         <p className='location'>
                             <img src={locationMarker} alt="location marker" loading='lazy' className='location-marker'/>
-                            {post.city}, {post.state}
+                            {t(`cities.${post.state}.${post.city}`)}, {t(`states.${post.state}`)}
                         </p>
-                        <p className="publish-time">{displayTimeAgo(post.createdAt.seconds)}</p>          
+                        <p className="publish-time">{displayTimeAgo(post.createdAt.seconds, t)}</p>          
                     </div>
                 </div>
                 <span className={`role ${post.role === 'collector' ? 'collector' : post.role === 'provider' ? 'provider' : 'admin'}`}>{t(post.role)}</span>

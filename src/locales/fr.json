@@ -25,6 +25,9 @@
     "footer-language-en": "Anglais",
     "footer-language-fr": "Français",
     "footer-language-ar": "Arabe",
+    "footer-facebook": "Facebook",
+    "footer-instagram": "Instagram",
+    "footer-twitter": "Twitter",
 
     "login-form-title": "Bonjour à nouveau !",
     "login-form-description": "Connectez-vous pour continuer à nettoyer notre planète.",
@@ -129,6 +132,10 @@
     "new-post-post-bottles": "Bouteilles",
     "new-post-post-bags": "Sacs",
     "new-post-post-mixed": "Matériaux mixtes",
+    "new-post-role": "Rôle (fournisseur ou collecteur)",
+    "new-post-select-your-role": "Sélectionnez votre rôle",
+    "new-post-provider": "Fournisseur",
+    "new-post-collector": "Collecteur",
     "new-post-post-button": "Publier la publication",
     "new-post-post-button-submitting": "Publication en cours...",
     "required-fields": "Tous les champs sont requis",
@@ -446,5 +453,10 @@
   "refer-friend": "Parrainez un ami sur la plateforme",
   "social-media-share": "Partagez la plateforme sur les réseaux sociaux",
   "profile-complete": "Complétez votre profil (ajoutez votre localisation et votre numéro de téléphone)",
-  "pts": "pts"
+  "pts": "pts",
+
+  "Just now": "Juste maintenant",
+  "minutes ago": "minutes avant",
+  "hours ago": "heures avant",
+  "days ago": "jours avant"
 }

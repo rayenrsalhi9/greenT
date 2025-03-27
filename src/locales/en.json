@@ -25,6 +25,9 @@
     "footer-language-en": "English",
     "footer-language-fr": "French",
     "footer-language-ar": "Arabic",
+    "footer-facebook": "Facebook",
+    "footer-instagram": "Instagram",
+    "footer-twitter": "Twitter",
 
     "login-form-title": "Hi again!",
     "login-form-description": "Login to continue cleaning our planet.",
@@ -129,6 +132,10 @@
     "new-post-post-bottles": "Bottles",
     "new-post-post-bags": "Bags",
     "new-post-post-mixed": "Mixed items",
+    "new-post-role": "Role (collector or provider)",
+    "new-post-select-your-role": "Select your role",
+    "new-post-collector": "Collector",
+    "new-post-provider": "Provider",
     "new-post-post-button": "Publish post",
     "new-post-post-button-submitting": "Publishing...",
     "required-fields": "All fields are required",
@@ -446,6 +453,11 @@
   "refer-friend": "Refer a friend to the platform",
   "social-media-share": "Share the platform on social media",
   "profile-complete": "Complete your profile (add location & phone number)",
-  "pts": "pts"
+  "pts": "pts",
+
+  "Just now": "Just now",
+  "minutes ago": "Minutes ago",
+  "hours ago": "Hours ago",
+  "days ago": "Days ago"
     
 }

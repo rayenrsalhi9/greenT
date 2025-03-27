@@ -141,11 +141,11 @@ export default function NewPost() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="role">Role</label>
+          <label htmlFor="role">{t('new-post-role')}</label>
           <select name="role" id="role" onChange={handleRoleChange}>
-            <option value="" defaultChecked>Select your role</option>
-            <option value="collector">Collector</option>
-            <option value="provider">Provider</option>
+            <option value="" defaultChecked>{t('new-post-select-your-role')}</option>
+            <option value="collector">{t('new-post-collector')}</option>
+            <option value="provider">{t('new-post-provider')}</option>
           </select>
         </div>
 

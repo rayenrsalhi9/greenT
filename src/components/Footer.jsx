@@ -64,15 +64,15 @@ export default function Footer() {
                         <div className="social-section">
                             <Link to="/">
                                 <img src={facebookImg} alt="Facebook" />
-                                Facebook
+                                {i18n.t('footer-facebook')}
                             </Link>
                             <Link to="/">
                                 <img src={twitterImg} alt="Twitter" />
-                                Twitter
+                                {i18n.t('footer-twitter')}
                             </Link>
                             <Link to="/">
                                 <img src={instagramImg} alt="Instagram" />
-                                Instagram
+                                {i18n.t('footer-instagram')}
                             </Link>
                         </div>
                     </div>
