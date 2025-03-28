@@ -27,95 +27,56 @@
     }
 }
 
-.left-section .header {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 14px;
-}
-
-.left-section .header .search-bar {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #4caf50;
-    border-radius: 4px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    outline: none;
-}
-
-.left-section .header .filters {
-    width: 100%;
+.community-posts .posts-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 @media(max-width: 576px) {
-    .left-section .header .filters .posts-types {
-        flex-wrap: wrap;
-    }
-}
-
-@media(max-width: 991px) {
-    .left-section .header .filters {
+    .community-posts .posts-header {
         flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
     }
 }
 
-.left-section .header .filters .plastic-types,
-.left-section .header .filters .posts-types {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.community-posts .posts-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
 }
 
-.left-section .header .filters .plastic-types a:not(.clear-filters-btn),
-.left-section .header .filters .posts-types a:not(.clear-filters-btn) {
+.community-posts .add-post-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    padding: 10px 16px;
+
+    background-color: #16a34a;
+    color: white;
     text-decoration: none;
 
-    color: #111;
+    border: none;
+    border-radius: 4px;
+
     font-weight: 500;
     font-size: 14px;
 
-    display: flex;
-    align-items: center;
-
-    padding: 4px;
-
-    border-radius: 4px;
-    border: 1px solid #4caf50;
-
     cursor: pointer;
-    transition: 0.5s;
+    transition: background-color 0.6s ease;
 }
 
-.left-section .header .filters .plastic-types a:hover:not(.clear-filters-btn),
-.left-section .header .filters .plastic-types a.selected:not(.clear-filters-btn),
-.left-section .header .filters .posts-types a:hover:not(.clear-filters-btn),
-.left-section .header .filters .posts-types a.selected:not(.clear-filters-btn) {
-    background: #4caf50;
-    color: #fff;
+.community-posts .add-post-button:hover {
+    background-color: #15803d;
 }
 
-.left-section .header .filters .plastic-types a img {
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
-}
-
-.filters .clear-filters-btn {
-    text-underline-offset: 2px;
-
-    color: #666;
-    font-weight: 500;    
-    font-size: 14px;
-    transition: .6s;
-}
-
-.filters .clear-filters-btn:hover {
-    color: #111;
+.community-posts .add-icon {
+    width: 16px;
+    height: 16px;
 }
 
 .right-section {

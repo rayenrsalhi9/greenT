@@ -1,0 +1,119 @@
+/* Search and filters */
+.search-section {
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+  }
+  
+  .search-input {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.6s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #16a34a;
+  }
+  
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    width: fit-content;
+  }
+  
+  .filter-button:hover {
+    background-color: #f9fafb;
+  }
+  
+  .filter-button.active {
+    background-color: rgba(22, 163, 74, 0.1);
+    border-color: #16a34a;
+    color: #16a34a;
+  }
+  
+  .filter-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .role-filter {
+    font-weight: 500;
+  }
+  
+  .active-provider {
+    background-color: rgba(22, 163, 74, 0.1);
+    border-color: #16a34a;
+    color: #16a34a;
+  }
+  
+  .active-collector {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    color: #f59e0b;
+  }
+  
+  .active-admin {
+    border-color: #d90429;
+    color: #d90429;
+    background: #fee2e2;
+  }
+  
+  .clear-button {
+    color: #6b7280;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .filters-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .filter-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .filter-button {
+        width: 100%;
+    }
+  }  
