@@ -55,7 +55,6 @@ export default function Navbar() {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
         setUserMenuOpen(false)
       }
-      setActiveDropdown(null)
     }
 
     document.addEventListener("mousedown", handleClickOutside)
@@ -116,7 +115,7 @@ export default function Navbar() {
                       </Link>
                     </li>
                     <li>
-                      <a href="/trending" className="navbar-dropdown-link">
+                      <a href="posts" className="navbar-dropdown-link">
                         <div className="navbar-dropdown-title">Trending</div>
                         <p className="navbar-dropdown-description">Most sought-after plastic materials right now</p>
                       </a>

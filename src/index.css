@@ -37,7 +37,7 @@ button {
 }
 
 body {
-    background: #4caf50;
+    background: linear-gradient(to right, #15803d, #22c55e);
     font-family: 'Inter', sans-serif;
 }
 

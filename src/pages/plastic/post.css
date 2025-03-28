@@ -46,7 +46,7 @@
 }
 
 .avatar.provider {
-    border: 1px solid #16a34a;
+    border: 1px solid #15803d;
 }
 
 .avatar.collector {
@@ -87,7 +87,7 @@
 }
 
 .provider-badge {
-    background-color: #16a34a;
+    background-color: #15803d;
 }
 
 .collector-badge {
@@ -171,14 +171,14 @@
 .stat-icon {
     width: 2.5rem;
     height: 2.5rem;
-    color: rgba(16, 185, 129, 0.8);
+    color: #15803d;
     margin-bottom: 0.25rem;
 }
 
 .bottle-icon {
     width: 2.5rem;
     height: 2.5rem;
-    color: rgba(16, 185, 129, 0.8);
+    color: #15803d;
 }
 
 .stat-value {
@@ -233,7 +233,7 @@
 }
 
 .section-title.provider-title {
-    color: #16a34a;
+    color: #15803d;
 }
 
 .section-title.collector-title {
@@ -300,11 +300,11 @@
 }
 
 .provider-button {
-    background-color: #16a34a;
+    background-color: #15803d;
 }
 
 .provider-button:hover:not(:disabled) {
-    background-color: #15803d;
+    background-color: #0c672d;
 }
 
 .collector-button {

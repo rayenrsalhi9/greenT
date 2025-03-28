@@ -1,6 +1,6 @@
 .about {
     padding: 50px 20px;
-    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    background: linear-gradient(135deg, #15803d 0%, #45a049 100%);
 }
 
 .about .header {
@@ -93,7 +93,7 @@
 
     font-size: 16px;
     font-weight: 700;
-    color: #4caf50;
+    color: #15803d;
 
     display: flex;
     align-items: center;

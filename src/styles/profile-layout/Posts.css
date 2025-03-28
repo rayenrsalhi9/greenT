@@ -19,7 +19,7 @@
 .user-posts-container .new-post-link a {
     text-decoration: none;
     color: #fafafa;
-    background-color: #4caf50;
+    background-color: #15803d;
     font-weight: 500;
     font-size: 14px;
     
@@ -63,7 +63,7 @@
 .user-posts-container .post-details h2 {
     font-size: 22px;
     font-weight: 600;
-    color: #4caf50;
+    color: #15803d;
 }
 
 .user-posts-container .post-details p:not(.time) {
@@ -102,7 +102,7 @@
 }
 
 .user-posts-container .post-details-btn {
-    background-color: #4caf50;
+    background-color: #15803d;
     color: #fafafa;
 }
 

@@ -30,7 +30,7 @@
   }
   
   .search-input:focus {
-    border-color: #16a34a;
+    border-color: #15803d;
   }
   
   .filters-container {
@@ -66,8 +66,8 @@
   
   .filter-button.active {
     background-color: rgba(22, 163, 74, 0.1);
-    border-color: #16a34a;
-    color: #16a34a;
+    border-color: #15803d;
+    color: #15803d;
   }
   
   .filter-icon {
@@ -81,8 +81,8 @@
   
   .active-provider {
     background-color: rgba(22, 163, 74, 0.1);
-    border-color: #16a34a;
-    color: #16a34a;
+    border-color: #15803d;
+    color: #15803d;
   }
   
   .active-collector {

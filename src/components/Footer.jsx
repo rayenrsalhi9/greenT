@@ -4,13 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import logo from '../assets/page-icon.png'
 
-import homeImg from '../assets/homepage.png'
-import aboutImg from '../assets/about.png'
-import contactImg from '../assets/admin.png'
-
-import facebookImg from '../assets/facebook.png'
-import twitterImg from '../assets/twitter.png'
-import instagramImg from '../assets/instagram.png'
+import {Facebook, Twitter, Instagram, House, Info, ShieldUser} from "lucide-react"
 
 import './footer.css'
 
@@ -46,15 +40,18 @@ export default function Footer() {
                         <h3>{i18n.t('footer-links')}</h3>
                         <div className="links-section">
                             <Link to="/">
-                                <img src={homeImg} alt="Home" />
+                                <House size={24} 
+                                className='house-icon'/>
                                 {i18n.t('footer-links-home')}
                             </Link>
                             <Link to="/about">
-                                <img src={aboutImg} alt="About" />
+                                <Info size={24} 
+                                className='info-icon'/>
                                 {i18n.t('footer-links-about')}
                             </Link>
                             <Link to="/contact">
-                                <img src={contactImg} alt="Contact" />
+                                <ShieldUser size={24} 
+                                className='shield-icon'/>
                                 {i18n.t('footer-links-contact')}
                             </Link>
                         </div>
@@ -63,15 +60,16 @@ export default function Footer() {
                         <h3>{i18n.t('footer-follow-us')}</h3>
                         <div className="social-section">
                             <Link to="/">
-                                <img src={facebookImg} alt="Facebook" />
+                                <Facebook size={24} className='facebook-icon'/>
                                 {i18n.t('footer-facebook')}
                             </Link>
                             <Link to="/">
-                                <img src={twitterImg} alt="Twitter" />
+                                <Twitter size={24} className='twitter-icon' />
                                 {i18n.t('footer-twitter')}
                             </Link>
                             <Link to="/">
-                                <img src={instagramImg} alt="Instagram" />
+                                <Instagram size={24} 
+                                className='instagram-icon'/>
                                 {i18n.t('footer-instagram')}
                             </Link>
                         </div>

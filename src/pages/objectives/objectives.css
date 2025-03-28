@@ -153,7 +153,7 @@
 }
 
 .objectives-content .progress-bar.done {
-  background: #4caf50;
+  background: #15803d;
 }
 
 .objectives-content .progress-bar .progress-bar-progress {
@@ -183,7 +183,7 @@
 }
 
 .objectives-content-item-progress-bar.filled {
-  background: #4caf50;
+  background: #15803d;
 }
 
 .objectives-content .rewarded-points {
@@ -201,7 +201,7 @@
 }
 
 .objectives-content .rewarded-points.done {
-  background: #4caf50;
+  background: #15803d;
   color: #fff;
 }
 
@@ -223,4 +223,3 @@
 .objectives-content .objective-description.done {
   color: #666;
 }
-
