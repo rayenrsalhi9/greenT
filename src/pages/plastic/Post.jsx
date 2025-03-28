@@ -104,9 +104,6 @@ export default function Post({ post }) {
                             </h3>
 
                             <div className="contact-info">
-                                <div className="contact-name">
-                                    {post.user.firstName} {post.user.lastName}
-                                </div>
                                 <div className="contact-detail">
                                     <MapPin className="icon-small" />
                                     <span>{post.user.city || "-"}</span>
