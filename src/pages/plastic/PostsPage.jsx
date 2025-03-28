@@ -23,7 +23,7 @@ export async function loader() {
             if (!user) {
                 resolve(redirect('/login?message=You have to log in to proceed'));
             } else {
-                resolve(defer({ posts: displayPosts(user.uid), stats: showTotalItemsShared() }));
+                resolve(defer({ posts: displayPosts(), stats: showTotalItemsShared() }));
             }
             unsubscribe();
         })

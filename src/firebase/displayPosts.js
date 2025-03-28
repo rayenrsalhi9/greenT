@@ -15,16 +15,14 @@ export async function displayPosts() {
         const postsSnapshot = await getDocs(postsRef)
 
         const posts = await Promise.all(postsSnapshot.docs.map(async postDoc => {
-            const userRef = collection(db, 'users')
-            const userSnapshot = await getDocs(userRef)
-            const user = userSnapshot.docs.find(doc => doc.id === postDoc.data().userID)
-            const userData = user.data()
+            const userRef = doc(db, 'users', postDoc.data().userID)
+            const userSnapshot = await getDoc(userRef)
+            const userData = {...userSnapshot.data(), id: userSnapshot.id}
 
             return {
                 id: postDoc.id,
                 ...postDoc.data(),
-                firstName: userData.firstName,
-                lastName: userData.lastName
+                user: userData
             }
         }))
 
