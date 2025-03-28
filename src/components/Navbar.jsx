@@ -29,7 +29,6 @@ export default function Navbar() {
 
   const [profile, setProfile] = useState(null)
 
-  const [scrolled, setScrolled] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -50,27 +49,13 @@ export default function Navbar() {
     fetchProfile()
   }, [])
 
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [scrolled])
-
   // Handle clicks outside dropdowns
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
         setUserMenuOpen(false)
       }
+      setActiveDropdown(null)
     }
 
     document.addEventListener("mousedown", handleClickOutside)
@@ -85,7 +70,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`navbar-header ${scrolled ? "navbar-scrolled" : ""}`}>
+    <header className="navbar-header">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
           <div className="navbar-logo-icon">
