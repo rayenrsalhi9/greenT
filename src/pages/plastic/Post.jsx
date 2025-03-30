@@ -29,13 +29,13 @@ export default function Post({ post }) {
                         <div className="user-name-role">
                             <h3 className="user-name">{post.user.firstName} {post.user.lastName}</h3>
                             <span className={`role-badge ${post.role === "provider" ? "provider-badge" : post.role === "collector" ? "collector-badge" : "admin-badge"}`}>
-                                {post.role}
+                                {t(post.role)}
                             </span>
                         </div>
 
                         <div className="location">
                             <MapPin className="icon-small" />
-                            <span>{post.city}, {post.state}</span>
+                            <span>{t(`cities.${post.state}.${post.city}`)}, {t(`states.${post.state}`)}</span>
                         </div>
 
                         <div className="posted-time">{displayTimeAgo(post.createdAt.seconds, t)}</div>
@@ -64,7 +64,7 @@ export default function Post({ post }) {
                                 </div>
                                 <div className="stat-value">
                                     <span className="stat-number">{post.bottles}</span>
-                                    <span className="stat-label">Bottles</span>
+                                    <span className="stat-label">{t('bottles')}</span>
                                 </div>
                             </div>
                         )}
@@ -74,7 +74,7 @@ export default function Post({ post }) {
                                 <ShoppingBag className="stat-icon" />
                                 <div className="stat-value">
                                     <span className="stat-number">{post.bags}</span>
-                                    <span className="stat-label">Bags</span>
+                                    <span className="stat-label">{t('bags')}</span>
                                 </div>
                             </div>
                         )}
@@ -84,7 +84,7 @@ export default function Post({ post }) {
                                 <Recycle className="stat-icon" />
                                 <div className="stat-value">
                                     <span className="stat-number">{post.mixed}</span>
-                                    <span className="stat-label">Mixed</span>
+                                    <span className="stat-label">{t('mixed_items')}</span>
                                 </div>
                             </div>
                         )}
@@ -100,13 +100,13 @@ export default function Post({ post }) {
                         <div className="contact-section">
                             <h3 className={`section-title ${post.role === "provider" ? "provider-title" : post.role === "collector" ? "collector-title" : "admin-title"}`}>
                                 <User className="icon-small" />
-                                Contact Information
+                                {t('contact_informations')}
                             </h3>
 
                             <div className="contact-info">
                                 <div className="contact-detail">
                                     <MapPin className="icon-small" />
-                                    <span>{post.user.city || "-"}</span>
+                                    <span>{t(`cities.${post.state}.${post.city}`)}, {t(`states.${post.state}`) || "-"}</span>
                                 </div>
                                 <div className="contact-detail">
                                     <Phone className="icon-small" />
@@ -122,7 +122,7 @@ export default function Post({ post }) {
                 <button className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}>
                     <>
                         <MessageSquare className="icon-small" />
-                        Contact User
+                        {t('contact_user')}
                     </>
                 </button>
             </div>

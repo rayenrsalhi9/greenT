@@ -36,7 +36,7 @@
     "login-form-button": "تسجيل الدخول",
     "login-form-button-submitting": "جاري التسجيل...",
     "login-form-signup": "ليس لديك حساب؟",
-    "login-form-link": "سجّل الآن",
+    "signup-form-link": "انشاء حساب",
     "divider-text": "أو تابع باستخدام",
     "google-login": "تسجيل الدخول عبر Google",
 
@@ -51,7 +51,7 @@
     "signup-form-button": "إنشاء حساب",
     "signup-form-button-submitting": "جاري الإنشاء...",
     "signup-form-login": "لديك حساب بالفعل؟",
-    "signup-form-link": "سجّل الدخول",
+    "login-form-link": "سجّل الدخول",
 
     "profile-title": "ملخص الحساب",
     "profile-description": "نظرة عامة على حسابك وأنشطتك الحديثة.",
@@ -462,5 +462,21 @@
     "Just now": "الان",
     "minutes ago": "دقيقة سابقا",
     "hours ago": "ساعة سابقا",
-    "days ago": "أيام سابقا"
+    "days ago": "أيام سابقا",
+
+    "search_placeholder": "ابحث عن المنشورات أو المستخدمين أو أنواع البلاستيك...",
+    "bottles": "زجاجات",
+    "bags": "أكياس",
+    "mixed_items": "عناصر مختلطة",
+    "collectors": "ملتقطو البلاستيك",
+    "providers": "مزودو البلاستيك",
+    "clear_filters": "مسح الفلاتر",
+    "add-post": "اضافة منشور جديد",
+
+    "total_bottles": "قارورة منشورة في المجمل",
+    "total_bags": "كيس منشور في المجمل",
+    "total_mixed_items": "عناصر مختلطة منشورة في الكل",
+    "total_posts": " منشورات في الكل",
+    "contact_user": "اتصل بالمستخدم",
+    "contact_informations": "معلومات عن المستخدم"
 }

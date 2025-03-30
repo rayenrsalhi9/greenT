@@ -31,6 +31,7 @@ async function saveUserToFirebase(user) {
                 lastName: user.displayName ? user.displayName.split(' ')[1] : '',
                 email: user.email,
                 city: '',
+                state: '',
                 phone: '',
                 createdAt: serverTimestamp(),
                 points: 0,

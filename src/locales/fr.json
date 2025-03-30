@@ -458,5 +458,21 @@
   "Just now": "Juste maintenant",
   "minutes ago": "minutes avant",
   "hours ago": "heures avant",
-  "days ago": "jours avant"
+  "days ago": "jours avant",
+
+  "search_placeholder": "Rechercher des publications, utilisateurs ou types de plastique...",
+  "bottles": "Bouteilles",
+  "bags": "Sacs",
+  "mixed_items": "Articles mélangés",
+  "collectors": "Collecteurs",
+  "providers": "Fournisseurs",
+  "clear_filters": "Effacer les filtres",
+  "add-post": "Nouvelle publication",
+
+  "total_bottles": "Bouteilles publiées au total",
+  "total_bags": "Sacs publiés au total",
+  "total_mixed_items": "Articles mélangés publiés au total",
+  "total_posts": "Publications partagées au total",
+  "contact_user": "Contacter l'utilisateur",
+  "contact_informations": "Informations de contact"
 }

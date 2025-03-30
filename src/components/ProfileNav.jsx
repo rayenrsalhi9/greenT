@@ -3,15 +3,16 @@ import { signout } from "../firebase/signOut"
 
 import { useTranslation } from 'react-i18next'
 
-import userIcon from '../assets/profile.png'
-
-import overviewIcon from '../assets/overview.png'
-import postIcon from '../assets/posts.png'
-import pointsIcon from '../assets/change.png'
-import settingsIcon from '../assets/settings.png'
-import logoutIcon from '../assets/logout.png'
-import messagesIcon from '../assets/message.png'
-import objectivesIcon from '../assets/points/target.png'
+import {
+  User,
+  ScanSearch,
+  Repeat2,
+  Settings,
+  Send,
+  Coins,
+  Target,
+  LogOut
+} from "lucide-react"
 
 import '../styles/ProfileNav.css'
 
@@ -28,7 +29,9 @@ export default function ProfileNav({profile}) {
 
       <div className="profile-info">
 
-        <img src={userIcon} alt="profile image" className="profile-pic" />
+        <div className="user-avatar">
+          <User className="user-icon" size={40}/>
+        </div>
 
         <div className="profile-info-details">
           <h3> {profile.lastName} {profile.firstName} </h3>
@@ -40,37 +43,37 @@ export default function ProfileNav({profile}) {
 
       <div className="navigation-links">
         <NavLink to="/profile" end>
-          <img src={overviewIcon} alt="overview icon" loading="lazy" />
+          <ScanSearch />
           {t('profile-links-overview')}
         </NavLink>
         <NavLink to="posts">
-          <img src={postIcon} alt="post icon" loading="lazy" />
+          <Repeat2 />
           {t('profile-links-plastics')}
         </NavLink>
         <NavLink to="messages">
-          <img src={messagesIcon} alt="messages icon" />
+          <Send />
           {t('profile-links-messages')}
         </NavLink>
         {
           profile.badge !== "Plateform Admin" &&
           <NavLink to="points">
-            <img src={pointsIcon} alt="points icon" />
+            <Coins />
             {t('profile-links-points')}
           </NavLink>
         }
         {
           profile.badge !== "Plateform Admin" &&
           <NavLink to="objectives">
-            <img src={objectivesIcon} alt="objectives icon" />
+            <Target />
             {t('profile-links-objectives')}
           </NavLink>
         }
         <NavLink to="settings">
-          <img src={settingsIcon} alt="settings icon" />
+          <Settings />
           {t('profile-links-settings')}
         </NavLink>
         <button className="logout" onClick={handleLogout}>
-          <img src={logoutIcon} alt="logout icon" />
+          <LogOut />
           {t('profile-links-logout')}
         </button>
       </div>

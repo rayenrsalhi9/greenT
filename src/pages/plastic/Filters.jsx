@@ -1,7 +1,9 @@
 import { Search, ShoppingBag, Recycle, Milk } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import "./filters.css"
 
-export default function PostsFilters({ activeFilters, toggleFilter, clearFilters, searchQuery, setSearchQuery }) {
+export default function Filters({ activeFilters, toggleFilter, clearFilters, searchQuery, setSearchQuery }) {
+  const { t } = useTranslation()
   return (
     <div className="search-section">
       <div className="search-container">
@@ -9,7 +11,7 @@ export default function PostsFilters({ activeFilters, toggleFilter, clearFilters
         <input
           type="text"
           className="search-input"
-          placeholder="Search posts, users or plastic types..."
+          placeholder={t('search_placeholder')}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
@@ -22,21 +24,21 @@ export default function PostsFilters({ activeFilters, toggleFilter, clearFilters
             
           >
             <Milk className="filter-icon" />
-            Bottles
+            {t('bottles')}
           </button>
           <button
             className={`filter-button ${activeFilters.includes("bags") ? "active" : ""}`}
             
           >
             <ShoppingBag className="filter-icon" />
-            Bags
+            {t('bags')}
           </button>
           <button
             className={`filter-button ${activeFilters.includes("mixed") ? "active" : ""}`}
             
           >
             <Recycle className="filter-icon" />
-            Mixed Items
+            {t('mixed_items')}
           </button>
         </div>
 
@@ -45,22 +47,22 @@ export default function PostsFilters({ activeFilters, toggleFilter, clearFilters
             className={`filter-button role-filter ${activeFilters.includes("collector") ? "active-collector" : ""}`}
             onClick={() => toggleFilter("collector")}
           >
-            Collectors
+            {t('collectors')}
           </button>
           <button
             className={`filter-button role-filter ${activeFilters.includes("provider") ? "active-provider" : ""}`}
             onClick={() => toggleFilter("provider")}
           >
-            Providers
+            {t('providers')}
           </button>
           <button
             className={`filter-button role-filter ${activeFilters.includes("admin") ? "active-admin" : ""}`}
             onClick={() => toggleFilter("admin")}
           >
-            Admin
+            {t("admin")}
           </button>
           <button className="filter-button clear-button" onClick={clearFilters}>
-            Clear filters
+            {t("clear_filters")}
           </button>
         </div>
       </div>

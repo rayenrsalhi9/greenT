@@ -61,10 +61,10 @@ export default function PostsPage() {
                 />
                 <div className="community-posts">
                     <div className="posts-header">
-                        <h2 className="posts-title">Community Posts</h2>
+                        <h2 className="posts-title">{t('Community Posts')}</h2>
                         <Link to = "/newPost" className="add-post-button">
                             <Plus className="add-icon" />
-                            <p>Add post</p>
+                            <p>{t('add-post')}</p>
                         </Link>
                     </div>
                     <Suspense fallback={<Loading />}>

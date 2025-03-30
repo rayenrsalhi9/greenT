@@ -458,6 +458,22 @@
   "Just now": "Just now",
   "minutes ago": "Minutes ago",
   "hours ago": "Hours ago",
-  "days ago": "Days ago"
+  "days ago": "Days ago",
+
+  "search_placeholder": "Search posts, users or plastic types...",
+  "bottles": "Bottles",
+  "bags": "Bags",
+  "mixed_items": "Mixed Items",
+  "collectors": "Collectors",
+  "providers": "Providers",
+  "clear_filters": "Clear filters",
+  "add-post": "Add a new post",
+
+  "total_bottles": "Bottles posted in total",
+  "total_bags": "Bags posted in total",
+  "total_mixed_items": "Mixed items posted in total",
+  "total_posts": "Posts in total",
+  "contact_user": "Contact User",
+  "contact_informations": "Contact Informations"
     
 }

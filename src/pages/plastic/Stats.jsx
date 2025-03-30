@@ -1,7 +1,9 @@
 import { Plus, ShoppingBag, Milk, Recycle } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import "./stats.css"
 
 export default function Stats({stats}) {
+  const { t } = useTranslation()
   return (
     <div className="stats-sidebar">
       <div className="stat-card">
@@ -9,7 +11,7 @@ export default function Stats({stats}) {
           <Milk />
         </div>
         <div className="stat-count">{stats.totalBottles}</div>
-        <div className="stat-description">Bottles collected in total</div>
+        <div className="stat-description">{t('total_bottles')}</div>
       </div>
 
       <div className="stat-card">
@@ -17,7 +19,7 @@ export default function Stats({stats}) {
           <ShoppingBag />
         </div>
         <div className="stat-count">{stats.totalBags}</div>
-        <div className="stat-description">Bags collected in total</div>
+        <div className="stat-description">{t('total_bags')}</div>
       </div>
 
       <div className="stat-card">
@@ -25,7 +27,7 @@ export default function Stats({stats}) {
           <Recycle />
         </div>
         <div className="stat-count">{stats.totalMixed}</div>
-        <div className="stat-description">Mixed items collected in total</div>
+        <div className="stat-description">{t('total_mixed_items')}</div>
       </div>
 
       <div className="stat-card">
@@ -33,7 +35,7 @@ export default function Stats({stats}) {
           <Plus />
         </div>
         <div className="stat-count">{stats.totalPosts}</div>
-        <div className="stat-description">Posts shared in total</div>
+        <div className="stat-description">{t('total_posts')}</div>
       </div>
     </div>
   )

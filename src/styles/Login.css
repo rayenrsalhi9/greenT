@@ -6,7 +6,7 @@
 }
 
 .login-container {
-    background-color: #fffcdc;
+    background-color: #fafafa;
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -76,7 +76,7 @@
 
 .login-form button {
     background-color: #15803d;
-    color: #fffcdc;
+    color: #fafafa;
 
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@
 .divider-text {
     position: relative;
     padding: 0 1rem;
-    background-color: #fffcdc;
+    background-color: #fafafa;
     font-size: 0.875rem;
     color: rgba(15, 15, 15, 0.676);
 }
