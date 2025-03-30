@@ -16,7 +16,7 @@
   /* Form Header */
   .form-header {
     padding: 32px;
-    background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
+    background: linear-gradient(to bottom right, #166534, #052e16);
     color: white;
   }
   
@@ -387,7 +387,7 @@
     justify-content: center;
     gap: 8px;
     padding: 14px 28px;
-    background-color: #22c55e;
+    background-color: #15803d;
     color: white;
     border: none;
     border-radius: 8px;
@@ -398,7 +398,7 @@
   }
   
   .submit-button:hover {
-    background-color: #15803d;
+    background-color: #0e6c30;
   }
   
   .submit-button:disabled {
