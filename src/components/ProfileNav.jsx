@@ -4,11 +4,10 @@ import { signout } from "../firebase/signOut"
 import { useTranslation } from 'react-i18next'
 
 import {
-  User,
+  UserRound,
   ScanSearch,
   Repeat2,
   Settings,
-  Send,
   Coins,
   Target,
   LogOut
@@ -30,7 +29,7 @@ export default function ProfileNav({profile}) {
       <div className="profile-info">
 
         <div className="user-avatar">
-          <User className="user-icon" size={40}/>
+          <UserRound className="user-icon" size={40}/>
         </div>
 
         <div className="profile-info-details">
@@ -49,10 +48,6 @@ export default function ProfileNav({profile}) {
         <NavLink to="posts">
           <Repeat2 />
           {t('profile-links-plastics')}
-        </NavLink>
-        <NavLink to="messages">
-          <Send />
-          {t('profile-links-messages')}
         </NavLink>
         {
           profile.badge !== "Plateform Admin" &&

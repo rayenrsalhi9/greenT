@@ -15,7 +15,7 @@ import Signup, { action as signupAction } from './pages/Signup'
 import About from './pages/static/About'
 import HowItWorks from './pages/static/HowItWorks'
 
-import ProfileLayout, { loader as profileLoader } from './Layout/ProfileLayout'
+import ProfileLayout from './Layout/ProfileLayout'
 
 import Profile from './pages/profile-layout/Profile'
 import Settings, { action as settingsAction } from './pages/profile-layout/Settings'
@@ -64,7 +64,7 @@ export default function App() {
         path='howToUse'
         element={<HowItWorks />}
       />
-      <Route path='profile' element={<ProfileLayout />} loader={profileLoader}>
+      <Route path='profile' element={<ProfileLayout />} >
         <Route index element={<Profile />} />
         <Route path='settings' element={<Settings />} action={settingsAction} />
         <Route path='points' element={<Points />}>
