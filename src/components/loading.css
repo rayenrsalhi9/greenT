@@ -1,7 +1,11 @@
-.loading-icon {
-    width: 150px;
-    display: block;
-    margin: 30px auto;
-    object-fit: contain;
-    mix-blend-mode: multiply;
+.spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

@@ -1,8 +1,8 @@
-import loading from '../assets/loading.gif'
+import { LoaderCircle } from "lucide-react"
 import './loading.css'
 
 export default function Loading() {
   return (
-    <img src={loading} alt="loading icon" className='loading-icon' />
+    <LoaderCircle size={100} className="spinner" />
   )
 }

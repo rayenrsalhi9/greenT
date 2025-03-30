@@ -22,7 +22,7 @@ const fetchPosts = async () => {
         return await displayPosts()
     } catch (error) {
         console.log(error)
-        return []
+        return null
     }
 }
 
@@ -31,12 +31,11 @@ const fetchStats = async () => {
         return await showTotalItemsShared()
     } catch (error) {
         console.log(error)
-        return []
+        return null
     }
 }
 
 export default function PostsPage() {
-
     const navigate = useNavigate()
     const [isAuth, setIsAuth] = useState(false)
 
@@ -102,33 +101,34 @@ export default function PostsPage() {
                 <div className="community-posts">
                     <div className="posts-header">
                         <h2 className="posts-title">{t('Community Posts')}</h2>
-                        <Link to = "/newPost" className="add-post-button">
+                        <Link to="/newPost" className="add-post-button">
                             <Plus className="add-icon" />
                             <p>{t('add-post')}</p>
                         </Link>
                     </div>
-                    
+
                     {
-                        postsLoading ? <Loading /> :
-                        !posts || posts.length === 0 ? <NoPosts /> :
-                        <div className="community-posts-grid">
-                            {
-                                activeFilters.length === 0 ? 
-                                posts.map(post => <Post key={post.id} post={post} />)
-                                : posts
-                                    .filter(post => activeFilters.includes(post.role))
-                                    .map(post => <Post key={post.id} post={post} />)
-                            }
-                        </div>
+                        postsLoading ? <Loading /> : (
+                            !posts || posts.length === 0 ? <NoPosts /> :
+                            <div className="community-posts-grid">
+                                {
+                                    activeFilters.length === 0 ? 
+                                    posts.map(post => <Post key={post.id} post={post} />) :
+                                    posts
+                                        .filter(post => activeFilters.includes(post.role))
+                                        .map(post => <Post key={post.id} post={post} />)
+                                }
+                            </div>
+                        )
                     }
                 </div>
             </div>
             <div className="right-section">
                 {
                     statsLoading ? <Loading /> :
-                    !stats ? <NoPosts /> :
+                    !stats || stats.length === 0 ? <NoPosts /> :
                     <Stats stats={stats} />
-                }                                
+                }
             </div>
         </section>
     )
