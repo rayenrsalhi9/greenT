@@ -299,6 +299,11 @@
     transition: background-color 0.6s ease;
 }
 
+.contact-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .provider-button {
     background-color: #15803d;
 }

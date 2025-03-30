@@ -3,6 +3,7 @@ import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk
 import avatarImg from '../../assets/profile.png'
 import { useTranslation } from "react-i18next"
 import {displayTimeAgo} from "../../utils/formatTime"
+import { auth } from "../../config/firebase"
 import "./post.css"
 
 export default function Post({ post }) {
@@ -119,7 +120,9 @@ export default function Post({ post }) {
             </div>
 
             <div className="post-footer">
-                <button className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}>
+                <button className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}
+                disabled={post.userID === auth.currentUser.uid}
+                >
                     <>
                         <MessageSquare className="icon-small" />
                         {t('contact_user')}
