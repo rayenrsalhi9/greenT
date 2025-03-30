@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import { auth } from "../config/firebase"
 import {Link, useNavigate} from "react-router-dom"
 import { onAuthStateChanged, signOut } from "firebase/auth"
@@ -25,6 +26,7 @@ import {
 import "./navbar.css"
 
 export default function Navbar() {
+  const { t } = useTranslation()
   const navigate = useNavigate()
 
   const [profile, setProfile] = useState(null)
@@ -76,7 +78,7 @@ export default function Navbar() {
             <Leaf className="navbar-leaf-icon" />
           </div>
           <span className="navbar-brand-text">GreenT</span>
-          <span className="navbar-badge">Eco-friendly</span>
+          <span className="navbar-badge">{t('navbar_eco_friendly')}</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -87,7 +89,7 @@ export default function Navbar() {
                 className={`navbar-menu-button ${activeDropdown === "find" ? "active" : ""}`}
                 onClick={() => toggleDropdown("find")}
               >
-                Find Plastics
+                {t('navbar_find_plastics')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
               {activeDropdown === "find" && (
@@ -129,7 +131,7 @@ export default function Navbar() {
                 className={`navbar-menu-button ${activeDropdown === "post" ? "active" : ""}`}
                 onClick={() => toggleDropdown("post")}
               >
-                Post Plastics
+                {t('navbar_post_plastics')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
               {activeDropdown === "post" && (
@@ -139,16 +141,16 @@ export default function Navbar() {
                       <Link to="newPost" className="navbar-dropdown-link navbar-dropdown-link-featured">
                         <Upload className="navbar-dropdown-icon" />
                         <div>
-                          <div className="navbar-dropdown-title">Quick Post</div>
-                          <p className="navbar-dropdown-description">List your recyclable plastics in minutes</p>
+                          <div className="navbar-dropdown-title">{t('navbar_quick_post')}</div>
+                          <p className="navbar-dropdown-description">{t('navbar_quick_post_description')}</p>
                         </div>
                       </Link>
                     </li>
                     <li>
                       <Link to="howToUse" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Posting Guide</div>
+                        <div className="navbar-dropdown-title">{t('navbar_post_guide')}</div>
                         <p className="navbar-dropdown-description">
-                          Learn how to effectively list your recyclable materials
+                          {t('navbar_post_guide_description')}
                         </p>
                       </Link>
                     </li>
@@ -158,7 +160,7 @@ export default function Navbar() {
             </li>
             <li className="navbar-menu-item">
               <Link to="howToUse" className="navbar-menu-link">
-                How it Works
+                {t('navbar_how_it_works')}
               </Link>
             </li>
             <li className="navbar-menu-item">
@@ -166,7 +168,7 @@ export default function Navbar() {
                 className={`navbar-menu-button ${activeDropdown === "about" ? "active" : ""}`}
                 onClick={() => toggleDropdown("about")}
               >
-                About GreenT
+                {t('navbar_about')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
               {activeDropdown === "about" && (
@@ -174,30 +176,22 @@ export default function Navbar() {
                   <ul className="navbar-dropdown-grid">
                     <li>
                       <Link to="about" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Our Mission</div>
+                        <div className="navbar-dropdown-title">{t('navbar_our_mission')}</div>
                         <p className="navbar-dropdown-description">
-                          Learn about our commitment to sustainable plastic management
+                          {t('navbar_our_mission_description')}
                         </p>
                       </Link>
                     </li>
                     <li>
                       <Link to="about" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Team</div>
-                        <p className="navbar-dropdown-description">Meet the people behind GreenT</p>
+                        <div className="navbar-dropdown-title">{t('navbar_team')}</div>
+                        <p className="navbar-dropdown-description">{t('navbar_team_description')}</p>
                       </Link>
                     </li>
                     <li>
                       <Link to="about" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Impact</div>
-                        <p className="navbar-dropdown-description">
-                          See the environmental difference we're making together
-                        </p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="about" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Contact Us</div>
-                        <p className="navbar-dropdown-description">Get in touch with our support team</p>
+                        <div className="navbar-dropdown-title">{t('navbar_contact_us')}</div>
+                        <p className="navbar-dropdown-description">{t('navbar_contact_us_description')}</p>
                       </Link>
                     </li>
                   </ul>
@@ -230,8 +224,8 @@ export default function Navbar() {
                           <p className="navbar-user-name">{profile && profile.firstName + " " + profile.lastName}</p>
                         ) : (
                           <>
-                            <p className="navbar-user-name">Guest User</p>
-                            <p className="navbar-user-status">Sign in to access your account</p>
+                            <p className="navbar-user-name">{t('navbar_guest_user')}</p>
+                            <p className="navbar-user-status">{t('navbar_guest_user_description')}</p>
                           </>
                         )
                     }
@@ -243,22 +237,22 @@ export default function Navbar() {
                         <>
                             <Link to="/login" className="navbar-user-menu-item">
                                 <LogIn className="navbar-user-menu-icon" />
-                                <span>Sign In</span>
+                                <span>{t('navbar_login')}</span>
                             </Link>
                             <Link to="/signup" className="navbar-user-menu-item">
                                 <UserPlus className="navbar-user-menu-icon" />
-                                <span>Create Account</span>
+                                <span>{t('navbar_create_account')}</span>
                             </Link>
                         </>
                       )  : (
                         <>
                             <Link to="profile" className="navbar-user-menu-item">
                                 <User className="navbar-user-menu-icon" />
-                                <span>Profile</span>
+                                <span>{t('navbar_profile')}</span>
                             </Link>
                             <Link to="profile/settings" className="navbar-user-menu-item">
                                 <Cog className="navbar-user-menu-icon" />
-                                <span>Settings</span>
+                                <span>{t('navbar_settings')}</span>
                             </Link>
                             <button 
                                 className=" navbar-user-menu-item navbar-user-button-logout"
@@ -269,7 +263,7 @@ export default function Navbar() {
                                 }}
                             >
                                 <LogOut className="navbar-user-menu-icon" />
-                                <span>Sign Out</span>
+                                <span>{t('navbar_logout')}</span>
                             </button>
                         </>
                       )
@@ -277,7 +271,7 @@ export default function Navbar() {
                 <hr className="navbar-divider" />
                 <Link to="/about" className="navbar-user-menu-item">
                 <Info className="navbar-user-menu-icon" />
-                  About GreenT
+                  {t('navbar_about')}
                 </Link>
               </div>
             )}
@@ -328,44 +322,38 @@ export default function Navbar() {
               </button>
             </div>
             <div className="navbar-mobile-content">
-              <div className="navbar-mobile-search">
-                <div className="navbar-mobile-search-wrapper">
-                  <Search className="navbar-mobile-search-icon" />
-                  <input type="text" placeholder="Search..." className="navbar-mobile-search-input" />
-                </div>
-              </div>
               <nav className="navbar-mobile-nav">
                 <a href="/" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                   <Home className="navbar-mobile-nav-icon" />
-                  <span>Home</span>
+                  <span>{t('navbar_home')}</span>
                 </a>
                 <div className="navbar-mobile-nav-section">
-                  <p className="navbar-mobile-nav-section-title">Find Plastics</p>
+                  <p className="navbar-mobile-nav-section-title">{t('navbar_find_plastics')}</p>
                   <Link to="posts" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                     <FileSearch className="navbar-mobile-nav-icon" />
-                    <span>See all posts</span>
+                    <span>{t('navbar_all_posts')}</span>
                   </Link>
                 </div>
                 <div className="navbar-mobile-nav-section">
-                  <p className="navbar-mobile-nav-section-title">Post Plastics</p>
+                  <p className="navbar-mobile-nav-section-title">{t('navbar_post_plastics')}</p>
                   <Link to="newPost" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                     <Upload className="navbar-mobile-nav-icon" />
-                    <span>Quick Post</span>
+                    <span>{t('navbar_quick_post')}</span>
                   </Link>
                 </div>
                 <Link to="howItWorks" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                   <Info className="navbar-mobile-nav-icon" />
-                  <span>How the app works</span>
+                  <span>{t('navbar_how_it_works')}</span>
                 </Link>
                 <div className="navbar-mobile-nav-section">
-                  <p className="navbar-mobile-nav-section-title">About GreenT</p>
+                  <p className="navbar-mobile-nav-section-title">{t('navbar_about')}</p>
                   <Link to="about" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                     <Info className="navbar-mobile-nav-icon" />
-                    <span>About GreenT</span>
+                    <span>{t('navbar_about')}</span>
                   </Link>
                   <Link to="contact" className="navbar-mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
                     <Mail className="navbar-mobile-nav-icon" />
-                    <span>Contact Admin</span>
+                    <span>{t('navbar_contact_us')}</span>
                   </Link>
                 </div>
               </nav>
@@ -381,7 +369,7 @@ export default function Navbar() {
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 <LogIn className="navbar-mobile-button-icon" />
-                                Sign In
+                                {t('navbar_login')}
                             </Link>
                             <Link
                                 to="/signup"
@@ -389,7 +377,7 @@ export default function Navbar() {
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 <UserPlus className="navbar-mobile-button-icon" />
-                                New account
+                                {t('navbar_create_account')}
                             </Link>
                         </>
                     ) : (
@@ -400,7 +388,7 @@ export default function Navbar() {
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 <User className="navbar-mobile-button-icon" />
-                                Profile
+                                {t('navbar_profile')}
                             </Link>
                             <button
                                 className="navbar-outline-button navbar-mobile-signout"
@@ -412,7 +400,7 @@ export default function Navbar() {
                                 }}
                             >
                                 <LogOut className="navbar-mobile-button-icon" />
-                                Sign Out
+                                {t('navbar_logout')}
                             </button>
                         </>
                     )

@@ -1,6 +1,6 @@
 .home {
     min-height: calc(100dvh - 70px);
-    background: linear-gradient(to right, #15803d, #22c55e);
+    background: linear-gradient(to bottom right, #166534, #052e16);
     color: #111111;
 }
 
