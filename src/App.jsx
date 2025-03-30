@@ -4,6 +4,8 @@ import {
   RouterProvider, 
   Route } from 'react-router-dom'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 import Layout from './Layout/Layout'
 
 import Home from './pages/static/Home'
@@ -31,7 +33,7 @@ import Weekly from './pages/objectives/Weekly'
 import Monthly from './pages/objectives/Monthly'
 import Once from './pages/objectives/Once'
 
-import PostsPage, { loader as postsLoader } from './pages/plastic/PostsPage'
+import PostsPage from './pages/plastic/PostsPage'
 import NewPost, 
 { loader as newPostLoader, action as newPostAction } from './pages/plastic/NewPost'
 import Details, { loader as detailsLoader } from './pages/profile-layout/Details'
@@ -90,7 +92,6 @@ export default function App() {
       <Route 
         path='posts'
         element={<PostsPage />}
-        loader={postsLoader}
       />
       <Route 
         path='newPost' 
@@ -100,9 +101,14 @@ export default function App() {
       />
     </Route>
   ))
+
+  const queryClient = new QueryClient()
+
   return (
     <>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </>
   )
 }

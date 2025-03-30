@@ -1,7 +1,7 @@
-/* eslint-disable react-refresh/only-export-components */
-import { Link, Await, defer, redirect, useLoaderData } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
 import { onAuthStateChanged } from 'firebase/auth'
-import { Suspense, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { displayPosts, showTotalItemsShared } from '../../firebase/displayPosts'
 import { auth } from '../../config/firebase'
 import { useTranslation } from 'react-i18next'
@@ -17,20 +17,58 @@ import Stats from './Stats'
 
 import './posts.css'
 
-export async function loader() {
-    return new Promise((resolve) => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                resolve(redirect('/login?message=You have to log in to proceed'));
-            } else {
-                resolve(defer({ posts: displayPosts(), stats: showTotalItemsShared() }));
-            }
-            unsubscribe();
-        })
-    })
+const fetchPosts = async () => {
+    try {
+        return await displayPosts()
+    } catch (error) {
+        console.log(error)
+        return []
+    }
+}
+
+const fetchStats = async () => {
+    try {
+        return await showTotalItemsShared()
+    } catch (error) {
+        console.log(error)
+        return []
+    }
 }
 
 export default function PostsPage() {
+
+    const navigate = useNavigate()
+    const [isAuth, setIsAuth] = useState(false)
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                navigate('/login?message=You have to log in to proceed')
+            } else {
+                setIsAuth(true)
+            }
+        })
+
+        return () => unsubscribe()
+    }, [navigate])
+
+    const { data: posts, isLoading: postsLoading, error: postsError } = useQuery(
+        {
+            queryKey: ['posts'],
+            queryFn: fetchPosts,
+            enabled: isAuth,
+            staleTime: 5 * 60 * 1000
+        }
+    )
+
+    const { data: stats, isLoading: statsLoading, error: statsError } = useQuery(
+        {
+            queryKey: ['stats'],
+            queryFn: fetchStats,
+            enabled: isAuth,
+            staleTime: 5 * 60 * 1000, // 5 minutes
+        }
+    )
 
     const [activeFilters, setActiveFilters] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
@@ -47,7 +85,9 @@ export default function PostsPage() {
     }
 
     const { t } = useTranslation()
-    const postsObject = useLoaderData()
+
+    postsError && console.log(postsError)
+    statsError && console.log(statsError)
 
     return (
         <section className='posts-page-container'>
@@ -67,36 +107,28 @@ export default function PostsPage() {
                             <p>{t('add-post')}</p>
                         </Link>
                     </div>
-                    <Suspense fallback={<Loading />}>
-                        <Await resolve={postsObject.posts}>
-                            {posts => 
-                                !posts || posts.length === 0 ? (
-                                    <NoPosts />
-                                ) : (
-                                    <div className="community-posts-grid">
-                                        {activeFilters.length === 0
-                                            ? posts.map(post => <Post key={post.id} post={post} />)
-                                            : posts
-                                                .filter(post => activeFilters.includes(post.role))
-                                                .map(post => <Post key={post.id} post={post} />)}
-                                    </div>
-                                )
+                    
+                    {
+                        postsLoading ? <Loading /> :
+                        !posts || posts.length === 0 ? <NoPosts /> :
+                        <div className="community-posts-grid">
+                            {
+                                activeFilters.length === 0 ? 
+                                posts.map(post => <Post key={post.id} post={post} />)
+                                : posts
+                                    .filter(post => activeFilters.includes(post.role))
+                                    .map(post => <Post key={post.id} post={post} />)
                             }
-                        </Await>
-                    </Suspense>
-
+                        </div>
+                    }
                 </div>
             </div>
             <div className="right-section">
-                <Suspense fallback={<Loading />}>
-                    <Await resolve={postsObject.stats}>
-                        {
-                            stats => (
-                                <Stats stats={stats}/>
-                            )    
-                        }
-                    </Await>
-                </Suspense>                       
+                {
+                    statsLoading ? <Loading /> :
+                    !stats ? <NoPosts /> :
+                    <Stats stats={stats} />
+                }                                
             </div>
         </section>
     )
