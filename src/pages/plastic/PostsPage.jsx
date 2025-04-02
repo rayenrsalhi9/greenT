@@ -68,7 +68,10 @@ export default function PostsPage() {
             queryKey: ['stats'],
             queryFn: fetchStats,
             enabled: isAuth,
-            staleTime: 5 * 60 * 1000, // 5 minutes
+            cacheTime: 5 * 60 * 1000,
+            refetchOnMount: true,
+            refetchOnReconnect: true,
+            refetchOnWindowFocus: true
         }
     )
 

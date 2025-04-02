@@ -98,7 +98,7 @@ export default function Navbar() {
                     <li className="navbar-dropdown-feature">
                       <Link to="posts" className="navbar-feature-link">
                         <MapPin className="navbar-feature-icon" />
-                        <div className="navbar-feature-title">Interactive Map</div>
+                        <div className="navbar-feature-title">See all posts</div>
                         <p className="navbar-feature-description">
                           Find recycling locations and plastic drop-off points near you
                         </p>
@@ -117,10 +117,10 @@ export default function Navbar() {
                       </Link>
                     </li>
                     <li>
-                      <a href="posts" className="navbar-dropdown-link">
+                      <Link to="posts" className="navbar-dropdown-link">
                         <div className="navbar-dropdown-title">Trending</div>
                         <p className="navbar-dropdown-description">Most sought-after plastic materials right now</p>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -268,11 +268,7 @@ export default function Navbar() {
                         </>
                       )
                 }
-                <hr className="navbar-divider" />
-                <Link to="/about" className="navbar-user-menu-item">
-                <Info className="navbar-user-menu-icon" />
-                  {t('navbar_about')}
-                </Link>
+                
               </div>
             )}
           </div>
