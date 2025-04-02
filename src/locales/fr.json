@@ -510,5 +510,9 @@
 
   "profile_saved_posts": "Publications enregistrées",
   "profile_saved_posts_description": "Voyez et gérez vos publications enregistrées",
-  "profile_saved_posts_empty": "Aucune publication enregistrée"
+  "profile_saved_posts_empty": "Aucune publication enregistrée",
+
+  "profile_posts": "Vos publications",
+  "profile_posts_description": "Voyez et gérez vos publications",
+  "profile_new_post": "Nouvelle publication"
 }

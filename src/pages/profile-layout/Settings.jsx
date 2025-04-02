@@ -3,24 +3,20 @@ import { useOutletContext, Form, redirect, useNavigation, useActionData } from '
 import { auth, db } from '../../config/firebase'
 import { doc, updateDoc } from 'firebase/firestore'
 
-import { states, cities } from '../../utils/locations'
-
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import '../../styles/profile-layout/Settings.css'
 
 export async function action({ request }) {
     const formData = await request.formData()
-    const { firstName, lastName, city, phone, state } = Object.fromEntries(formData)
+    const { firstName, lastName, phone } = Object.fromEntries(formData)
 
-    if (!city || !phone || !firstName || !lastName || !state) return 'All fields are required'
+    if (!phone || !firstName || !lastName) return 'All fields are required'
     
     const docRef = doc(db, "users", auth.currentUser.uid)
 
     try {
         await updateDoc(docRef, {
-            city: `${state} - ${city}`,
             phone,
             firstName,
             lastName
@@ -32,17 +28,6 @@ export async function action({ request }) {
 }
 
 export default function Settings() {
-    const [selectedState, setSelectedState] = useState("")
-    const [, setSelectedCity] = useState("")
-
-    const handleStateChange = (e) => {
-        setSelectedState(e.target.value)
-    }
-
-    const handleCityChange = (e) => {
-        setSelectedCity(e.target.value)
-    }
-
     const { t } = useTranslation()
 
     const profile = useOutletContext()
@@ -76,27 +61,6 @@ export default function Settings() {
                                 id='lastName' 
                                 defaultValue={profile.lastName} 
                             />
-                        </div>
-                    </div>
-                    <div className="group">
-                        <label htmlFor="city">{t('account-settings-city')}</label>
-                        <div className="group">
-                            <select name="state" id="state" onChange={handleStateChange}>
-                                <option value="">{t('account-settings-state-placeholder')}</option>
-                                {
-                                    states.map((state) => (
-                                        <option value={state.id} key={state.id}>{t(`states.${state.id}`)}</option>
-                                    ))
-                                }
-                            </select>       
-                            <select name="city" id="city" onChange={handleCityChange}>
-                                <option value="">{t('account-settings-city-placeholder')}</option>
-                                {
-                                    selectedState && cities[selectedState].map((city) => (
-                                        <option value={city} key={city}>{t(`cities.${selectedState}.${city}`)}</option>
-                                    ))
-                                }
-                            </select>
                         </div>
                     </div>
                     <div className="group">

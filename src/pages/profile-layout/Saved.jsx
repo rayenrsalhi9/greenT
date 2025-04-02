@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { auth } from '../../config/firebase'
@@ -23,6 +23,7 @@ export default function Saved() {
 
   const { t } = useTranslation()
   const navigate = useNavigate()
+  const [isAuth, setIsAuth] = useState(false)
 
   const { 
     data: savedPosts,
@@ -32,6 +33,7 @@ export default function Saved() {
     queryKey: ['savedPosts'],
     queryFn: fetchSavedPosts,
     staleTime: Infinity,
+    enabled: isAuth,
     cacheTime: 5 * 60 * 1000,
     refetchOnMount: "always"
   })
@@ -40,6 +42,8 @@ export default function Saved() {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (!user) {
         navigate('/login?message=You have to log in to proceed')
+      } else {
+        setIsAuth(true)
       }
     })
 

@@ -1,6 +1,5 @@
 .about {
-    padding: 50px 20px;
-    background: linear-gradient(to bottom right, #166534, #052e16);
+    padding: 20px;
 }
 
 .about .header {
@@ -15,11 +14,12 @@
 .about .header h1 {
     font-size: 40px;
     font-weight: 600;
+    color: #fafafa;
 }
 
 .about .header p {
     font-size: 18px;
-    color: #181818;
+    color: #fafafa;
     font-weight: 400;
     max-width: 800px;
     margin: 0 auto;
@@ -39,7 +39,7 @@
 
 .about .main-goal {
     border-radius: 8px;
-    background: #fffcdc;
+    background: #fafafa;
     border: 2px solid #a3b18a;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 24px;
@@ -50,6 +50,7 @@
 .about .main-goal h3 {
     font-size: 24px;
     font-weight: 600;
+    color: #111;
 }
 
 .about .main-goal p {
@@ -62,6 +63,7 @@
 
 .about .title {
     font-size: 32px;
+    color: #fafafa;
     font-weight: 600;
     margin: 40px 0 20px;
     text-align: center;
@@ -81,7 +83,7 @@
     margin-bottom: 24px;
     padding: 24px;
     overflow: hidden;
-    background-color: #fffcdc;
+    background-color: #fafafa;
 }
 
 .about .how-it-works-item span {
@@ -135,18 +137,13 @@
     margin-bottom: 24px;
     padding: 24px;
     overflow: hidden;
-    background-color: #fffcdc;
+    background-color: #fafafa;
 }
 
 .about .why-choose-item .card-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.about .why-choose-item .card-header img {
-    width: 30px;
-    height: 30px;
+    gap: 8px;
 }
 
 .about .why-choose-item .card-header h4 {
@@ -182,7 +179,7 @@
     margin-bottom: 24px;
     padding: 16px;
     overflow: hidden;
-    background-color: #fffcdc;
+    background-color: #fafafa;
 }
 
 .about .faq-item {
@@ -206,14 +203,12 @@
     font-weight: 600;
 }
 
-.about .accordion-header img {
-    width: 16px;
-    height: 16px;
+.about .accordion-header .icon  {
     cursor: pointer;
     transition: 0.6s ease;
 }
 
-.about .accordion-header img.active {
+.about .accordion-header .icon.active {
     transform: rotate(45deg);
 }
 

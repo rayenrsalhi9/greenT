@@ -1,73 +1,76 @@
 import { displayPostsByUser } from '../../firebase/displayPosts'
-import { formatDate } from '../../utils/formatTime'
+import Post from '../plastic/Post'
 
 import { useTranslation } from 'react-i18next'
+import { BookmarkPlus } from 'lucide-react'
 
 import { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../../config/firebase'
 
 import Loading from '../../components/Loading'
-import '../../styles/profile-layout/Posts.css'
+import NoPosts from '../../components/NoPosts'
+import './posts.css'
+
+async function getUserPosts() {
+  try {
+    return displayPostsByUser(auth.currentUser.uid)
+  } catch(error) {
+    console.error(error)
+    return 'Error getting user posts'
+  }
+}
 
 export default function Posts() {
 
   const { t } = useTranslation()
-  const userID = auth.currentUser.uid
-  const [posts, setPosts] = useState(null)
-
-  const [searchParams] = useSearchParams()
-  const message = searchParams.get('message')
+  const [isAuth, setIsAuth] = useState(false)
+  const navigate = useNavigate()
+  
+  const { data: posts, isLoading: postsLoading, error: postsError } = useQuery({
+    queryKey: ['userPosts'],
+    queryFn: () => getUserPosts(),
+    staleTime: Infinity,
+    enabled: isAuth,
+    cacheTime: 5 * 60 * 1000,
+    refetchOnMount: 'always'
+  })
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const posts = await displayPostsByUser(userID)
-      setPosts(posts)
-    }
-    fetchPosts()
-  }, [userID])
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (!user) {
+        navigate('/login?message=You have to log in to proceed')
+      } else {
+        setIsAuth(true)
+      }
+    })
+
+    return () => unsubscribe()
+  }, [navigate])
   
   return (
     <div className="user-posts-container">
-        <h1 className="title">{t('posted-plastics-title')}</h1>
-        <div className="new-post-link">
-          <Link to="/newPost">{t('posted-plastics-add-plastic')}</Link>
-        </div>
-        {
-          message && <p className="url-message">{message}</p>
-        }
-        {
-          posts && posts.length > 0 && (
-          posts.map((post) => (
-            <div key={post.id} className="post">
-                <div className="post-details">
-                    <h2>{post.title}</h2>
-                    <p className="time">
-                      { formatDate(post.createdAt.seconds) }
-                    </p>
-                    <p>{post.description}</p>
-                </div>
-                <div className="post-actions">
-                    <Link 
-                      to={`./${post.id}`}
-                      className="post-details-btn"
-                    >
-                        {t('posted-plastics-see-details')}
-                    </Link>
-                </div>
+        <div className="user-posts">
+          <div className="user-posts-header">
+            <div className="left">
+                <h1>{t('profile_posts')}</h1>
+                <p>{t('profile_posts_description')}</p>
             </div>
-            
-          ))
-          )
-        }
-        {
-          posts && posts.length === 0 && (
-            <p className="no-posts">{t('posted-plastics-no-posts')}</p>
-          )
-        }
-        {
-          !posts && <Loading />
-        }
+            <div className="right">
+              <Link to="../../newPost">
+                <BookmarkPlus />
+                {t('profile_new_post')}
+              </Link>
+            </div>
+          </div>
+          <div className="posts-body">
+            {postsLoading && <Loading />}
+            {postsError && <p>{postsError}</p>}
+            {posts && posts.map(post => <Post key={post.id} post={post} />)}
+            {posts && posts.length === 0 && <NoPosts />}
+          </div>
+        </div>
     </div>
   )
 }

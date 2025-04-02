@@ -1,14 +1,8 @@
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { faq } from '../../utils/faq'
-
-import flash from '../../assets/about/flash.png'
-import recycle from '../../assets/about/recycle.png'
-import community from '../../assets/about/community.png'
-import communication from '../../assets/about/speak.png'
-import plus from '../../assets/about/plus.png'
+import { Zap, Recycle, MessageCircleHeart, UsersRound, Plus } from 'lucide-react'
 
 import '../../styles/static/About.css'
 
@@ -76,7 +70,7 @@ export default function About() {
         <div className="why-choose-container">
           <div className="why-choose-item">
             <div className="card-header">
-              <img src={flash} alt="flash" />
+              <Zap size={30} />
               <h4>{t('about-why-choose-platform-efficiency')}</h4>
             </div>
             <p>
@@ -85,7 +79,7 @@ export default function About() {
           </div>
           <div className="why-choose-item">
             <div className="card-header">
-              <img src={recycle} alt="recycle" />
+              <Recycle size={30} />
               <h4>{t('about-why-choose-platform-sustainability')}</h4>
             </div>
             <p>
@@ -94,7 +88,7 @@ export default function About() {
           </div>
           <div className="why-choose-item">
             <div className="card-header">
-              <img src={community} alt="community" />
+              <UsersRound size={30} />
               <h4>{t('about-why-choose-platform-community')}</h4>
             </div>
             <p>
@@ -103,7 +97,7 @@ export default function About() {
           </div>
           <div className="why-choose-item">
             <div className="card-header">
-              <img src={communication} alt="communication" />
+              <MessageCircleHeart size={30} />
               <h4>{t('about-why-choose-platform-easy-communication')}</h4>
             </div>
             <p>
@@ -119,7 +113,11 @@ export default function About() {
             <div className="faq-item " key={index}>
               <div className="accordion-header">
                 <h4>{t(`about-faq-question-${index + 1}`)}</h4>
-                <img src={plus} alt="plus" onClick={() => toggleAccordion(index)} className={activeIndex === index ? 'active' : ''}/>
+                <Plus 
+                  onClick={() => toggleAccordion(index)} 
+                  size={20} 
+                  className={`icon ${activeIndex === index ? 'active' : ''}`}
+                />
               </div>
               <p className={`accordion-content ${activeIndex === index ? 'active' : 'hidden'}`}>
                 {t(`about-faq-answer-${index + 1}`)}

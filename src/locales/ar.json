@@ -513,5 +513,9 @@
 
   "profile_saved_posts": "المنشورات المحفوظة",
   "profile_saved_posts_description": "اعرض و تصرف في منشوراتك المحفوظة",
-  "profile_saved_posts_empty": "لا يوجد منشورات محفوظة بعد"
+  "profile_saved_posts_empty": "لا يوجد منشورات محفوظة بعد",
+
+  "profile_posts": "منشوراتك",
+  "profile_posts_description": "اعرض و تصرف في منشوراتك",
+  "profile_new_post": "منشور جديد"
 }

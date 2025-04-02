@@ -38,11 +38,19 @@ export async function displayPostsByUser(userID) {
         const postsRef = collection(db, 'posts')
         const postsSnapshot = await getDocs(postsRef)
 
+        const userRef = doc(db, 'users', userID)
+        const userSnapshot = await getDoc(userRef)
+        const userData = {
+            id: userSnapshot.id,
+            ...userSnapshot.data()
+        }
+
         const userPosts = postsSnapshot.docs.filter(doc => doc.data().userID === userID)
 
         return userPosts.map(doc => ({
             id: doc.id,
-            ...doc.data()
+            ...doc.data(),
+            user: userData
         })).sort((a, b) => b.createdAt - a.createdAt)
     } catch (error) {
         console.error(error)

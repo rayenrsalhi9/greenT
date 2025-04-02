@@ -36,10 +36,6 @@ export default function Profile() {
               <p> {profile.email} </p>
             </div>
             <div className="details-row">
-              <p className='title'>{t('account-details-city')}:</p>
-              <p> {t(`states.${profile.state}`)}, {t(`cities.${profile.state}.${profile.city}`)} </p>
-            </div>
-            <div className="details-row">
               <p className='title'>{t('account-details-phone')}:</p>
               <p>
                 {

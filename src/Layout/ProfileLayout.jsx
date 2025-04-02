@@ -37,7 +37,9 @@ export default function ProfileLayout() {
     queryKey: ['profile'],
     queryFn: () => fetchProfile(auth.currentUser?.uid),
     enabled: isAuth,
-    staleTime: 5 * 60 * 1000
+    staleTime: Infinity,
+    cacheTime: 5 * 60 * 1000,
+    refetchOnMount: 'always'
   })
 
   profileError && console.error(profileError)

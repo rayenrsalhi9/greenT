@@ -510,6 +510,10 @@
 
   "profile_saved_posts": "Saved posts",
   "profile_saved_posts_description": "View and manage your saved posts",
-  "profile_saved_posts_empty": "No saved posts yet"
+  "profile_saved_posts_empty": "No saved posts yet",
+
+  "profile_posts": "Your posts",
+  "profile_posts_description": "View and manage your posts",
+  "profile_new_post": "Add a new post"
     
 }
