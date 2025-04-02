@@ -32,10 +32,11 @@ export default function Saved() {
   } = useQuery({
     queryKey: ['savedPosts'],
     queryFn: fetchSavedPosts,
-    staleTime: Infinity,
     enabled: isAuth,
     cacheTime: 5 * 60 * 1000,
-    refetchOnMount: "always"
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+    refetchOnWindowFocus: true
   })
 
   useEffect(() => {

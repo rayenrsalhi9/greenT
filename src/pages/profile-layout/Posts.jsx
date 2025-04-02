@@ -31,10 +31,11 @@ export default function Posts() {
   const { data: posts, isLoading: postsLoading, error: postsError } = useQuery({
     queryKey: ['userPosts'],
     queryFn: () => getUserPosts(),
-    staleTime: Infinity,
     enabled: isAuth,
     cacheTime: 5 * 60 * 1000,
-    refetchOnMount: "always"
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+    refetchOnWindowFocus: true
   })
 
   useEffect(() => {
