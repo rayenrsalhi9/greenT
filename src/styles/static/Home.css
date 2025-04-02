@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: center;
 
-    animation: rotate 5s infinite ease-in-out, fadeIn 4s ease;
+    animation: fadeIn 4s ease, rotate 5s infinite ease-in-out;
 }
 
 @keyframes rotate {
@@ -82,17 +82,6 @@
     }
     100% {
         transform: rotate(2deg);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -120,6 +109,18 @@
     background-color: #fafafa;
     padding: 4rem 2rem;
     text-align: center;
+    animation: fadeIn 5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-section > h2 {
