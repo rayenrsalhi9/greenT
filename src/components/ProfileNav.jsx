@@ -10,7 +10,8 @@ import {
   Settings,
   Coins,
   Target,
-  LogOut
+  LogOut,
+  Bookmark
 } from "lucide-react"
 
 import '../styles/ProfileNav.css'
@@ -48,6 +49,10 @@ export default function ProfileNav({profile}) {
         <NavLink to="posts">
           <Repeat2 />
           {t('profile-links-plastics')}
+        </NavLink>
+        <NavLink to="saved">
+          <Bookmark />
+          {t('profile-links-saved')}
         </NavLink>
         {
           profile.badge !== "Plateform Admin" &&

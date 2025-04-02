@@ -56,7 +56,9 @@ export default function PostsPage() {
             queryKey: ['posts'],
             queryFn: fetchPosts,
             enabled: isAuth,
-            staleTime: 5 * 60 * 1000
+            staleTime: Infinity,
+            cacheTime: 5 * 60 * 1000,
+            refetchOnMount: "always"
         }
     )
 

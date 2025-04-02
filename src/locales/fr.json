@@ -42,6 +42,7 @@
     "profile-description": "Résumé de votre compte et activités récentes.",
     "profile-links-overview": "Aperçu",
     "profile-links-plastics": "Plastiques postés",
+    "profile-links-saved": "Publications enregistrées",
     "profile-links-messages": "Messages",
     "profile-links-points": "Points",
     "profile-links-objectives": "Objectifs",
@@ -502,5 +503,12 @@
   "footer_post_plastics": "Publier des plastiques",
   "footer_about": "À propos de GreenT",
   "footer_how": "Guide de l'application",
-  "footer_contact": "Contactez-nous"
+  "footer_contact": "Contactez-nous",
+
+  "no_phone_alert": "L'utilisateur n'a pas de numéro de téléphone, impossible de le contacter",
+  "by_you": "(Publié par vous)",
+
+  "profile_saved_posts": "Publications enregistrées",
+  "profile_saved_posts_description": "Voyez et gérez vos publications enregistrées",
+  "profile_saved_posts_empty": "Aucune publication enregistrée"
 }

@@ -42,6 +42,7 @@
     "profile-description": "Your account summary and recent activities.",
     "profile-links-overview": "Overview",
     "profile-links-plastics": "Posted Plastics",
+    "profile-links-saved": "Saved posts",
     "profile-links-messages": "Messages",
     "profile-links-points": "Points",
     "profile-links-objectives": "Objectives",
@@ -502,6 +503,13 @@
   "footer_post_plastics": "Post Plastics",
   "footer_about": "About GreenT",
   "footer_how": "App Guide",
-  "footer_contact": "Contact Us"
+  "footer_contact": "Contact Us",
+
+  "no_phone_alert": "The post owner has no phone number, cannot contact him",
+  "by_you": "(Posted by you)",
+
+  "profile_saved_posts": "Saved posts",
+  "profile_saved_posts_description": "View and manage your saved posts",
+  "profile_saved_posts_empty": "No saved posts yet"
     
 }

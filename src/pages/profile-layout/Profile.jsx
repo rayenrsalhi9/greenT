@@ -13,6 +13,8 @@ export default function Profile() {
   
   const { t } = useTranslation()
 
+  console.log(profile)
+
   return (
     <section className="profile-overview-container">
       <div className="profile-overview">
@@ -35,7 +37,7 @@ export default function Profile() {
             </div>
             <div className="details-row">
               <p className='title'>{t('account-details-city')}:</p>
-              <p> {profile.city} </p>
+              <p> {t(`states.${profile.state}`)}, {t(`cities.${profile.state}.${profile.city}`)} </p>
             </div>
             <div className="details-row">
               <p className='title'>{t('account-details-phone')}:</p>

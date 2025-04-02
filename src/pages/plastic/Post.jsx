@@ -1,8 +1,9 @@
-import { useState } from "react"
-import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle } from "lucide-react"
+import { useEffect, useState } from "react"
+import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle, Bookmark, BookmarkCheck } from "lucide-react"
 import avatarImg from '../../assets/profile.png'
 import { useTranslation } from "react-i18next"
-import {displayTimeAgo} from "../../utils/formatTime"
+import { displayTimeAgo } from "../../utils/formatTime"
+import { savePostToUser, removePostFromUser, checkPostSaved } from "../../firebase/displayPosts"
 import { auth } from "../../config/firebase"
 import "./post.css"
 
@@ -10,12 +11,31 @@ export default function Post({ post }) {
     const { t } = useTranslation()
 
     const [expandedPosts, setExpandedPosts] = useState({})
+    const [isSaved, setIsSaved] = useState(false)
+
+    useEffect(() => {
+        async function checkPosts() {
+            const isSaved = await checkPostSaved(auth.currentUser.uid, post.id)
+            setIsSaved(isSaved)
+        }
+        checkPosts()
+    }, [post.id])
 
     const toggleExpand = (postId) => {
         setExpandedPosts((prev) => ({
             ...prev,
             [postId]: !prev[postId],
         }))
+    }
+
+    const handleSavePost = () => {
+        setIsSaved((prev) => !prev)
+
+        if (isSaved) {
+            removePostFromUser(auth.currentUser.uid, post.id)
+        } else {
+            savePostToUser(auth.currentUser.uid, post.id) 
+        }
     }
 
     return (
@@ -28,7 +48,7 @@ export default function Post({ post }) {
 
                     <div className="user-details">
                         <div className="user-name-role">
-                            <h3 className="user-name">{post.user.firstName} {post.user.lastName}</h3>
+                            <h3 className="user-name">{post.user.firstName} {post.user.lastName} {post.userID === auth.currentUser.uid && <span className="by-you">{t('by_you')}</span>}</h3>
                             <span className={`role-badge ${post.role === "provider" ? "provider-badge" : post.role === "collector" ? "collector-badge" : "admin-badge"}`}>
                                 {t(post.role)}
                             </span>
@@ -120,15 +140,32 @@ export default function Post({ post }) {
             </div>
 
             <div className="post-footer">
-                <button className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}
-                disabled={post.userID === auth.currentUser.uid}
+                <button 
+                className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}
+                disabled={post.userID === auth.currentUser.uid || post.user.phone === ''}
                 >
                     <>
                         <MessageSquare className="icon-small" />
                         {t('contact_user')}
                     </>
                 </button>
+                <button 
+                    className={`save-button ${isSaved ? "saved" : ""}`} 
+                    onClick={() => handleSavePost(post.id)} disabled={post.userID === auth.currentUser.uid}
+                >
+                    {
+                        !isSaved ?
+                        <Bookmark className="icon-small" /> :
+                        <BookmarkCheck className="icon-small" />
+                    }
+                </button>
             </div>
+            {
+                post.user.phone === '' && 
+                <span className="no-phone-number">
+                    {t('no_phone_alert')}
+                </span>
+            }
         </div>
     )
 }

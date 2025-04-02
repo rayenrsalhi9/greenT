@@ -1,4 +1,4 @@
-import { Plus, ShoppingBag, Milk, Recycle } from "lucide-react"
+import { ScrollText, ShoppingBag, Milk, Recycle } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import "./stats.css"
 
@@ -32,7 +32,7 @@ export default function Stats({stats}) {
 
       <div className="stat-card">
         <div className="stat-icon-large post-large">
-          <Plus />
+          <ScrollText />
         </div>
         <div className="stat-count">{stats.totalPosts}</div>
         <div className="stat-description">{t('total_posts')}</div>

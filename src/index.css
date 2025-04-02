@@ -26,13 +26,7 @@ button {
     font-family: 'Cairo', sans-serif;
 }
 
-.container.ar button,
-.container.ar input::placeholder,
-.container.ar input,
-.container.ar label,
-.container.ar select,
-.container.ar option,
-.container.ar textarea {
+.container.ar * {
     font-family: 'Cairo', sans-serif;
 }
 
@@ -46,9 +40,9 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #ffbe0b;
+    background: #fafafa;
 }
 
 body::-webkit-scrollbar-track {
-    background: #0f2610;
+    background: linear-gradient(to bottom right, #166534, #052e16);
 }

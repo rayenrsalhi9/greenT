@@ -22,6 +22,7 @@ import Settings, { action as settingsAction } from './pages/profile-layout/Setti
 import Posts from './pages/profile-layout/Posts'
 import Messages from './pages/profile-layout/Messages'
 import Chat, { action as chatAction } from './pages/profile-layout/Chat'
+import Saved from './pages/profile-layout/Saved'
 
 import Points from './pages/profile-layout/Points'
 import Summary from './pages/points/Summary'
@@ -66,6 +67,7 @@ export default function App() {
       />
       <Route path='profile' element={<ProfileLayout />} >
         <Route index element={<Profile />} />
+        <Route path='saved' element={<Saved />} />
         <Route path='settings' element={<Settings />} action={settingsAction} />
         <Route path='points' element={<Points />}>
           <Route index element={<Summary />} />

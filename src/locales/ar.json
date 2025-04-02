@@ -41,7 +41,8 @@
     "profile-title": "ملخص الحساب",
     "profile-description": "نظرة عامة على حسابك وأنشطتك الحديثة.",
     "profile-links-overview": "نظرة عامة",
-    "profile-links-plastics": "منشورات البلاستيك",
+    "profile-links-plastics": "منشوراتك",
+    "profile-links-saved": "المنشورات المحفوظة",
     "profile-links-messages": "الرسائل",
     "profile-links-points": "النقاط",
     "profile-links-objectives": "الأهداف",
@@ -52,7 +53,7 @@
     "account-details-name": "الاسم الكامل",
     "account-details-email": "البريد الإلكتروني",
     "account-details-phone": "رقم الهاتف",
-    "account-details-city": "المدينة",
+    "account-details-city": "مقر الإقامة",
     "account-details-member-since": "تاريخ الانضمام",
     "account-details-level": "المستوى",
     "account-details-points": "النقاط",
@@ -505,5 +506,12 @@
   "footer_post_plastics": "نشر البلاستيك",
   "footer_about": "حول GreenT",
   "footer_how": "دليل التطبيق",
-  "footer_contact": "اتصل بنا"
+  "footer_contact": "اتصل بنا",
+
+  "no_phone_alert": "صاحب المنشور لا يتوفر على رقم هاتف, لا يمكن مراسلته",
+  "by_you": "(قمت بنشر هذا)",
+
+  "profile_saved_posts": "المنشورات المحفوظة",
+  "profile_saved_posts_description": "اعرض و تصرف في منشوراتك المحفوظة",
+  "profile_saved_posts_empty": "لا يوجد منشورات محفوظة بعد"
 }

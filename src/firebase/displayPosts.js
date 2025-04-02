@@ -131,3 +131,64 @@ export async function showTotalItemsShared() {
     }
 }
 
+export async function savePostToUser(userID, postID) {
+    try {
+        const userRef = doc(db, 'users', userID)
+        const userSnapshot = await getDoc(userRef)
+        let saved = userSnapshot.data().savedPosts || []
+        saved = [...saved, postID]
+        await updateDoc(userRef, { savedPosts: saved })
+    } catch (error) {
+        console.error(error)
+        return 'Failed to save post to user'
+    }
+}
+
+export async function removePostFromUser(userID, postID) {
+    try {
+        const userRef = doc(db, 'users', userID)
+        const userSnapshot = await getDoc(userRef)
+        let saved = userSnapshot.data().savedPosts || []
+        saved = saved.filter(id => id !== postID)
+        await updateDoc(userRef, { savedPosts: saved })
+    } catch (error) {
+        console.error(error)
+        return 'Failed to remove post from user'
+    }
+}
+
+export async function checkPostSaved(userID, postID) {
+    try {
+        const userRef = doc(db, 'users', userID)
+        const userSnapshot = await getDoc(userRef)
+        const savedPosts = userSnapshot.data().savedPosts || []
+        return savedPosts.includes(postID)
+    } catch (error) {
+        console.error(error)
+        return 'Failed to check if post is saved'
+    }
+}
+
+export async function getSavedPosts(userID) {
+    try {
+        const userRef = doc(db, 'users', userID)
+        const userSnapshot = await getDoc(userRef)
+        const savedPosts = userSnapshot.data().savedPosts || []
+        const posts = await Promise.all(savedPosts.map(async (postID) => {
+            const postRef = doc(db, 'posts', postID)
+            const postSnapshot = await getDoc(postRef)
+            const userRef = doc(db, 'users', postSnapshot.data().userID)
+            const userSnapshot = await getDoc(userRef)
+            const userData = {...userSnapshot.data(), id: userSnapshot.id}
+            return {
+                id: postSnapshot.id,
+                ...postSnapshot.data(),
+                user: userData
+            }
+        }))
+        return posts
+    } catch (error) {
+        console.error(error)
+        return 'Failed to get saved posts'
+    }
+}
