@@ -34,7 +34,7 @@ export default function Posts() {
     staleTime: Infinity,
     enabled: isAuth,
     cacheTime: 5 * 60 * 1000,
-    refetchOnMount: 'always'
+    refetchOnMount: "always"
   })
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Posts() {
           <div className="posts-body">
             {postsLoading && <Loading />}
             {postsError && <p>{postsError}</p>}
-            {posts && posts.map(post => <Post key={post.id} post={post} />)}
+            {posts && posts.map(post => <Post key={post.id} post={post} canDelete={true} />)}
             {posts && posts.length === 0 && <NoPosts />}
           </div>
         </div>

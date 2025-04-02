@@ -376,7 +376,7 @@
 }
 
 /* Save button */
-.save-button {
+.save-button, .delete-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -392,6 +392,10 @@
     transition: background-color 0.6s ease;
 }
 
+.delete-button {
+    color: #d90429;
+}
+
 .save-button.saved {
     background: #9ca3af;
     color: #fafafa;
@@ -403,6 +407,37 @@
 
 .save-button:hover:not(:disabled) {
     background: #9ca3af;
+}
+
+.delete-button:hover:not(:disabled), .delete-button.loading {
+    background: #d32f2f;
+    color: #fafafa;
+}
+
+.delete-button:hover:not(:disabled) .icon-small {
+    animation: tiltRightLeft 0.6s ease infinite;
+}
+
+.delete-button.loading .icon-small {
+    animation: tiltRightLeft 0.6s ease infinite;
+}
+
+@keyframes tiltRightLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .save-button.saved:hover {

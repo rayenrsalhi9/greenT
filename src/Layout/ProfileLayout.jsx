@@ -39,7 +39,7 @@ export default function ProfileLayout() {
     enabled: isAuth,
     staleTime: Infinity,
     cacheTime: 5 * 60 * 1000,
-    refetchOnMount: 'always'
+    refetchOnMount: "always"
   })
 
   profileError && console.error(profileError)

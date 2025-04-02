@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react"
-import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle, Bookmark, BookmarkCheck } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle, Bookmark, BookmarkCheck, Trash2 } from "lucide-react"
 import avatarImg from '../../assets/profile.png'
 import { useTranslation } from "react-i18next"
 import { displayTimeAgo } from "../../utils/formatTime"
-import { savePostToUser, removePostFromUser, checkPostSaved } from "../../firebase/displayPosts"
+import { savePostToUser, removePostFromUser, checkPostSaved, deletePost } from "../../firebase/displayPosts"
 import { auth } from "../../config/firebase"
 import "./post.css"
 
-export default function Post({ post }) {
+export default function Post({ post, canDelete }) {
     const { t } = useTranslation()
+    const navigate = useNavigate()
 
     const [expandedPosts, setExpandedPosts] = useState({})
     const [isSaved, setIsSaved] = useState(false)
+    const [isDeleting, setIsDeleting] = useState(false)
 
     useEffect(() => {
         async function checkPosts() {
@@ -36,6 +39,12 @@ export default function Post({ post }) {
         } else {
             savePostToUser(auth.currentUser.uid, post.id) 
         }
+    }
+
+    const handleDeletePost = async () => {
+        setIsDeleting(true)
+        await deletePost(post.id, navigate)
+        window.location.reload()
     }
 
     return (
@@ -159,6 +168,13 @@ export default function Post({ post }) {
                         <BookmarkCheck className="icon-small" />
                     }
                 </button>
+                {
+                    canDelete === true && (
+                        <button className={`delete-button ${isDeleting ? "loading" : ""}`} onClick={() => handleDeletePost(post.id)}>
+                            <Trash2 className="icon-small delete"/>
+                        </button>
+                    )
+                }
             </div>
             {
                 post.user.phone === '' && 
