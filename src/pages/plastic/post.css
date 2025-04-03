@@ -312,6 +312,7 @@
 .post-card .by-you {
     font-size: 14px;
     color: #545965;
+    font-weight: 500;
 }
 
 @media(max-width: 576px) {

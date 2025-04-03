@@ -514,6 +514,34 @@
 
   "profile_posts": "Your posts",
   "profile_posts_description": "View and manage your posts",
-  "profile_new_post": "Add a new post"
-    
+  "profile_new_post": "Add a new post",
+
+    "new_post_title": "Create a new plastic post",
+    "new_post_description": "Share details about the plastic items you have collected.",
+    "new_post_basic_info": "Basic Informations",
+    "new_post_post_title": "Post Title",
+    "new_post_post_description": "Description",
+    "new_post_description_placeholder": "Describe the plastic items you're offering or looking for",
+    "new_post_location": "Location",
+    "new_post_state": "State",
+    "new_post_city": "City",
+    "new_post_state_placeholder": "Select your state",
+    "new_post_city_placeholder": "Enter your city",
+    "new_post_role": "Role",
+    "new_post_provider": "I'm providing plastics",
+    "new_post_collector": "I'm looking for plastics",
+    "new_post_details": "Plastic Details",
+    "new_post_details_description": "Specify the types and quantities of plastic items you're offering",
+    "new_post_bottles": "Bottles",
+    "new_post_bottles_description": "PET, HDPE bottles, containers, ...",
+    "new_post_bags": "Bags",
+    "new_post_bags_description": "Plastic bags, films, wrappers",
+    "new_post_mixed_items": "Mixed Items",
+    "new_post_mixed_items_description": "Other plastic items, mixed materials, ...",
+    "new_post_photos": "Photos",
+    "new_post_photos_description": "Add up to 3 photos of your plastic items (optional)",
+    "new_post_add_photos": "Add photos",
+    "new_post_max_photos": "Max of 3 photos",
+    "new_post_publish_post": "Publish post",
+    "new_post_publishing": "Publishing..."
 }

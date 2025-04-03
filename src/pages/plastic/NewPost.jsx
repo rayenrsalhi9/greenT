@@ -6,6 +6,7 @@ import { states, cities } from "../../utils/locations"
 import { Upload, Camera, Trash2, Milk, ShoppingBag, Recycle, Loader2 } from "lucide-react"
 import { serverTimestamp } from "firebase/firestore"
 import { sharePost } from '../../firebase/sharePost'
+import { useTranslation } from "react-i18next"
 import "./new-post.css"
 
 export async function loader() {
@@ -78,6 +79,8 @@ export async function action({ request }) {
 }
 
 export default function NewPost() {
+
+  const { t } = useTranslation()
 
   const errorMessages = useActionData()
   const navigation = useNavigation()
@@ -154,13 +157,13 @@ export default function NewPost() {
     <div className="new-post-container">
       <div className="form-container">
         <div className="form-header">
-          <h1>Create New Plastic Recycling Post</h1>
-          <p>Share details about the plastic items you have collected.</p>
+          <h1>{t('new_post_title')}</h1>
+          <p>{t('new_post_description')}</p>
         </div>
 
         <Form method="post" replace  encType="multipart/form-data" className="post-form">
           <div className="form-section">
-            <h2>Basic Informations</h2>
+            <h2>{t('new_post_basic_info')}</h2>
 
             <div className="form-group">
               <div className="floating-input">
@@ -168,10 +171,10 @@ export default function NewPost() {
                   type="text"
                   id="title"
                   name="title"
-                  placeholder=" "
+                  placeholder=""
                   className={errorMessages?.title ? "has-error" : ""}
                 />
-                <label htmlFor="title">Post Title</label>
+                <label htmlFor="title">{t('new_post_post_title')}</label>
                 {errorMessages?.title && <span className="error-message">{errorMessages?.title}</span>}
               </div>
             </div>
@@ -185,15 +188,15 @@ export default function NewPost() {
                   rows="4"
                   className={errorMessages?.description ? "has-error" : ""}
                 ></textarea>
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">{t('new_post_post_description')}</label>
                 {errorMessages?.description && <span className="error-message">{errorMessages?.description}</span>}
               </div>
-              <span className="input-hint">Describe the plastic items you're offering or looking for</span>
+              <span className="input-hint">{t('new_post_description_placeholder')}</span>
             </div>
           </div>
 
           <div className="form-section">
-            <h2>Location</h2>
+            <h2>{t('new_post_location')}</h2>
 
             <div className="form-row">
               <div className="form-group half">
@@ -205,14 +208,14 @@ export default function NewPost() {
                     onChange={handleStateChange}
                     className={errorMessages?.state ? "has-error" : ""}
                   >
-                    <option value="">Select State</option>
+                    <option value="">{t('new_post_state_placeholder')}</option>
                     {states.map(state => (
                       <option key={state.id} value={state.id}>
                         {state.name}
                       </option>
                     ))}
                   </select>
-                  <label htmlFor="state">State</label>
+                  <label htmlFor="state">{t('new_post_state')}</label>
                   {errorMessages?.state && <span className="error-message">{errorMessages?.state}</span>}
                 </div>
               </div>
@@ -226,7 +229,7 @@ export default function NewPost() {
                     onChange={handleCityChange}
                     className={errorMessages?.city ? "has-error" : ""}
                   >
-                    <option value="">Select City</option>
+                    <option value="">{t('new_post_city_placeholder')}</option>
                     {selectedState &&
                       cities[selectedState].map((city) => (
                         <option key={city} value={city}>
@@ -234,7 +237,7 @@ export default function NewPost() {
                         </option>
                       ))}
                   </select>
-                  <label htmlFor="city">City</label>
+                  <label htmlFor="city">{t('new_post_city')}</label>
                   {errorMessages?.city && <span className="error-message">{errorMessages?.city}</span>}
                 </div>
               </div>
@@ -242,7 +245,7 @@ export default function NewPost() {
           </div>
 
           <div className="form-section">
-            <h2>Role</h2>
+            <h2>{t('new_post_role')}</h2>
 
             <div className="radio-group">
               <div className="radio-option">
@@ -254,7 +257,7 @@ export default function NewPost() {
                   checked={selectedRole === "provider"}
                   onChange={handleRoleChange}
                 />
-                <label htmlFor="provider">I am offering plastic</label>
+                <label htmlFor="provider">{t('new_post_provider')}</label>
               </div>
 
               <div className="radio-option">
@@ -266,7 +269,7 @@ export default function NewPost() {
                   checked={selectedRole === "collector"}
                   onChange={handleRoleChange}
                 />
-                <label htmlFor="collector">I am looking for plastic</label>
+                <label htmlFor="collector">{t('new_post_collector')}</label>
               </div>
             </div>
             <span className="error-message">{errorMessages?.role}</span>
@@ -275,16 +278,16 @@ export default function NewPost() {
           {selectedRole === "provider" && (
             <>
               <div className="form-section">
-                <h2>Plastic Details</h2>
-                <p className="section-description">Specify the types and quantities of plastic items</p>
+                <h2>{t('new_post_details')}</h2>
+                <p className="section-description">{t('new_post_details_description')}</p>
 
                 <div className="plastic-types-grid">
                   <div className="plastic-type-card">
                     <div className="plastic-type-icon">
                       <Milk />
                     </div>
-                    <h3 className="plastic-type-title">Bottles</h3>
-                    <p className="plastic-type-description">PET, HDPE bottles, containers</p>
+                    <h3 className="plastic-type-title">{t('new_post_bottles')}</h3>
+                    <p className="plastic-type-description">{t('new_post_bottles_description')}</p>
                     <div className="plastic-type-quantity">
                       <input type="number" name="bottles" min="0" />
                     </div>
@@ -294,8 +297,8 @@ export default function NewPost() {
                     <div className="plastic-type-icon">
                       <ShoppingBag />
                     </div>
-                    <h3 className="plastic-type-title">Bags</h3>
-                    <p className="plastic-type-description">Plastic bags, films, wrappers</p>
+                    <h3 className="plastic-type-title">{t('new_post_bags')}</h3>
+                    <p className="plastic-type-description">{t('new_post_bags_description')}</p>
                     <div className="plastic-type-quantity">
                       <input type="number" name="bags" min="0" />
                     </div>
@@ -305,8 +308,8 @@ export default function NewPost() {
                     <div className="plastic-type-icon">
                       <Recycle />
                     </div>
-                    <h3 className="plastic-type-title">Mixed Items</h3>
-                    <p className="plastic-type-description">Other plastic items, mixed materials</p>
+                    <h3 className="plastic-type-title">{t('new_post_mixed_items')}</h3>
+                    <p className="plastic-type-description">{t('new_post_mixed_items_description')}</p>
                     <div className="plastic-type-quantity">
                       <input type="number" name="mixed" min="0" />
                     </div>
@@ -321,8 +324,8 @@ export default function NewPost() {
               </div>
 
               <div className="form-section">
-                <h2>Photos</h2>
-                <p className="section-description">Add up to 3 photos of your plastic items (optional)</p>
+                <h2>{t('new_post_photos')}</h2>
+                <p className="section-description">{t('new_post_photos_description')}</p>
 
                 <div className="image-upload-section">
                   <div className="image-upload-container">
@@ -337,8 +340,8 @@ export default function NewPost() {
                     />
                     <label htmlFor="images" className="image-upload-label">
                       <Camera className="image-upload-icon" />
-                      <span>Add Photos</span>
-                      <span className="image-upload-hint">(Max 3 images)</span>
+                      <span>{t('new_post_add_photos')}</span>
+                      <span className="image-upload-hint">{t('new_post_max_photos')}</span>
                     </label>
                   </div>
 
@@ -364,12 +367,12 @@ export default function NewPost() {
               {navigation.state === "submitting" ? (
                 <>
                   <Loader2 size={20} className="spinner" />
-                  Submitting...
+                  {t('new_post_publishing')}
                 </>
               ) : (
                 <>
                   <Upload size={20} />
-                  Publish Post
+                  {t('new_post_publish_post')}
                 </>
               )}
             </button>
