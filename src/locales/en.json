@@ -745,5 +745,9 @@
 
   "save_post": "Save Post",
   "post_saved": "Post Saved",
-  "delete_post": "Delete Post"
+  "delete_post": "Delete Post",
+  "approve_received": "Mark plastic as received",
+  "received": "Plastic Received",
+  "approve_delivered": "Mark plastic as delivered",
+  "delivered": "Plastic Delivered"
 }

@@ -285,6 +285,12 @@
     gap: 4px;
 }
 
+@media(max-width: 991px) {
+    .post-footer {
+        flex-direction: column;
+    }
+}
+
 .contact-button {
     display: flex;
     align-items: center;
@@ -298,7 +304,7 @@
     cursor: pointer;
     width: 100%;
     max-width: 16rem;
-    transition: background-color 0.6s ease;
+    transition: 0.6s ease;
 }
 
 .post-card .no-phone-number {
@@ -448,6 +454,49 @@
 .save-button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+}
+
+/* Approval button */
+.approve-post-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    color: #111;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.6s ease;
+}
+
+.approve-post-button.approved {
+    background: #9ca3af;
+    color: #fafafa;
+}
+
+.approve-post-button.approved .icon-small {
+    color: #0c672d;
+    animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.approve-post-button:hover:not(:disabled) {
+    background: #9ca3af;
 }
 
 /* Screen reader only */

@@ -746,5 +746,11 @@
 
   "save_post": "Sauvegarder",
   "post_saved": "Sauvegardé",
-  "delete_post": "Supprimer la publication"
+  "delete_post": "Supprimer la publication",
+
+  "approve_received": "Marquer comme recu",
+  "received": "Plastique recu",
+
+  "approve_delivered": "Marquer comme livré",
+  "delivered": "Plastique livré"
 }

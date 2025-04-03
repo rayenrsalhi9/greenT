@@ -748,5 +748,11 @@
 
   "save_post": "حفظ المنشور",
   "post_saved": "تم الحفظ",
-  "delete_post": "حذف المنشور"
+  "delete_post": "حذف المنشور",
+
+  "approve_received": "وافق على استلام البلاستيك",
+  "received": "إستلمت البلاستيك",
+
+  "approve_delivered": "وافق على تسليم البلاستيك",
+  "delivered": "تم التسليم"
 }
