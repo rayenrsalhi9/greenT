@@ -115,7 +115,7 @@ export default function Footer () {
               <div className="contact-list">
                 <div className="contact-item">
                   <Mail className="contact-icon" />
-                  <span>-</span>
+                  <span>enactuslimitlessisetkef25@gmail.com</span>
                 </div>
                 <div className="contact-item">
                   <Phone className="contact-icon" />
