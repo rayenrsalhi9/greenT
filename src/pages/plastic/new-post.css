@@ -465,6 +465,15 @@
   
   .radio-group input[type="radio"] {
     margin: 0;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  @media(max-width: 576px) {
+    .radio-group {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
   }

@@ -747,5 +747,6 @@
   },
 
   "save_post": "حفظ المنشور",
-  "post_saved": "تم الحفظ"
+  "post_saved": "تم الحفظ",
+  "delete_post": "حذف المنشور"
 }

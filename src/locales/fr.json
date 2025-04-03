@@ -745,5 +745,6 @@
   },
 
   "save_post": "Sauvegarder",
-  "post_saved": "Sauvegardé"
+  "post_saved": "Sauvegardé",
+  "delete_post": "Supprimer la publication"
 }

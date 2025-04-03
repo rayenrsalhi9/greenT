@@ -149,35 +149,42 @@ export default function Post({ post, canDelete }) {
             </div>
 
             <div className="post-footer">
-                <button 
-                className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}
-                disabled={post.userID === auth.currentUser.uid || post.user.phone === ''}
-                >
-                    <>
-                        <MessageSquare className="icon-small" />
-                        {t('contact_user')}
-                    </>
-                </button>
-                <button 
-                    className={`save-button ${isSaved ? "saved" : ""}`} 
-                    onClick={() => handleSavePost(post.id)} disabled={post.userID === auth.currentUser.uid}
-                >
-                    {
-                        !isSaved ?
+                {
+                    !canDelete && (
                         <>
-                            <Bookmark className="icon-small" />
-                            {t('save_post')}
-                        </> :
-                        <>
-                            <Check className="icon-small" />
-                            {t('post_saved')}
+                            <button 
+                                className={`contact-button ${post.role === "provider" ? "provider-button" : post.role === "collector" ? "collector-button" : "admin-button"}`}
+                                disabled={post.userID === auth.currentUser.uid || post.user.phone === ''}
+                            >
+                                <>
+                                    <MessageSquare className="icon-small" />
+                                    {t('contact_user')}
+                                </>
+                            </button>
+                            <button 
+                                className={`save-button ${isSaved ? "saved" : ""}`} 
+                                onClick={() => handleSavePost(post.id)} disabled={post.userID === auth.currentUser.uid}
+                            >
+                                {
+                                    !isSaved ?
+                                    <>
+                                        <Bookmark className="icon-small" />
+                                        {t('save_post')}
+                                    </> :
+                                    <>
+                                        <Check className="icon-small" />
+                                        {t('post_saved')}
+                                    </>
+                                }
+                            </button>
                         </>
-                    }
-                </button>
+                    )
+                }
                 {
                     canDelete === true && (
                         <button className={`delete-button ${isDeleting ? "loading" : ""}`} onClick={() => handleDeletePost(post.id)}>
                             <Trash2 className="icon-small delete"/>
+                            {t('delete_post')}
                         </button>
                     )
                 }
