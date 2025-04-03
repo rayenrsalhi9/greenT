@@ -741,5 +741,8 @@
       "text": "Join GreenT today and start your journey towards a plastic-free future.",
       "buttons": ["Sign Up Now", "Learn More"]
     }
-  }
+  },
+
+  "save_post": "Save Post",
+  "post_saved": "Post Saved"
 }

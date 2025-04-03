@@ -742,5 +742,8 @@
       "text": "Rejoignez GreenT aujourd'hui et commencez votre voyage vers un avenir sans plastique.",
       "buttons": ["S'inscrire maintenant", "En savoir plus"]
     }
-  }
+  },
+
+  "save_post": "Sauvegarder",
+  "post_saved": "Sauvegardé"
 }

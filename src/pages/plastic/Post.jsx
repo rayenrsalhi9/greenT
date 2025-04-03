@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle, Bookmark, BookmarkCheck, Trash2 } from "lucide-react"
+import { ChevronDown, ChevronUp, MapPin, MessageSquare, Phone, ShoppingBag, Milk, User, Recycle, Bookmark, Check, Trash2 } from "lucide-react"
 import avatarImg from '../../assets/profile.png'
 import { useTranslation } from "react-i18next"
 import { displayTimeAgo } from "../../utils/formatTime"
@@ -164,8 +164,14 @@ export default function Post({ post, canDelete }) {
                 >
                     {
                         !isSaved ?
-                        <Bookmark className="icon-small" /> :
-                        <BookmarkCheck className="icon-small" />
+                        <>
+                            <Bookmark className="icon-small" />
+                            {t('save_post')}
+                        </> :
+                        <>
+                            <Check className="icon-small" />
+                            {t('post_saved')}
+                        </>
                     }
                 </button>
                 {
