@@ -552,5 +552,195 @@
     "new_post_add_photos": "Ajouter photos",
     "new_post_max_photos": "Maximum de 3 photos",
     "new_post_publish_post": "Publier le post",
-    "new_post_publishing": "Publication en cours..."
+    "new_post_publishing": "Publication en cours...",
+
+    "howItWorks": {
+    "title": "Comment fonctionne GreenT",
+    "subtitle": "Rejoignez notre communauté et commencez à faire la différence dès aujourd'hui avec ces étapes simples",
+    
+    "gettingStarted": {
+      "title": "Pour commencer",
+      "subtitle": "Suivez ces étapes simples pour commencer à échanger des plastiques",
+      "steps": [
+        {
+          "title": "S'inscrire",
+          "description": "Créez votre compte GreenT pour rejoindre notre communauté écologique"
+        },
+        {
+          "title": "Publier des plastiques",
+          "description": "Téléchargez des photos et des détails des articles en plastique que vous souhaitez échanger"
+        },
+        {
+          "title": "Connecter",
+          "description": "Envoyez et recevez des messages pour organiser l'échange"
+        },
+        {
+          "title": "Échanger",
+          "description": "Rencontrez d'autres utilisateurs pour finaliser l'échange de plastique"
+        }
+      ]
+    },
+    
+    "postingGuide": {
+      "title": "Créer des publications de qualité",
+      "subtitle": "Aidez les autres à trouver vos plastiques avec des informations claires",
+      "clearPhotos": {
+        "title": "Prenez des photos claires",
+        "tips": [
+          "Utilisez un bon éclairage pour montrer l'état réel",
+          "Incluez plusieurs angles des articles en plastique",
+          "Montrez clairement la quantité sur au moins une photo",
+          "Évitez les images floues ou sombres"
+        ]
+      },
+      "detailedDescriptions": {
+        "title": "Rédigez des descriptions détaillées",
+        "tips": [
+          "Précisez le type de plastique (bouteilles, sacs, etc.)",
+          "Mentionnez la quantité et l'état",
+          "Indiquez votre emplacement général pour le ramassage",
+          "Ajoutez des notes spéciales sur les articles"
+        ]
+      },
+      "reminder": {
+        "title": "Rappel important",
+        "text": "Incluez toujours votre numéro de téléphone dans votre profil ou vos publications pour faciliter la coordination. Si vous préférez la confidentialité, vous pouvez utiliser le système de messagerie intégré à l'application."
+      }
+    },
+    
+    "rewards": {
+      "title": "Système de récompenses par points",
+      "subtitle": "Gagnez des points pour chaque article en plastique que vous recyclez ou échangez",
+      "table": {
+        "headers": ["Type de plastique", "Points par article", "Points bonus"],
+        "rows": [
+          ["Bouteilles en plastique", "5 points chacune", "+10 points pour chaque 20 bouteilles"],
+          ["Sacs en plastique", "2 points chacun", "+15 points pour chaque 50 sacs"],
+          ["Articles en plastique mélangés", "3 points chacun", "+5 points pour chaque 10 articles"],
+          ["Plastiques durs", "8 points chacun", "+20 points pour chaque 5 articles"]
+        ]
+      },
+      "pointsUsage": {
+        "title": "Que pouvez-vous faire avec des points?",
+        "items": [
+          "Échangez des produits écologiques auprès de nos partenaires",
+          "Bénéficiez de réductions sur des services durables",
+          "Gagnez des badges et améliorez votre statut de profil GreenT",
+          "Participez à des événements communautaires exclusifs"
+        ]
+      }
+    },
+    
+    "objectives": {
+      "title": "Objectifs et réalisations",
+      "subtitle": "Fixez des objectifs et suivez vos progrès vers une planète plus verte",
+      "achievements": [
+        {
+          "title": "Recycleur débutant",
+          "description": "Échangez vos 10 premiers articles en plastique",
+          "reward": "Récompense : 50 points bonus"
+        },
+        {
+          "title": "Contributeur régulier",
+          "description": "Effectuez 5 échanges en un mois",
+          "reward": "Récompense : Badge écologique"
+        },
+        {
+          "title": "Guerrier du plastique",
+          "description": "Recyclez plus de 100 articles en plastique",
+          "reward": "Récompense : Statut premium pendant 1 mois"
+        },
+        {
+          "title": "Champion communautaire",
+          "description": "Invitez 10 amis à rejoindre GreenT",
+          "reward": "Récompense : Réductions chez les partenaires"
+        }
+      ],
+      "tips": {
+        "title": "Conseils pour atteindre vos objectifs",
+        "items": [
+          "Fixez un objectif de recyclage hebdomadaire",
+          "Participez à des événements de nettoyage communautaire",
+          "Suivez nos réseaux sociaux pour les défis",
+          "Collaborez avec des amis pour des collectes plus importantes"
+        ]
+      }
+    },
+    
+    "partners": {
+      "title": "Nos partenaires",
+      "subtitle": "Travaillons ensemble pour un avenir durable",
+      "partnerCards": [
+        {
+          "title": "Centres de recyclage",
+          "description": "Déposez des quantités plus importantes de plastiques dans nos centres de recyclage partenaires",
+          "link": "Trouver le centre le plus proche"
+        },
+        {
+          "title": "Magasins écologiques",
+          "description": "Échangez vos points contre des produits durables dans les magasins partenaires",
+          "link": "Parcourir les partenaires"
+        },
+        {
+          "title": "ONG environnementales",
+          "description": "Rejoignez des initiatives plus larges et des événements communautaires avec nos partenaires ONG",
+          "link": "Événements à venir"
+        }
+      ],
+      "becomePartner": {
+        "title": "Devenir partenaire",
+        "text": "Votre organisation est engagée en faveur du développement durable? Rejoignez notre réseau de partenaires et aidez à créer un avenir sans plastique.",
+        "button": "Postuler maintenant"
+      }
+    },
+    
+    "support": {
+      "title": "Support et aide",
+      "subtitle": "Nous sommes là pour vous aider dans votre parcours de recyclage",
+      "supportCards": [
+        {
+          "title": "Contacter l'administrateur",
+          "description": "Besoin d'aide avec votre compte ou avez des suggestions?",
+          "email": "admin@greent.com",
+          "hours": "Délai de réponse : Sous 24 heures"
+        },
+        {
+          "title": "Support technique",
+          "description": "Vous rencontrez des problèmes avec l'application?",
+          "email": "support@greent.com",
+          "hours": "Disponible : Lun-Ven, 9h-17h"
+        },
+        {
+          "title": "Aide communautaire",
+          "description": "Connectez-vous avec d'autres utilisateurs et partagez des conseils",
+          "link": "Rejoindre le forum",
+          "hours": "Actif 24h/24, 7j/7"
+        }
+      ],
+      "faq": {
+        "title": "Foire aux questions",
+        "items": [
+          {
+            "question": "Comment vérifier mon compte?",
+            "answer": "Après inscription, vérifiez votre email pour un lien de vérification. Cliquez sur le lien pour compléter le processus."
+          },
+          {
+            "question": "Puis-je échanger des plastiques contre de l'argent?",
+            "answer": "GreenT se concentre sur l'échange communautaire et les récompenses par points. Certains partenaires peuvent offrir de l'argent pour de grandes quantités."
+          },
+          {
+            "question": "Comment les points sont-ils calculés pour les articles en plastique mélangés?",
+            "answer": "Les articles mélangés sont évalués en fonction du type, de l'état et de la quantité. Notre système fournit une estimation lors de la publication."
+          }
+        ],
+        "viewAll": "Voir toutes les FAQ"
+      }
+    },
+    
+    "cta": {
+      "title": "Prêt à faire la différence?",
+      "text": "Rejoignez GreenT aujourd'hui et commencez votre voyage vers un avenir sans plastique.",
+      "buttons": ["S'inscrire maintenant", "En savoir plus"]
+    }
+  }
 }

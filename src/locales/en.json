@@ -551,5 +551,195 @@
     "new_post_add_photos": "Add photos",
     "new_post_max_photos": "Max of 3 photos",
     "new_post_publish_post": "Publish post",
-    "new_post_publishing": "Publishing..."
+    "new_post_publishing": "Publishing...",
+
+    "howItWorks": {
+    "title": "How GreenT Works",
+    "subtitle": "Join our community and start making a difference today with these simple steps",
+    
+    "gettingStarted": {
+      "title": "Getting Started",
+      "subtitle": "Follow these simple steps to start exchanging plastics",
+      "steps": [
+        {
+          "title": "Sign Up",
+          "description": "Create your GreenT account to join our eco-friendly community"
+        },
+        {
+          "title": "Post Plastics",
+          "description": "Upload photos and details of the plastic items you want to exchange"
+        },
+        {
+          "title": "Connect",
+          "description": "Send and receive messages to arrange the exchange"
+        },
+        {
+          "title": "Exchange",
+          "description": "Meet with other users to complete the plastic exchange"
+        }
+      ]
+    },
+    
+    "postingGuide": {
+      "title": "Creating Quality Posts",
+      "subtitle": "Help others find your plastics with clear information",
+      "clearPhotos": {
+        "title": "Take Clear Photos",
+        "tips": [
+          "Use good lighting to show the true condition",
+          "Include multiple angles of the plastic items",
+          "Show the quantity clearly in at least one photo",
+          "Avoid blurry or dark images"
+        ]
+      },
+      "detailedDescriptions": {
+        "title": "Write Detailed Descriptions",
+        "tips": [
+          "Specify the type of plastic (bottles, bags, etc.)",
+          "Mention the quantity and condition",
+          "Include your general location for pickup",
+          "Add any special notes about the items"
+        ]
+      },
+      "reminder": {
+        "title": "Important Reminder",
+        "text": "Always include your contact number in your profile or posts to make coordination easier. If you prefer privacy, you can use the in-app messaging system."
+      }
+    },
+    
+    "rewards": {
+      "title": "Points Rewards System",
+      "subtitle": "Earn points for every plastic item you recycle or exchange",
+      "table": {
+        "headers": ["Plastic Type", "Points per Item", "Bonus Points"],
+        "rows": [
+          ["Plastic Bottles", "5 points each", "+10 points for every 20 bottles"],
+          ["Plastic Bags", "2 points each", "+15 points for every 50 bags"],
+          ["Mixed Plastic Items", "3 points each", "+5 points for every 10 items"],
+          ["Hard Plastics", "8 points each", "+20 points for every 5 items"]
+        ]
+      },
+      "pointsUsage": {
+        "title": "What Can You Do With Points?",
+        "items": [
+          "Redeem eco-friendly products from our partners",
+          "Get discounts on sustainable services",
+          "Earn badges and improve your GreenT profile status",
+          "Participate in exclusive community events"
+        ]
+      }
+    },
+    
+    "objectives": {
+      "title": "Objectives & Achievements",
+      "subtitle": "Set goals and track your progress towards a greener planet",
+      "achievements": [
+        {
+          "title": "Beginner Recycler",
+          "description": "Exchange your first 10 plastic items",
+          "reward": "Reward: 50 bonus points"
+        },
+        {
+          "title": "Consistent Contributor",
+          "description": "Complete 5 exchanges in one month",
+          "reward": "Reward: Eco-friendly badge"
+        },
+        {
+          "title": "Plastic Warrior",
+          "description": "Recycle 100+ plastic items",
+          "reward": "Reward: Premium status for 1 month"
+        },
+        {
+          "title": "Community Champion",
+          "description": "Invite 10 friends to join GreenT",
+          "reward": "Reward: Partner discounts"
+        }
+      ],
+      "tips": {
+        "title": "Tips to Achieve Your Goals",
+        "items": [
+          "Set a weekly recycling target",
+          "Join community cleanup events",
+          "Follow our social media for challenges",
+          "Partner with friends for bigger collections"
+        ]
+      }
+    },
+    
+    "partners": {
+      "title": "Our Partners",
+      "subtitle": "Working together for a sustainable future",
+      "partnerCards": [
+        {
+          "title": "Recycling Centers",
+          "description": "Drop off larger quantities of plastics at our partner recycling centers",
+          "link": "Find Nearest Center"
+        },
+        {
+          "title": "Eco-Friendly Stores",
+          "description": "Redeem your points for sustainable products at partner stores",
+          "link": "Browse Partners"
+        },
+        {
+          "title": "Environmental NGOs",
+          "description": "Join larger initiatives and community events with our NGO partners",
+          "link": "Upcoming Events"
+        }
+      ],
+      "becomePartner": {
+        "title": "Become a Partner",
+        "text": "Is your organization committed to sustainability? Join our network of partners and help create a plastic-free future.",
+        "button": "Apply Now"
+      }
+    },
+    
+    "support": {
+      "title": "Support & Help",
+      "subtitle": "We're here to assist you on your recycling journey",
+      "supportCards": [
+        {
+          "title": "Contact Admin",
+          "description": "Need help with your account or have suggestions?",
+          "email": "admin@greent.com",
+          "hours": "Response time: Within 24 hours"
+        },
+        {
+          "title": "Technical Support",
+          "description": "Experiencing issues with the app?",
+          "email": "support@greent.com",
+          "hours": "Available: Mon-Fri, 9am-5pm"
+        },
+        {
+          "title": "Community Help",
+          "description": "Connect with other users and share tips",
+          "link": "Join Forum",
+          "hours": "Active 24/7"
+        }
+      ],
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "How do I verify my account?",
+            "answer": "After signing up, check your email for a verification link. Click the link to complete the verification process."
+          },
+          {
+            "question": "Can I exchange plastics for money?",
+            "answer": "GreenT focuses on community exchange and points rewards. Some partners may offer cash for large quantities."
+          },
+          {
+            "question": "How are points calculated for mixed plastic items?",
+            "answer": "Mixed items are assessed based on type, condition, and quantity. Our system provides an estimate during posting."
+          }
+        ],
+        "viewAll": "View All FAQs"
+      }
+    },
+    
+    "cta": {
+      "title": "Ready to make a difference?",
+      "text": "Join GreenT today and start your journey towards a plastic-free future.",
+      "buttons": ["Sign Up Now", "Learn More"]
+    }
+  }
 }
