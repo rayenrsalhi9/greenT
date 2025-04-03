@@ -28,11 +28,13 @@ button {
 
 .container.ar * {
     font-family: 'Cairo', sans-serif;
+    line-height: 1.2;
 }
 
 body {
     background: linear-gradient(to bottom right, #166534, #052e16);
     font-family: 'Inter', sans-serif;
+    font-variant-ligatures: none;
 }
 
 body::-webkit-scrollbar {

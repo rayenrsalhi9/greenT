@@ -46,7 +46,7 @@ export default function Navbar() {
             setProfile(data)
           })
         }
-          })
+      })
     }
     fetchProfile()
   }, [])
@@ -65,9 +65,13 @@ export default function Navbar() {
     }
   }, [])
 
-  // Toggle dropdown menus
-  const toggleDropdown = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
+  // Handle hover for dropdown menus
+  const handleMouseEnter = (dropdown) => {
+    setActiveDropdown(dropdown)
+  }
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null)
   }
 
   return (
@@ -84,11 +88,12 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="navbar-desktop-nav">
           <ul className="navbar-menu-list">
-            <li className="navbar-menu-item">
-              <button
-                className={`navbar-menu-button ${activeDropdown === "find" ? "active" : ""}`}
-                onClick={() => toggleDropdown("find")}
-              >
+            <li
+              className="navbar-menu-item"
+              onMouseEnter={() => handleMouseEnter("find")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="navbar-menu-button">
                 {t('navbar_find_plastics')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
@@ -126,11 +131,12 @@ export default function Navbar() {
                 </div>
               )}
             </li>
-            <li className="navbar-menu-item">
-              <button
-                className={`navbar-menu-button ${activeDropdown === "post" ? "active" : ""}`}
-                onClick={() => toggleDropdown("post")}
-              >
+            <li
+              className="navbar-menu-item"
+              onMouseEnter={() => handleMouseEnter("post")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="navbar-menu-button">
                 {t('navbar_post_plastics')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
@@ -163,11 +169,12 @@ export default function Navbar() {
                 {t('navbar_how_it_works')}
               </Link>
             </li>
-            <li className="navbar-menu-item">
-              <button
-                className={`navbar-menu-button ${activeDropdown === "about" ? "active" : ""}`}
-                onClick={() => toggleDropdown("about")}
-              >
+            <li
+              className="navbar-menu-item"
+              onMouseEnter={() => handleMouseEnter("about")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="navbar-menu-button">
                 {t('navbar_about')}
                 <ChevronDown className="navbar-menu-icon" />
               </button>
