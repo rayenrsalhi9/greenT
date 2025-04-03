@@ -521,4 +521,11 @@
     .post-title {
         font-size: 1.125rem;
     }
+
+    .post-footer .contact-button,
+    .post-footer .save-button,
+    .post-footer .approve-post-button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
