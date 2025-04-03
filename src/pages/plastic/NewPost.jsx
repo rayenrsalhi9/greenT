@@ -211,7 +211,7 @@ export default function NewPost() {
                     <option value="">{t('new_post_state_placeholder')}</option>
                     {states.map(state => (
                       <option key={state.id} value={state.id}>
-                        {state.name}
+                        {t(`states.${state.id}`)}
                       </option>
                     ))}
                   </select>
@@ -233,7 +233,7 @@ export default function NewPost() {
                     {selectedState &&
                       cities[selectedState].map((city) => (
                         <option key={city} value={city}>
-                          {city}
+                          {t(`cities.${selectedState}.${city}`)}
                         </option>
                       ))}
                   </select>

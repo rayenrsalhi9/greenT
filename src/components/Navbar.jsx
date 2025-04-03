@@ -98,28 +98,28 @@ export default function Navbar() {
                     <li className="navbar-dropdown-feature">
                       <Link to="posts" className="navbar-feature-link">
                         <MapPin className="navbar-feature-icon" />
-                        <div className="navbar-feature-title">See all posts</div>
+                        <div className="navbar-feature-title">{t('navbar_see_all_posts')}</div>
                         <p className="navbar-feature-description">
-                          Find recycling locations and plastic drop-off points near you
+                          {t('navbar_see_all_posts_description')}
                         </p>
                       </Link>
                     </li>
                     <li>
                       <Link to="posts" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Categories</div>
-                        <p className="navbar-dropdown-description">Browse by plastic type and recycling category</p>
+                        <div className="navbar-dropdown-title">{t('navbar_categories')}</div>
+                        <p className="navbar-dropdown-description">{t('navbar_categories_description')}</p>
                       </Link>
                     </li>
                     <li>
                       <Link to="posts" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Nearby</div>
-                        <p className="navbar-dropdown-description">Discover available plastics in your local area</p>
+                        <div className="navbar-dropdown-title">{t('navbar_nearby')}</div>
+                        <p className="navbar-dropdown-description">{t('navbar_nearby_description')}</p>
                       </Link>
                     </li>
                     <li>
                       <Link to="posts" className="navbar-dropdown-link">
-                        <div className="navbar-dropdown-title">Trending</div>
-                        <p className="navbar-dropdown-description">Most sought-after plastic materials right now</p>
+                        <div className="navbar-dropdown-title">{t('navbar_trending')}</div>
+                        <p className="navbar-dropdown-description">{t('navbar_trending_description')}</p>
                       </Link>
                     </li>
                   </ul>

@@ -487,6 +487,15 @@
   "navbar_guest_user": "Utilisateur invité",
   "navbar_guest_user_description": "Connectez-vous pour acceder à votre compte et publier des plastiques",
   "navbar_logout": "Déconnexion",
+  "navbar_see_all_posts": "Voir tous les posts",
+  "navbar_see_all_posts_description": "Trouvez des lieux de recyclage et points de dépôt de plastique près de chez vous",
+  "navbar_categories": "Catégories",
+  "navbar_categories_description": "Parcourir par type de plastique et catégorie de recyclage",
+  "navbar_nearby": "À proximité",
+  "navbar_nearby_description": "Découvrez les plastiques disponibles dans votre région",
+  "navbar_trending": "Tendances",
+  "navbar_trending_description": "Les matériaux plastiques les plus demandés actuellement",
+
 
   "footer_description": "Connecter les gens pour faciliter et rendre plus accessible le recyclage. Rejoignez notre communauté et aidez à créer un avenir plus durable.",
   "footer_en": "Anglais",
